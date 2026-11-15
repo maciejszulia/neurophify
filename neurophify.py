@@ -89,13 +89,14 @@ def clean(text):
 # ---------------------------------------------------------------- input A: graph.json
 
 def parse_time(value):
-    """Epoch seconds from a number or an ISO 8601 date or datetime (no zone = local time); None if absent or invalid."""
+    """Epoch seconds from a number or an ISO 8601 date or datetime (no zone = local time); None if absent, invalid
+    or outside the dates that REGIONS.md and CORE.md can print."""
     if value is None or isinstance(value, bool):
         return None
-    if isinstance(value, (int, float)):
-        return int(value) if math.isfinite(value) else None
     try:
-        return int(datetime.fromisoformat(str(value).strip()).timestamp())
+        t = int(value) if isinstance(value, (int, float)) else int(datetime.fromisoformat(str(value).strip()).timestamp())
+        datetime.fromtimestamp(t)
+        return t
     except (ValueError, OverflowError, OSError):
         return None
 
@@ -1094,6 +1095,7 @@ def selftest():
             assert parse_git_log(log) == {"b.md": (200, 300), "a.md": (100, 200)}, f"git log: {parse_git_log(log)}"
             assert parse_time("2026-01-02") == int(datetime(2026, 1, 2).timestamp()) and parse_time(5) == 5
             assert parse_time("soon") is None and parse_time(True) is None and parse_time(float("nan")) is None
+            assert parse_time(1e20) is None and parse_time(float("inf")) is None, "a time outside the calendar passed"
             pt = os.path.join(tmp, "timed.json")
             write(pt, json.dumps({"nodes": [{"id": "a", "time": 0}, {"id": "b", "time": 40 * 86400}, {"id": "c"}],
                                   "links": [{"source": "a", "target": "b"}]}))
