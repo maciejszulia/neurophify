@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 303" width="960" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" role="img" aria-label="neurophify czyta graf, dzieli węzły na regiony i układa regiony na 2 półkulach. Jeden układ zasila 4 pliki wyjścia.">
+<rect width="960" height="303" fill="#ffffff"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#111111"/></marker></defs>
+<text x="16" y="32" font-size="15" font-weight="bold" fill="#111111">neurophify czyta graf, dzieli węzły na regiony i układa regiony na 2 półkulach.</text>
+<text x="16" y="53" font-size="15" font-weight="bold" fill="#111111">Jeden układ zasila 4 pliki wyjścia.</text>
+<polyline points="230,122.5 254,122.5" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<polyline points="230,245 242,245 242,122.5 254,122.5" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<polyline points="468,122.5 492,122.5" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<polyline points="706,122.5 730,122.5" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<polyline points="599,173 599,203" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<polyline points="837,173 837,203" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="16" y="72" width="214" height="101" fill="#f2f2f2" stroke="#111111" stroke-width="1.5"/>
+<text x="24" y="101.5" fill="#111111" font-weight="bold">Wejście A</text>
+<text x="24" y="118.5" fill="#111111">graph.json z graphify:</text>
+<text x="24" y="135.5" fill="#111111">nodes, links albo edges,</text>
+<text x="24" y="152.5" fill="#111111">community</text>
+<rect x="254" y="72" width="214" height="101" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
+<text x="262" y="93" fill="#111111" font-weight="bold">Regiony</text>
+<text x="262" y="110" fill="#111111">pole community albo</text>
+<text x="262" y="127" fill="#111111">label propagation</text>
+<text x="262" y="144" fill="#111111">(ziarno 42); co najwyżej</text>
+<text x="262" y="161" fill="#111111">24, reszta to „other”</text>
+<rect x="492" y="72" width="214" height="101" fill="#ffffff" stroke="#c8102e" stroke-width="2"/>
+<text x="500" y="93" fill="#c8102e" font-weight="bold">Układ 3D</text>
+<text x="500" y="110" fill="#111111">środki regionów na</text>
+<text x="500" y="127" fill="#111111">2 elipsoidach półkul;</text>
+<text x="500" y="144" fill="#111111">każdy region dostaje</text>
+<text x="500" y="161" fill="#111111">płat powierzchni</text>
+<rect x="730" y="72" width="214" height="101" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
+<text x="738" y="101.5" fill="#111111" font-weight="bold">Pliki wyjścia</text>
+<text x="738" y="118.5" fill="#111111">brain.html (widok 3D)</text>
+<text x="738" y="135.5" fill="#111111">brain.svg (rzut)</text>
+<text x="738" y="152.5" fill="#111111">brain.json, REGIONS.md</text>
+<rect x="16" y="203" width="214" height="84" fill="#f2f2f2" stroke="#111111" stroke-width="1.5"/>
+<text x="24" y="224" fill="#111111" font-weight="bold">Wejście B</text>
+<text x="24" y="241" fill="#111111">folder plików .md:</text>
+<text x="24" y="258" fill="#111111">linki [[strona]] oraz</text>
+<text x="24" y="275" fill="#111111">[tekst](plik.md)</text>
+<rect x="492" y="203" width="214" height="84" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
+<text x="500" y="224" fill="#111111" font-weight="bold">Wewnątrz płata</text>
+<text x="500" y="241" fill="#111111">układ siłowy trzyma</text>
+<text x="500" y="258" fill="#111111">połączone węzły blisko,</text>
+<text x="500" y="275" fill="#111111">huby przy środku</text>
+<rect x="730" y="203" width="214" height="84" fill="#ffffff" stroke="#111111" stroke-width="1.5"/>
+<text x="738" y="232.5" fill="#111111" font-weight="bold">Przeglądarka</text>
+<text x="738" y="249.5" fill="#111111">3d-force-graph z jsDelivr</text>
+<text x="738" y="266.5" fill="#111111">rysuje stałe pozycje</text>
+</svg>
