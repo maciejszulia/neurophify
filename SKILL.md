@@ -50,7 +50,7 @@ Wykonaj każdy krok w tej kolejności:
    - Ścieżki 5 plików: `brain.html`, `brain.svg`, `brain.json`, `REGIONS.md`, `CORE.md`.
    - Nazwy 3 największych regionów z pliku `REGIONS.md` oraz liczbę węzłów w każdym z 3 regionów.
    - Uwagę: widok 3D w pliku `brain.html` pobiera bibliotekę 3d-force-graph z serwera jsDelivr.
-   - Ścieżkę pliku `brain-spin.svg` i pliku `brain.stl`, jeżeli komenda miała opcję `--spin` albo opcję `--stl`.
+   - Ścieżkę każdego dodatkowego pliku, jeżeli komenda miała opcję `--spin` lub opcję `--stl`.
 
 ## Granice
 
