@@ -170,7 +170,7 @@ def first_paragraph(text):
     text = CODE_FENCE.sub("", FRONTMATTER.sub("", text.lstrip("\ufeff"), count=1))
     for block in re.split(r"\n[ \t]*\n", text):
         para = clean(" ".join(line for line in block.splitlines() if not HEADING.match(line)))
-        if para:
+        if para and not all(word.startswith("#") for word in para.split()):  # a line of tags is not a paragraph
             return para if len(para) <= PARAGRAPH_CHARS else para[:PARAGRAPH_CHARS - 1].rstrip() + "…"
     return ""
 
@@ -1142,6 +1142,8 @@ def selftest():
             assert "| First line second \\| line [[b]]. |" in core and "not this" not in core, core
             long = first_paragraph("word " * 100)
             assert len(long) <= PARAGRAPH_CHARS and long.endswith("…") and long in core, long
+            tags_first = first_paragraph("#guide #meta/page\n\nReal text.")
+            assert tags_first == "Real text.", f"a block of tags only is not a paragraph: {tags_first!r}"
             for name in ("brain.html", "brain.json"):
                 with open(os.path.join(out, name), encoding="utf-8") as f:
                     assert "First line" not in f.read(), f"the first paragraph leaked into {name}"
