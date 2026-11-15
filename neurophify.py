@@ -43,6 +43,13 @@ CDN = "https://cdn.jsdelivr.net/npm/3d-force-graph@1.80.1/dist/3d-force-graph.mi
 MAX_REGIONS = 24          # legend entries, "other" included
 TOP_LABELS = 10           # nodes with a permanent label
 SEED, LPA_MAX_ITER = 42, 50
+SPIN_FRAMES, SPIN_SECONDS = 24, 12   # brain-spin.svg: one turn in 12 s, drawn from 24 key frames
+SPIN_PITCH = math.radians(20)        # the turning brain is seen 20 degrees from above
+SPIN_EDGES = 80                      # brain-spin.svg draws the 80 edges between the nodes with the most edges
+STL_NODES = 40                       # brain.stl: a tetrahedron for each of the 40 nodes with the most edges
+HEMI_U, HEMI_V = 12, 6               # brain.stl: hemisphere mesh, 12 steps around, 6 from pole to pole
+HEMI_FACETS = 2 * HEMI_U * (HEMI_V - 1)
+STL_SHELL = 0.92                     # brain.stl: the hemispheres shrink so the node markers stand out
 CORE_SIZE = 20            # nodes in CORE.md
 HALF_LIFE = 30            # days: a node loses half its weight per 30 days behind the newest change
 PARAGRAPH_CHARS = 300     # longest first paragraph in CORE.md
@@ -638,6 +645,111 @@ def render_svg(scene):
     return "\n".join(out) + "\n"
 
 
+def spin_frames(scene, frames=SPIN_FRAMES):
+    """Per key frame of one turn around the vertical axis: (screen x, screen y down, depth toward viewer) per node."""
+    cp, sp = math.cos(SPIN_PITCH), math.sin(SPIN_PITCH)
+    out = []
+    for f in range(frames):
+        ca, sa = math.cos(2 * math.pi * f / frames), math.sin(2 * math.pi * f / frames)
+        row = []
+        for n in scene["nodes"]:
+            x, z = n["x"] * ca + n["z"] * sa, -n["x"] * sa + n["z"] * ca
+            row.append((x, -(n["y"] * cp - z * sp), n["y"] * sp + z * cp))
+        out.append(row)
+    return out
+
+
+def render_spin_svg(scene):
+    """brain-spin.svg: the brain turning around its vertical axis, animated with SMIL (no script), for a README."""
+    width, height, top = 900, 620, 80
+    nodes, regions = scene["nodes"], scene["regions"]
+    frames = spin_frames(scene)
+    reach = max((math.sqrt(n["x"] ** 2 + n["y"] ** 2 + n["z"] ** 2) for n in nodes), default=1.0) or 1.0
+    s = 0.96 * min(width, height - top) / (2 * reach)
+    cx0, cy0 = width / 2, top + (height - top) / 2
+    index = {n["id"]: i for i, n in enumerate(nodes)}
+
+    def track(i, k):              # coordinate k of node i over the turn, closed back to the first frame
+        return [f[i][k] for f in frames] + [frames[0][i][k]]
+
+    def animate(name, values, fmt):
+        vals = ";".join(fmt.format(v) for v in values)
+        return f'<animate attributeName="{name}" dur="{SPIN_SECONDS}s" repeatCount="indefinite" values="{vals}"/>'
+
+    title, meta = scene["title"], f'{len(nodes)} nodes, {len(regions)} regions. One turn every {SPIN_SECONDS} s.'
+    out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" height="{height}" '
+           f'font-family="{FONT}" role="img" aria-labelledby="title desc">',
+           f'<title id="title">{html.escape(title)}</title>',
+           f'<desc id="desc">{html.escape(meta)} Knowledge graph drawn as a turning 3D brain by neurophify.</desc>',
+           f'<rect width="{width}" height="{height}" fill="{BACKGROUND}"/>',
+           f'<text x="28" y="44" font-size="24" font-weight="600" fill="#f5f7fa">{html.escape(title)}</text>',
+           f'<text x="28" y="68" font-size="14" fill="#9aa4b2">{html.escape(meta)}</text>']
+    degree = {n["id"]: n["degree"] for n in nodes}
+    region_of = {n["id"]: n["region"] for n in nodes}
+    edges = sorted(scene["edges"], key=lambda e: (-(degree[e["source"]] + degree[e["target"]]), e["source"], e["target"]))
+    for e in edges[:SPIN_EDGES]:
+        a, b = index[e["source"]], index[e["target"]]
+        ra, rb = region_of[e["source"]], region_of[e["target"]]
+        ends = {"x1": [cx0 + s * v for v in track(a, 0)], "y1": [cy0 + s * v for v in track(a, 1)],
+                "x2": [cx0 + s * v for v in track(b, 0)], "y2": [cy0 + s * v for v in track(b, 1)]}
+        out.append("<line " + " ".join(f'{k}="{v[0]:.0f}"' for k, v in ends.items())
+                   + f' stroke="{regions[ra]["color"] if ra == rb else "#8b95a5"}" stroke-opacity="0.35" stroke-width="0.8">'
+                   + "".join(animate(k, v, "{:.0f}") for k, v in ends.items()) + "</line>")
+    for n in sorted(nodes, key=lambda n: (n["degree"], n["id"])):   # nodes with more edges are drawn on top
+        i = index[n["id"]]
+        depth = [(z + reach) / (2 * reach) for z in track(i, 2)]
+        x, y = [cx0 + s * v for v in track(i, 0)], [cy0 + s * v for v in track(i, 1)]
+        r = [node_radius(n["degree"]) * (0.55 + 0.6 * d) for d in depth]
+        o = [0.2 + 0.8 * d for d in depth]
+        out.append(f'<circle cx="{x[0]:.0f}" cy="{y[0]:.0f}" r="{r[0]:.1f}" opacity="{o[0]:.2f}" '
+                   f'fill="{regions[n["region"]]["color"]}">'
+                   + animate("cx", x, "{:.0f}") + animate("cy", y, "{:.0f}")
+                   + animate("r", r, "{:.1f}") + animate("opacity", o, "{:.2f}") + "</circle>")
+    out.append("</svg>")
+    return "\n".join(out) + "\n"
+
+
+def render_stl(scene, top=STL_NODES):
+    """brain.stl: ASCII STL of both hemispheres and a tetrahedron for each of the `top` nodes with the most edges.
+    The brain's height axis becomes z, so STL viewers show it upright."""
+    facets = []
+
+    def add(a, b, c, inside):      # orient the facet so its normal points away from `inside`
+        nrm = cross([b[k] - a[k] for k in range(3)], [c[k] - a[k] for k in range(3)])
+        if dot(nrm, [(a[k] + b[k] + c[k]) / 3 - inside[k] for k in range(3)]) < 0:
+            b, c, nrm = c, b, [-v for v in nrm]
+        facets.append((unit(nrm), a, b, c))
+
+    for sign in (-1.0, 1.0):
+        centre, axes = (sign * SHIFT * R, 0.0, 0.0), [STL_SHELL * k * R for k in SEMI]
+
+        def p(i, j):
+            th, ph = 2 * math.pi * i / HEMI_U, math.pi * j / HEMI_V
+            return (centre[0] + axes[0] * math.sin(ph) * math.cos(th), centre[1] + axes[1] * math.cos(ph),
+                    centre[2] + axes[2] * math.sin(ph) * math.sin(th))
+        for i in range(HEMI_U):
+            for j in range(HEMI_V):     # the first and the last band meet at a pole: 1 triangle per step
+                if j > 0:
+                    add(p(i, j), p(i + 1, j), p(i + 1, j + 1), centre)
+                if j < HEMI_V - 1:
+                    add(p(i, j), p(i + 1, j + 1), p(i, j + 1), centre)
+    corners = ((1, 1, 1), (1, -1, -1), (-1, 1, -1), (-1, -1, 1))
+    for n in sorted(scene["nodes"], key=lambda n: (-n["degree"], n["label"], n["id"]))[:top]:
+        c, t = (n["x"], n["y"], n["z"]), (4 + 1.5 * math.sqrt(n["degree"])) / math.sqrt(3)
+        v = [tuple(c[k] + t * q[k] for k in range(3)) for q in corners]
+        for a, b, d in ((0, 1, 2), (0, 3, 1), (0, 2, 3), (1, 3, 2)):
+            add(v[a], v[b], v[d], c)
+
+    def xyz(q):                     # (x, y, z) of the scene -> (x, -z, y) in STL, in units of 10
+        return f"{q[0] / 10:.1f} {-q[2] / 10:.1f} {q[1] / 10:.1f}"
+    out = ["solid neurophify"]
+    for nrm, a, b, c in facets:
+        out += [f"facet normal {nrm[0]:.3f} {-nrm[2]:.3f} {nrm[1]:.3f}", "outer loop",
+                f"vertex {xyz(a)}", f"vertex {xyz(b)}", f"vertex {xyz(c)}", "endloop", "endfacet"]
+    out.append("endsolid neurophify")
+    return "\n".join(out) + "\n"
+
+
 def embed_json(obj):
     """JSON safe inside a <script> element: no '<', '>' or '&' outside escapes."""
     text = json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
@@ -959,11 +1071,15 @@ def render_core_md(scene, paragraphs=None):
     return "\n".join(lines) + "\n"
 
 
-def write_outputs(scene, out_dir, paragraphs=None):
+def write_outputs(scene, out_dir, paragraphs=None, spin=False, stl=False):
     os.makedirs(out_dir, exist_ok=True)
     files = {"brain.html": render_html(scene), "brain.svg": render_svg(scene),
              "brain.json": json.dumps(scene, ensure_ascii=False, indent=1) + "\n",
              "REGIONS.md": render_regions_md(scene), "CORE.md": render_core_md(scene, paragraphs)}
+    if spin:
+        files["brain-spin.svg"] = render_spin_svg(scene)
+    if stl:
+        files["brain.stl"] = render_stl(scene)
     paths = []
     for name, text in files.items():
         path = os.path.join(out_dir, name)
@@ -983,7 +1099,7 @@ def default_title(src):
     return os.path.splitext(os.path.basename(path))[0]
 
 
-def run(src, out_dir="neurophify-out", title=None, excludes=()):
+def run(src, out_dir="neurophify-out", title=None, excludes=(), spin=False, stl=False):
     if not os.path.exists(src):
         raise InputError(f"input not found: {src}\n  fix: pass graphify-out/graph.json or a folder of .md files")
     name = default_title(src)
@@ -998,7 +1114,7 @@ def run(src, out_dir="neurophify-out", title=None, excludes=()):
         graph, paragraphs = load_graph_json(src), None
     scene = build_scene(graph, title or name, name)
     try:
-        return write_outputs(scene, out_dir, paragraphs), scene
+        return write_outputs(scene, out_dir, paragraphs, spin, stl), scene
     except OSError as e:
         raise InputError(f"cannot write to {out_dir}: {e.strerror}\n  fix: choose another folder with --out") from None
 
@@ -1148,6 +1264,25 @@ def selftest():
                 with open(os.path.join(out, name), encoding="utf-8") as f:
                     assert "First line" not in f.read(), f"the first paragraph leaked into {name}"
             checks += 1
+            # 12. brain-spin.svg: one full turn in SPIN_SECONDS; a node in front is larger and more opaque than behind.
+            spin = render_spin_svg(scene_b)
+            assert spin.count("<circle") == len(scene_b["nodes"]), "brain-spin.svg needs 1 circle per node"
+            assert f'dur="{SPIN_SECONDS}s"' in spin and 'repeatCount="indefinite"' in spin, "brain-spin.svg does not loop"
+            first = re.search(r"<circle[^>]*>(.*?)</circle>", spin, re.S).group(1)
+            radii = [float(v) for v in re.search(r'attributeName="r"[^>]*values="([^"]+)"', first).group(1).split(";")]
+            alpha = [float(v) for v in re.search(r'attributeName="opacity"[^>]*values="([^"]+)"', first).group(1).split(";")]
+            near, far = radii.index(max(radii)), radii.index(min(radii))
+            assert radii[near] > radii[far] and alpha[near] > alpha[far], "depth does not change size and opacity"
+            assert len(radii) == SPIN_FRAMES + 1 and radii[0] == radii[-1], "the turn does not close"
+            assert len(spin.encode()) <= 500_000, "brain-spin.svg is larger than 500 kB"
+            checks += 1
+            # 13. brain.stl: ASCII STL of both hemispheres and a tetrahedron per top node, at most 100 kB.
+            stl = render_stl(scene_b)
+            facets = stl.count("facet normal")
+            assert stl.startswith("solid neurophify\n") and stl.endswith("endsolid neurophify\n"), "not an ASCII STL solid"
+            assert facets == 2 * HEMI_FACETS + 4 * min(STL_NODES, len(scene_b["nodes"])), f"{facets} facets"
+            assert stl.count("vertex") == 3 * facets and len(stl.encode()) <= 100_000, "STL vertices or size"
+            checks += 1
     except AssertionError as e:
         print(f"selftest: FAILED after {checks} checks: {e}", file=sys.stderr)
         return 1
@@ -1178,6 +1313,11 @@ consolidation:
   For a folder, each entry adds the first paragraph of the page. REGIONS.md ends with graph
   metrics: connected components, nodes without edges, modularity Q of the regions.
 
+files for a README:
+  --spin also writes brain-spin.svg: the brain turning around its vertical axis (SMIL, no script).
+  --stl also writes brain.stl: an ASCII STL of both hemispheres and the 40 nodes with the most
+  edges. GitHub shows it as an interactive 3D model in a fenced code block marked stl.
+
 exit codes: 0 done, 1 selftest failed, 2 bad usage or unreadable input."""
 
 
@@ -1192,6 +1332,8 @@ def main(argv=None):
     parser.add_argument("--exclude", action="append", default=[], metavar="PATTERN",
                         help="folder input: skip files and folders whose relative path matches "
                              "this fnmatch pattern; repeatable")
+    parser.add_argument("--spin", action="store_true", help="also write brain-spin.svg, the brain turning in 3D")
+    parser.add_argument("--stl", action="store_true", help="also write brain.stl, a 3D model of the brain")
     parser.add_argument("--selftest", action="store_true", help="run the built-in checks and exit")
     parser.add_argument("--version", action="version", version=f"neurophify {VERSION}")
     args = parser.parse_args(argv)
@@ -1201,7 +1343,7 @@ def main(argv=None):
         parser.print_help(sys.stderr)
         return 2
     try:
-        paths, scene = run(args.input, args.out, args.title, args.exclude)
+        paths, scene = run(args.input, args.out, args.title, args.exclude, args.spin, args.stl)
     except InputError as e:
         print(f"neurophify: error: {e}", file=sys.stderr)
         return 2
