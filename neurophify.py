@@ -3,12 +3,13 @@
 
 Reads a graphify graph.json (networkx node-link format) or a folder of Markdown
 files, groups the nodes into regions and lays the regions out on the surface of
-two brain hemispheres. Writes four files to the output folder:
+two brain hemispheres. Writes five files to the output folder:
 
   brain.html   interactive 3D view (3d-force-graph from jsDelivr, data embedded)
   brain.svg    static projection of the same scene
   brain.json   nodes with positions and regions, edges, regions
-  REGIONS.md   regions, their central nodes and the bridges between regions
+  REGIONS.md   regions, their central nodes, the bridges between regions, graph metrics
+  CORE.md      consolidation: the 20 nodes with the largest weight (degree and recency)
 
 Time is the fourth dimension: a node takes its first and last commit from the git
 history of a Markdown folder (the file modification time outside git) or the
@@ -37,11 +38,14 @@ from collections import Counter, defaultdict
 from datetime import datetime
 from urllib.parse import unquote
 
-VERSION = "1.1.0"
+VERSION = "1.2.0"
 CDN = "https://cdn.jsdelivr.net/npm/3d-force-graph@1.80.1/dist/3d-force-graph.min.js"
 MAX_REGIONS = 24          # legend entries, "other" included
 TOP_LABELS = 10           # nodes with a permanent label
 SEED, LPA_MAX_ITER = 42, 50
+CORE_SIZE = 20            # nodes in CORE.md
+HALF_LIFE = 30            # days: a node loses half its weight per 30 days behind the newest change
+PARAGRAPH_CHARS = 300     # longest first paragraph in CORE.md
 
 # Brain geometry, in units of R. Each hemisphere is an ellipsoid with half-axes
 # SEMI (x: width, y: height, z: length); the two centres sit at x = -SHIFT and +SHIFT.
@@ -152,10 +156,22 @@ WIKI_LINK = re.compile(r"\[\[([^\[\]|#]+)[^\[\]]*\]\]")          # [[target]], [
 MD_LINK = re.compile(r"\]\(\s*(?:<([^>]+)>|([^)\s]+))")          # [text](path.md), [text](<path with spaces.md>)
 CODE_FENCE = re.compile(r"^[ \t]*(`{3,}|~{3,}).*?^[ \t]*\1", re.S | re.M)
 CODE_SPAN = re.compile(r"`[^`\n]+`")
+FRONTMATTER = re.compile(r"\A---[ \t]*\n.*?^---[ \t]*$", re.S | re.M)
+HEADING = re.compile(r"[ \t]{0,3}#{1,6}(?:[ \t]|$)")
 
 
 def excluded(rel, patterns):
     return any(fnmatch.fnmatch(rel, p) for p in patterns)
+
+
+def first_paragraph(text):
+    """First paragraph of a page without YAML frontmatter, headings and code blocks; at most PARAGRAPH_CHARS characters."""
+    text = CODE_FENCE.sub("", FRONTMATTER.sub("", text.lstrip("\ufeff"), count=1))
+    for block in re.split(r"\n[ \t]*\n", text):
+        para = clean(" ".join(line for line in block.splitlines() if not HEADING.match(line)))
+        if para:
+            return para if len(para) <= PARAGRAPH_CHARS else para[:PARAGRAPH_CHARS - 1].rstrip() + "…"
+    return ""
 
 
 def resolve_wiki(target, src_dir, ids, by_name):
@@ -229,7 +245,7 @@ def file_times(root, files):
 
 
 def load_folder(root, excludes=(), skip_dir=None):
-    """Return (labels, edges, None, {}, times) for a folder: one node per .md file, one edge per link."""
+    """Return (labels, edges, None, {}, times, first paragraphs) for a folder: one node per .md file, one edge per link."""
     root = os.path.abspath(root)
     files = {}
     for dirpath, dirnames, filenames in os.walk(root):
@@ -249,7 +265,7 @@ def load_folder(root, excludes=(), skip_dir=None):
     by_name = defaultdict(list)
     for nid in sorted(files, key=lambda s: (len(s), s)):
         by_name[posixpath.basename(nid)].append(nid)
-    edges = set()
+    edges, paragraphs = set(), {}
     for nid, path in files.items():
         try:
             with open(path, encoding="utf-8", errors="replace") as f:
@@ -257,12 +273,13 @@ def load_folder(root, excludes=(), skip_dir=None):
         except OSError as e:
             warn(f"skipped links of {nid}: {e.strerror}")
             continue
+        paragraphs[nid] = first_paragraph(text)
         text = CODE_SPAN.sub("", CODE_FENCE.sub("", text))     # link syntax shown as code is not a link
         src_dir = posixpath.dirname(nid)
         targets = {resolve_wiki(m.group(1), src_dir, files, by_name) for m in WIKI_LINK.finditer(text)}
         targets |= {resolve_md(m.group(1) or m.group(2), src_dir, files) for m in MD_LINK.finditer(text)}
         edges |= {(min(nid, t), max(nid, t)) for t in targets if t and t != nid}
-    return {nid: nid for nid in sorted(files)}, sorted(edges), None, {}, file_times(root, files)
+    return {nid: nid for nid in sorted(files)}, sorted(edges), None, {}, file_times(root, files), paragraphs
 
 
 # ---------------------------------------------------------------- regions
@@ -872,14 +889,80 @@ def render_regions_md(scene):
                 status = "growing" if new else "active" if last >= recent else "dormant"
                 lines.append(f"| {i + 1} | {cell(reg['name'])} | {day(min(n['t'] for n in ts))} | {day(last)} | "
                              f"{new} | {status} |")
+    components, largest, isolated, q = graph_metrics(scene)
+    lines += ["", "## Graph metrics", "",
+              f"- Connected components: {components}, nodes without edges included; the largest has {largest} "
+              f"of {len(nodes)} nodes.",
+              f"- Nodes without edges: {isolated}.",
+              f"- Modularity of the regions: Q = {q:.4f}. "
+              r"$Q = \sum_c \left[\frac{L_c}{m} - \left(\frac{D_c}{2m}\right)^2\right]$, where $L_c$ is the number of "
+              r"edges inside region $c$, $D_c$ the sum of the degrees of its nodes and $m$ the number of edges; "
+              '"other" counts as 1 region and a graph without edges has Q = 0. Q = 0 means no more edges inside '
+              "the regions than chance gives a graph with the same degrees."]
     return "\n".join(lines) + "\n"
 
 
-def write_outputs(scene, out_dir):
+def graph_metrics(scene):
+    """(connected components, nodes in the largest one, nodes without edges, modularity Q of the regions)."""
+    parent = {n["id"]: n["id"] for n in scene["nodes"]}
+
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+    for e in scene["edges"]:
+        parent[find(e["source"])] = find(e["target"])
+    sizes = Counter(find(n) for n in parent)
+    region = {n["id"]: n["region"] for n in scene["nodes"]}
+    inner, degrees, m = Counter(), Counter(), len(scene["edges"])
+    for n in scene["nodes"]:
+        degrees[n["region"]] += n["degree"]
+    for e in scene["edges"]:
+        if region[e["source"]] == region[e["target"]]:
+            inner[region[e["source"]]] += 1
+    q = sum(inner[c] / m - (degrees[c] / (2 * m)) ** 2 for c in degrees) if m else 0.0
+    return len(sizes), max(sizes.values()), sum(1 for n in scene["nodes"] if not n["degree"]), q
+
+
+def core_nodes(scene):
+    """[(node, weight)] for the CORE_SIZE heaviest nodes, weight = (1 + degree) * 2^(-d / HALF_LIFE).
+
+    d is the number of days between the last change of the node and the newest change in the graph;
+    a node without a time has d = 0. Ties go to the label, then the id.
+    """
+    end = max((n["last"] for n in scene["nodes"] if "last" in n), default=0)
+    weighed = [(n, (1 + n["degree"]) * 2 ** (-(end - n.get("last", end)) / 86400 / HALF_LIFE)) for n in scene["nodes"]]
+    return sorted(weighed, key=lambda nw: (-nw[1], nw[0]["label"], nw[0]["id"]))[:CORE_SIZE]
+
+
+def render_core_md(scene, paragraphs=None):
+    """CORE.md, the consolidation: the heaviest nodes; a folder input (paragraphs given) adds each first paragraph."""
+    regions, core = scene["regions"], core_nodes(scene)
+    lasts = [n["last"] for n in scene["nodes"] if "last" in n]
+    day = lambda t: datetime.fromtimestamp(t).strftime("%Y-%m-%d")
+    cell = lambda s: s.replace("|", "\\|")
+    newest = day(max(lasts)) if lasts else "none: no node has a time"
+    lines = [f"# Core: {scene['title']}", "",
+             f"The {len(core)} of {len(scene['nodes'])} nodes with the largest weight "
+             f"$w(v) = (1 + \\deg(v)) \\cdot 2^{{-d(v)/{HALF_LIFE}}}$. $\\deg(v)$ is the number of edges of node $v$; "
+             f"$d(v)$ is the number of days between the last change of $v$ and the newest change in the graph "
+             f"({newest}), so a node loses half its weight per {HALF_LIFE} days without a change. "
+             "A node without a time has $d(v) = 0$. Ties go to the label, then the id.", "",
+             "| # | Node | Region | Degree | Last change | Weight |" + (" First paragraph |" if paragraphs is not None else ""),
+             "|---" * (7 if paragraphs is not None else 6) + "|"]
+    for i, (n, w) in enumerate(core):
+        row = (f"| {i + 1} | {cell(n['label'])} | {cell(regions[n['region']]['name'])} | {n['degree']} | "
+               f"{day(n['last']) if 'last' in n else 'unknown'} | {w:.2f} |")
+        lines.append(row + (f" {cell(paragraphs.get(n['id'], ''))} |" if paragraphs is not None else ""))
+    return "\n".join(lines) + "\n"
+
+
+def write_outputs(scene, out_dir, paragraphs=None):
     os.makedirs(out_dir, exist_ok=True)
     files = {"brain.html": render_html(scene), "brain.svg": render_svg(scene),
              "brain.json": json.dumps(scene, ensure_ascii=False, indent=1) + "\n",
-             "REGIONS.md": render_regions_md(scene)}
+             "REGIONS.md": render_regions_md(scene), "CORE.md": render_core_md(scene, paragraphs)}
     paths = []
     for name, text in files.items():
         path = os.path.join(out_dir, name)
@@ -907,14 +990,14 @@ def run(src, out_dir="neurophify-out", title=None, excludes=()):
         hint = os.path.join(src, "graphify-out", "graph.json")
         if os.path.isfile(hint):
             warn(f"note: {hint} exists; pass that file to use graphify communities")
-        graph = load_folder(src, excludes, skip_dir=os.path.abspath(out_dir))
+        *graph, paragraphs = load_folder(src, excludes, skip_dir=os.path.abspath(out_dir))
     else:
         if excludes:
             warn("--exclude applies to folder input only; ignored")
-        graph = load_graph_json(src)
+        graph, paragraphs = load_graph_json(src), None
     scene = build_scene(graph, title or name, name)
     try:
-        return write_outputs(scene, out_dir), scene
+        return write_outputs(scene, out_dir, paragraphs), scene
     except OSError as e:
         raise InputError(f"cannot write to {out_dir}: {e.strerror}\n  fix: choose another folder with --out") from None
 
@@ -964,7 +1047,7 @@ def selftest():
             write(os.path.join(root, "_archive", "Old.md"), "[[index]]\n")
             write(os.path.join(root, "skip-me.md"), "[[index]]\n")
             write(os.path.join(root, ".hidden", "Secret.md"), "[[index]]\n")
-            labels, edges, community, _, _ = load_folder(root, ["_archive", "skip-*"])
+            labels, edges, community, _, _, _ = load_folder(root, ["_archive", "skip-*"])
             assert list(labels) == ["Ghost", "Page One", "index", "sub/Deep"], f"input B nodes: {list(labels)}"
             assert edges == [("Page One", "index"), ("Page One", "sub/Deep"), ("index", "sub/Deep")], f"input B edges: {edges}"
             assert community is None
@@ -977,10 +1060,11 @@ def selftest():
                 q = math.sqrt(sum(((n[a] - hc[k]) / (SEMI[k] * R)) ** 2 for k, a in enumerate("xyz")))
                 assert abs(q - 1) < 0.01, f"{n['id']} lies off the brain surface: {q:.3f}"
             checks += 1
-            # 5. Four output files are written.
+            # 5. Five output files are written.
             out = os.path.join(tmp, "out")
             paths = write_outputs(scene_b, out)
-            assert sorted(os.path.basename(p) for p in paths) == ["REGIONS.md", "brain.html", "brain.json", "brain.svg"]
+            assert sorted(os.path.basename(p) for p in paths) == ["CORE.md", "REGIONS.md", "brain.html", "brain.json",
+                                                                  "brain.svg"]
             assert all(os.path.getsize(p) > 0 for p in paths), "an output file is empty"
             with open(os.path.join(out, "brain.json"), encoding="utf-8") as f:
                 assert json.load(f) == scene_b, "brain.json differs from the scene"
@@ -1018,6 +1102,48 @@ def selftest():
             md = render_regions_md(scene_t)
             assert "## Time" in md and "| growing |" in md and "## Time" not in render_regions_md(scene_b), md
             checks += 1
+            # 9. CORE.md: weight (1 + degree) * 2^(-d/30), d = days behind the newest change (0 without a time);
+            #    ties go to the label, then the id. Node ids sort in another order than the labels.
+            pk = os.path.join(tmp, "core.json")
+            write(pk, json.dumps({"nodes": [
+                {"id": "h", "label": "Hub", "time": 0}, {"id": "m", "label": "Mid", "time": 30 * 86400},
+                {"id": "z", "label": "New", "time": 60 * 86400}, {"id": "s2", "label": "Same"}, {"id": "s1", "label": "Same"}],
+                "links": [{"source": "h", "target": t} for t in ("m", "z", "s1")] + [{"source": "m", "target": "s2"}]}))
+            scene_k = build_scene(load_graph_json(pk), "core", "core")
+            order = [(n["id"], w) for n, w in core_nodes(scene_k)]
+            assert order == [("z", 2.0), ("s1", 2.0), ("s2", 2.0), ("m", 1.5), ("h", 1.0)], f"CORE.md order: {order}"
+            rows = re.findall(r"^\| (\d+) \| (.+?) \| .* \| ([\d.]+) \|$", render_core_md(scene_k), re.M)
+            assert rows == [("1", "New", "2.00"), ("2", "Same", "2.00"), ("3", "Same", "2.00"), ("4", "Mid", "1.50"),
+                            ("5", "Hub", "1.00")], f"CORE.md rows: {rows}"
+            assert len(re.findall(r"^\| \d+ \|", render_core_md(scene_c), re.M)) == CORE_SIZE, "CORE.md size"
+            checks += 1
+            # 10. Graph metrics: two 5-cliques and 1 bridge give m = 21, L = 10 and 10, D = 21 and 21,
+            #     Q = 20/21 - 2 * (21/42)^2 = 0.4524; a graph without edges has Q = 0.
+            metrics = graph_metrics(scene_b)
+            assert metrics[:3] == (1, 10, 0) and abs(metrics[3] - (20 / 21 - 0.5)) < 1e-12, f"metrics: {metrics}"
+            assert "Q = 0.4524" in render_regions_md(scene_b), "REGIONS.md has no modularity"
+            pe = os.path.join(tmp, "loose.json")
+            write(pe, json.dumps({"nodes": [{"id": "a"}, {"id": "b"}, {"id": "c"}]}))
+            metrics = graph_metrics(build_scene(load_graph_json(pe), "loose", "loose"))
+            assert metrics == (3, 1, 3, 0.0), f"metrics without edges: {metrics}"
+            checks += 1
+            # 11. CORE.md of a folder: the first paragraph skips frontmatter, headings and code blocks, stops at
+            #     300 characters and stays out of brain.html and brain.json.
+            notes = os.path.join(tmp, "para")
+            write(os.path.join(notes, "a.md"), "---\ntitle: A\n---\n# Title\n\n```\nnot this\n```\n\n## Part\n"
+                  "First line\nsecond | line [[b]].\n\nSecond paragraph.\n")
+            write(os.path.join(notes, "b.md"), "word " * 100)
+            out = os.path.join(tmp, "para-out")
+            run(notes, out)
+            with open(os.path.join(out, "CORE.md"), encoding="utf-8") as f:
+                core = f.read()
+            assert "| First line second \\| line [[b]]. |" in core and "not this" not in core, core
+            long = first_paragraph("word " * 100)
+            assert len(long) <= PARAGRAPH_CHARS and long.endswith("…") and long in core, long
+            for name in ("brain.html", "brain.json"):
+                with open(os.path.join(out, name), encoding="utf-8") as f:
+                    assert "First line" not in f.read(), f"the first paragraph leaked into {name}"
+            checks += 1
     except AssertionError as e:
         print(f"selftest: FAILED after {checks} checks: {e}", file=sys.stderr)
         return 1
@@ -1042,6 +1168,12 @@ time (the fourth dimension):
   A folder inside a git repository gives each page its first and last commit; outside git,
   the file modification time. A graph.json node may carry "time": ISO 8601 or epoch seconds.
 
+consolidation:
+  CORE.md lists the 20 nodes with the largest weight (1 + degree) * 2^(-d/30), where d is the
+  number of days between the last change of the node and the newest change in the graph.
+  For a folder, each entry adds the first paragraph of the page. REGIONS.md ends with graph
+  metrics: connected components, nodes without edges, modularity Q of the regions.
+
 exit codes: 0 done, 1 selftest failed, 2 bad usage or unreadable input."""
 
 
@@ -1049,7 +1181,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(
         prog="neurophify.py", epilog=EPILOG, formatter_class=argparse.RawDescriptionHelpFormatter,
         description="Draw a knowledge graph as a 3D brain: regions on two hemispheres, "
-                    "written as brain.html, brain.svg, brain.json and REGIONS.md.")
+                    "written as brain.html, brain.svg, brain.json, REGIONS.md and CORE.md.")
     parser.add_argument("input", nargs="?", help="graphify graph.json, or a folder of Markdown files")
     parser.add_argument("--out", default="neurophify-out", metavar="DIR", help="output folder (default: neurophify-out)")
     parser.add_argument("--title", metavar="TEXT", help="title of the page and the picture (default: input name)")
