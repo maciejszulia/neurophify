@@ -10,6 +10,11 @@ two brain hemispheres. Writes four files to the output folder:
   brain.json   nodes with positions and regions, edges, regions
   REGIONS.md   regions, their central nodes and the bridges between regions
 
+Time is the fourth dimension: a node takes its first and last commit from the git
+history of a Markdown folder (the file modification time outside git) or the
+"time" field of graph.json. brain.html replays the growth on a time slider and
+REGIONS.md marks each region growing, active or dormant.
+
 Standard library only, Python 3.11 or newer.
 """
 from __future__ import annotations
@@ -25,12 +30,14 @@ import os
 import posixpath
 import random
 import re
+import subprocess
 import sys
 import tempfile
 from collections import Counter, defaultdict
+from datetime import datetime
 from urllib.parse import unquote
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 CDN = "https://cdn.jsdelivr.net/npm/3d-force-graph@1.80.1/dist/3d-force-graph.min.js"
 MAX_REGIONS = 24          # legend entries, "other" included
 TOP_LABELS = 10           # nodes with a permanent label
@@ -77,8 +84,20 @@ def clean(text):
 
 # ---------------------------------------------------------------- input A: graph.json
 
+def parse_time(value):
+    """Epoch seconds from a number or an ISO 8601 date or datetime (no zone = local time); None if absent or invalid."""
+    if value is None or isinstance(value, bool):
+        return None
+    if isinstance(value, (int, float)):
+        return int(value) if math.isfinite(value) else None
+    try:
+        return int(datetime.fromisoformat(str(value).strip()).timestamp())
+    except (ValueError, OverflowError, OSError):
+        return None
+
+
 def load_graph_json(path):
-    """Return (labels, edges, community or None, community names) from a node-link graph.json."""
+    """Return (labels, edges, community or None, community names, {id: (first, last)}) from a node-link graph.json."""
     fix = "  fix: pass graphify-out/graph.json, or a folder of .md files"
     try:
         with open(path, encoding="utf-8") as f:
@@ -94,7 +113,7 @@ def load_graph_json(path):
         raise InputError(f'{path} has no "nodes" list\n  fix: pass a graph.json written by graphify '
                          "(networkx node-link format)")
     links = data.get("links", data.get("edges")) or []
-    labels, community, names = {}, {}, {}
+    labels, community, names, times, bad_times = {}, {}, {}, {}, 0
     for n in nodes:
         if not isinstance(n, dict) or "id" not in n:
             raise InputError(f'{path}: every node needs an "id" field, found {str(n)[:80]}')
@@ -105,6 +124,13 @@ def load_graph_json(path):
             community[nid] = str(n["community"])
         if n.get("community_name"):
             names[nid] = clean(n["community_name"])
+        t = parse_time(n.get("time"))
+        if t is not None:
+            times[nid] = (t, t)
+        elif n.get("time") is not None:
+            bad_times += 1
+    if bad_times:
+        warn(f'{bad_times} "time" values skipped: use ISO 8601 (2026-11-15T19:30) or epoch seconds')
     edges, skipped = set(), 0
     for e in links if isinstance(links, list) else []:
         a, b = (str(e.get("source")), str(e.get("target"))) if isinstance(e, dict) else (None, None)
@@ -117,7 +143,7 @@ def load_graph_json(path):
         warn(f"{skipped} edges skipped: unknown node or missing source/target")
     labels = dict(sorted(labels.items()))
     # Regions come from the input only when every node has a community.
-    return labels, sorted(edges), (community if len(community) == len(labels) else None), names
+    return labels, sorted(edges), (community if len(community) == len(labels) else None), names, times
 
 
 # ---------------------------------------------------------------- input B: Markdown folder
@@ -157,8 +183,53 @@ def resolve_md(target, src_dir, ids):
     return p if p in ids else None
 
 
+def parse_git_log(text):
+    """{path: (first, last) epoch seconds} from `git log --format=%x00%at --name-only` output."""
+    span, t = {}, None
+    for line in text.splitlines():
+        if line.startswith("\0"):
+            t = int(line[1:])
+        elif line and t is not None and not line.startswith('"'):  # ponytail: C-quoted names fall back to mtime
+            a, b = span.get(line, (t, t))
+            span[line] = (min(a, t), max(b, t))
+    return span
+
+
+def file_times(root, files):
+    """{node id: (first, last)}: first and last commit of each file under root, else its modification time."""
+    span, changed = {}, set()
+    git = ["git", "-c", "core.quotePath=false", "-C", root]
+    run = lambda *args: subprocess.run(git + list(args), capture_output=True, text=True, encoding="utf-8",
+                                       errors="replace", timeout=120)
+    try:  # ponytail: one full-history git log; renamed files start at the rename (no --follow)
+        out = run("log", "--format=%x00%at", "--name-only", "--relative", "--", ".")
+        if out.returncode == 0:
+            span = parse_git_log(out.stdout)
+            dirty = run("diff", "--name-only", "--relative", "HEAD", "--", ".")
+            changed = set(dirty.stdout.splitlines()) if dirty.returncode == 0 else set()
+    except (OSError, subprocess.TimeoutExpired):
+        pass
+    times, missing = {}, 0
+    for nid, path in files.items():
+        rel = os.path.relpath(path, root).replace(os.sep, "/")
+        if rel in span:
+            first, last = span[rel]
+            if rel in changed:  # saved after its last commit: the save is the last change
+                with contextlib.suppress(OSError):
+                    last = max(last, int(os.stat(path).st_mtime))
+            times[nid] = (first, last)
+            continue
+        missing += 1
+        with contextlib.suppress(OSError):
+            m = int(os.stat(path).st_mtime)
+            times[nid] = (m, m)
+    if span and missing:
+        warn(f"{missing} files have no git history; their time is the file modification time")
+    return times
+
+
 def load_folder(root, excludes=(), skip_dir=None):
-    """Return (labels, edges, None, {}) for a folder: one node per .md file, one edge per link."""
+    """Return (labels, edges, None, {}, times) for a folder: one node per .md file, one edge per link."""
     root = os.path.abspath(root)
     files = {}
     for dirpath, dirnames, filenames in os.walk(root):
@@ -191,7 +262,7 @@ def load_folder(root, excludes=(), skip_dir=None):
         targets = {resolve_wiki(m.group(1), src_dir, files, by_name) for m in WIKI_LINK.finditer(text)}
         targets |= {resolve_md(m.group(1) or m.group(2), src_dir, files) for m in MD_LINK.finditer(text)}
         edges |= {(min(nid, t), max(nid, t)) for t in targets if t and t != nid}
-    return {nid: nid for nid in sorted(files)}, sorted(edges), None, {}
+    return {nid: nid for nid in sorted(files)}, sorted(edges), None, {}, file_times(root, files)
 
 
 # ---------------------------------------------------------------- regions
@@ -406,7 +477,7 @@ def layout(regions, adj):
 
 
 def build_scene(graph, title, source):
-    labels, edges, community, names = graph
+    labels, edges, community, names, times = graph
     ids = list(labels)
     adj = {n: [] for n in ids}
     for a, b in edges:
@@ -429,7 +500,8 @@ def build_scene(graph, title, source):
                      **({"merged": reg["merged"]} if "merged" in reg else {})}
                     for i, reg in enumerate(regions)],
         "nodes": [{"id": n, "label": labels[n], "region": region_of[n], "degree": len(adj[n]),
-                   "x": round(pos[n][0], 1), "y": round(pos[n][1], 1), "z": round(pos[n][2], 1)} for n in ids],
+                   "x": round(pos[n][0], 1), "y": round(pos[n][1], 1), "z": round(pos[n][2], 1),
+                   **({"t": times[n][0], "last": times[n][1]} if n in times else {})} for n in ids],
         "edges": [{"source": a, "target": b} for a, b in edges],
         "top": sorted(ids, key=lambda n: (-len(adj[n]), labels[n], n))[:TOP_LABELS],
     }
@@ -567,7 +639,7 @@ html, body { margin: 0; height: 100%; overflow: hidden; background: __BG__; colo
 #labels { pointer-events: none; overflow: hidden; }
 .label { position: absolute; white-space: nowrap; font-size: 12px; line-height: 16px;
   color: #f5f7fa; text-shadow: 0 0 3px __BG__, 0 0 3px __BG__; }
-#panel { position: absolute; top: 12px; left: 12px; width: 280px; max-height: calc(100% - 64px); overflow: auto;
+#panel { position: absolute; top: 12px; left: 12px; width: 280px; max-height: calc(100% - 110px); overflow: auto;
   background: rgba(9, 12, 18, 0.86); border: 1px solid #252b38; border-radius: 6px; padding: 10px 12px; }
 h1 { font-size: 16px; margin: 0 0 2px; }
 .meta, .count, #hint { color: #9aa4b2; }
@@ -579,6 +651,13 @@ li { display: flex; align-items: center; gap: 8px; padding: 1px 0; }
 #hint { position: absolute; left: 12px; bottom: 10px; margin: 0; }
 #error { color: #ffb4a8; margin: 8px 0 0; }
 a { color: #8ab4f8; }
+#time { position: absolute; left: 12px; right: 12px; bottom: 34px; display: flex; align-items: center; gap: 10px;
+  background: rgba(9, 12, 18, 0.86); border: 1px solid #252b38; border-radius: 6px; padding: 6px 10px; }
+#time[hidden] { display: none; }
+#time input { flex: 1; min-width: 0; accent-color: #8ab4f8; }
+#time output { color: #9aa4b2; white-space: nowrap; font-variant-numeric: tabular-nums; }
+button { font: inherit; color: #e6e9ef; background: #1b2130; border: 1px solid #39414f; border-radius: 4px;
+  padding: 3px 12px; cursor: pointer; }
 </style>
 </head>
 <body>
@@ -591,6 +670,8 @@ a { color: #8ab4f8; }
 <p id="error" hidden></p>
 </section>
 <p id="hint">Drag to rotate, scroll to zoom, hover a node to read its name, click a node to fly to it.</p>
+<div id="time" hidden><button id="play" type="button">Play</button><label for="when">Time</label>
+<input id="when" type="range" min="0" max="0" step="1" value="0"><output id="when-text" for="when"></output></div>
 <script id="graph-data" type="application/json">__DATA__</script>
 <script src="__CDN__"></script>
 <script>
@@ -647,6 +728,41 @@ a { color: #8ab4f8; }
   }
   const c = data.camera;
   graph.cameraPosition({x: c[0], y: c[1], z: c[2]}, {x: 0, y: 0, z: 0}, 0);
+  // Time, the fourth dimension: the slider shows the nodes that existed at the chosen moment.
+  let now = Infinity;
+  const seen = n => n.t === undefined || n.t <= now;
+  const times = [...new Set(nodes.filter(n => n.t !== undefined).map(n => n.t))].sort((a, b) => a - b);
+  if (times.length > 1) {
+    const box = document.getElementById("time"), when = document.getElementById("when");
+    const text = document.getElementById("when-text"), play = document.getElementById("play");
+    const pad = v => String(v).padStart(2, "0");
+    const fmt = t => { const d = new Date(t * 1000); return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()) + " " + pad(d.getHours()) + ":" + pad(d.getMinutes()); };
+    const end = x => byId.get(typeof x === "object" ? x.id : x);
+    const update = () => {
+      now = times[+when.value];
+      graph.nodeVisibility(n => seen(n)).linkVisibility(l => seen(end(l.source)) && seen(end(l.target)));
+      text.textContent = fmt(now) + ", " + nodes.filter(seen).length + " of " + nodes.length + " nodes";
+    };
+    let timer = 0;
+    const stop = () => { clearInterval(timer); timer = 0; play.textContent = "Play"; };
+    play.addEventListener("click", () => {
+      if (timer) return stop();
+      if (+when.value >= times.length - 1) when.value = 0;
+      play.textContent = "Pause";
+      timer = setInterval(() => {
+        if (+when.value >= times.length - 1) return stop();
+        when.value = +when.value + 1;
+        update();
+      }, Math.max(16, 8000 / times.length));
+      update();
+    });
+    when.addEventListener("input", () => { stop(); update(); });
+    when.max = times.length - 1;
+    when.value = times.length - 1;
+    box.hidden = false;
+    document.getElementById("hint").textContent += " Play the time bar to watch the brain grow.";
+    update();
+  }
   const layer = document.getElementById("labels");
   const tags = data.top.map(id => {
     const n = byId.get(id), el = document.createElement("div");
@@ -661,7 +777,7 @@ a { color: #8ab4f8; }
     const p = cam.position, vx = t.x - p.x, vy = t.y - p.y, vz = t.z - p.z;
     const taken = [];
     for (const [n, el, w, h] of tags) {
-      const front = (n.x - p.x) * vx + (n.y - p.y) * vy + (n.z - p.z) * vz > 0;
+      const front = (n.x - p.x) * vx + (n.y - p.y) * vy + (n.z - p.z) * vz > 0 && seen(n);
       el.hidden = !front;
       if (!front) continue;
       const s = graph.graph2ScreenCoords(n.x, n.y, n.z);
@@ -732,6 +848,30 @@ def render_regions_md(scene):
         for j, count in sorted(bridges[i].items(), key=lambda kv: (-kv[1], kv[0]))[:5]:
             sample = "; ".join(f"{label[x]} -- {label[y]}" for x, y in examples[i][j])
             lines.append(f"  - {regions[j]['name']}: {count} edges, for example {sample}.")
+    timed = [n for n in nodes if "t" in n]
+    if timed:
+        day = lambda t: datetime.fromtimestamp(t).strftime("%Y-%m-%d")
+        end = max(n["last"] for n in timed)
+        recent = end - 30 * 86400
+        busiest, count = max(sorted(Counter(day(n["t"]) for n in timed).items()), key=lambda kv: kv[1])
+        months = Counter(day(n["t"])[:7] for n in timed)
+        lines += ["", "## Time", "",
+                  f"{len(timed)} of {len(nodes)} nodes have a time: first node {day(min(n['t'] for n in timed))}, "
+                  f"last change {day(end)}. Time comes from the git history of a Markdown folder (outside git: the file "
+                  'modification time) or from the "time" field of graph.json. brain.html replays the growth on a time slider.',
+                  "",
+                  f"- Busiest day: {busiest}, {count} new nodes.",
+                  "- New nodes per month: " + ", ".join(f"{m}: {c}" for m, c in sorted(months.items())) + ".",
+                  "- Status covers the 30 days before the last change: growing = new nodes, active = changes only, "
+                  "dormant = no change.", "",
+                  "| # | Region | First node | Last change | New in 30 days | Status |", "|---|---|---|---|---|---|"]
+        for i, reg in enumerate(regions):
+            ts = [n for n in timed if n["region"] == i]
+            if ts:
+                new, last = sum(n["t"] >= recent for n in ts), max(n["last"] for n in ts)
+                status = "growing" if new else "active" if last >= recent else "dormant"
+                lines.append(f"| {i + 1} | {cell(reg['name'])} | {day(min(n['t'] for n in ts))} | {day(last)} | "
+                             f"{new} | {status} |")
     return "\n".join(lines) + "\n"
 
 
@@ -800,7 +940,7 @@ def selftest():
                 {"id": "c", "label": "C", "community": 1}, {"id": "d", "label": "D", "community": 1}],
                 "links": [{"source": "a", "target": "b"}, {"source": "b", "target": "c"},
                           {"source": "c", "target": "d"}, {"source": "d", "target": "x"}]}))
-            labels, edges, community, _ = load_graph_json(pa)
+            labels, edges, community, _, _ = load_graph_json(pa)
             assert labels == {"a": "Alpha", "b": "b", "c": "C", "d": "D"}, f"input A labels: {labels}"
             assert edges == [("a", "b"), ("b", "c"), ("c", "d")], f"input A edges: {edges}"
             assert community == {"a": "0", "b": "0", "c": "1", "d": "1"}, f"input A communities: {community}"
@@ -824,7 +964,7 @@ def selftest():
             write(os.path.join(root, "_archive", "Old.md"), "[[index]]\n")
             write(os.path.join(root, "skip-me.md"), "[[index]]\n")
             write(os.path.join(root, ".hidden", "Secret.md"), "[[index]]\n")
-            labels, edges, community, _ = load_folder(root, ["_archive", "skip-*"])
+            labels, edges, community, _, _ = load_folder(root, ["_archive", "skip-*"])
             assert list(labels) == ["Ghost", "Page One", "index", "sub/Deep"], f"input B nodes: {list(labels)}"
             assert edges == [("Page One", "index"), ("Page One", "sub/Deep"), ("index", "sub/Deep")], f"input B edges: {edges}"
             assert community is None
@@ -865,6 +1005,19 @@ def selftest():
             left = sum(1 for n in scene_c["nodes"] if n["x"] < 0)
             assert left == 30 and scene_c["regions"][-1]["hemisphere"] == "both", f"unbalanced hemispheres: {left} of 60 left"
             checks += 1
+            # 8. Time, the fourth dimension: git log parsing, the "time" field, the Time section of REGIONS.md.
+            log = "\x00300\n\nb.md\n\n\x00200\n\na.md\nb.md\n\"q\\\"x.md\"\n\n\x00100\n\na.md\n"
+            assert parse_git_log(log) == {"b.md": (200, 300), "a.md": (100, 200)}, f"git log: {parse_git_log(log)}"
+            assert parse_time("2026-01-02") == int(datetime(2026, 1, 2).timestamp()) and parse_time(5) == 5
+            assert parse_time("soon") is None and parse_time(True) is None and parse_time(float("nan")) is None
+            pt = os.path.join(tmp, "timed.json")
+            write(pt, json.dumps({"nodes": [{"id": "a", "time": 0}, {"id": "b", "time": 40 * 86400}, {"id": "c"}],
+                                  "links": [{"source": "a", "target": "b"}]}))
+            scene_t = build_scene(load_graph_json(pt), "timed", "t")
+            assert [n.get("t") for n in scene_t["nodes"]] == [0, 40 * 86400, None], f"times: {scene_t['nodes']}"
+            md = render_regions_md(scene_t)
+            assert "## Time" in md and "| growing |" in md and "## Time" not in render_regions_md(scene_b), md
+            checks += 1
     except AssertionError as e:
         print(f"selftest: FAILED after {checks} checks: {e}", file=sys.stderr)
         return 1
@@ -884,6 +1037,10 @@ input:
   community; "links" or "edges" with source, target). A folder is read as Markdown:
   each .md file is a node, [[page]], [[page|alias]] and [text](file.md) are edges.
   Hidden folders and the output folder are skipped.
+
+time (the fourth dimension):
+  A folder inside a git repository gives each page its first and last commit; outside git,
+  the file modification time. A graph.json node may carry "time": ISO 8601 or epoch seconds.
 
 exit codes: 0 done, 1 selftest failed, 2 bad usage or unreadable input."""
 
