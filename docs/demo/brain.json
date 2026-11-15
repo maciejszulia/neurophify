@@ -1,0 +1,9601 @@
+{
+ "generator": "neurophify 1.2.0",
+ "title": "SilverBullet docs",
+ "input": "docs",
+ "method": "label propagation (seed 42, at most 50 iterations, top 5 % hubs do not vote)",
+ "camera": [
+  0.0,
+  751.3,
+  375.7
+ ],
+ "regions": [
+  {
+   "id": 0,
+   "name": "CHANGELOG",
+   "color": "#3987e5",
+   "size": 77,
+   "hemisphere": "left",
+   "center": [
+    -187.7,
+    157.6,
+    0.0
+   ]
+  },
+  {
+   "id": 1,
+   "name": "API",
+   "color": "#d95926",
+   "size": 34,
+   "hemisphere": "right",
+   "center": [
+    260.8,
+    -62.9,
+    0.0
+   ]
+  },
+  {
+   "id": 2,
+   "name": "Link",
+   "color": "#199e70",
+   "size": 29,
+   "hemisphere": "right",
+   "center": [
+    179.5,
+    125.6,
+    -180.5
+   ]
+  },
+  {
+   "id": 3,
+   "name": "Object Index",
+   "color": "#c98500",
+   "size": 27,
+   "hemisphere": "right",
+   "center": [
+    163.7,
+    -8.4,
+    295.9
+   ]
+  },
+  {
+   "id": 4,
+   "name": "Object",
+   "color": "#d55181",
+   "size": 19,
+   "hemisphere": "left",
+   "center": [
+    -169.1,
+    -119.3,
+    -202.6
+   ]
+  },
+  {
+   "id": 5,
+   "name": "Space Style",
+   "color": "#0ca30c",
+   "size": 18,
+   "hemisphere": "right",
+   "center": [
+    148.6,
+    -103.2,
+    -236.5
+   ]
+  },
+  {
+   "id": 6,
+   "name": "Page Picker",
+   "color": "#9085e9",
+   "size": 15,
+   "hemisphere": "left",
+   "center": [
+    -120.4,
+    7.0,
+    294.4
+   ]
+  },
+  {
+   "id": 7,
+   "name": "Tag/relation",
+   "color": "#e66767",
+   "size": 13,
+   "hemisphere": "right",
+   "center": [
+    80.0,
+    142.0,
+    50.0
+   ]
+  },
+  {
+   "id": 8,
+   "name": "Reference/Space Lua and APIs",
+   "color": "#7eb1ee",
+   "size": 8,
+   "hemisphere": "left",
+   "center": [
+    -89.4,
+    82.2,
+    -227.0
+   ]
+  },
+  {
+   "id": 9,
+   "name": "Space Lua/Standard Library",
+   "color": "#e69372",
+   "size": 7,
+   "hemisphere": "left",
+   "center": [
+    -124.5,
+    -163.8,
+    48.2
+   ]
+  },
+  {
+   "id": 10,
+   "name": "Architecture/Client",
+   "color": "#6ac0a2",
+   "size": 7,
+   "hemisphere": "right",
+   "center": [
+    118.7,
+    -142.3,
+    147.5
+   ]
+  },
+  {
+   "id": 11,
+   "name": "API/widget",
+   "color": "#dcb059",
+   "size": 5,
+   "hemisphere": "left",
+   "center": [
+    -65.5,
+    104.0,
+    143.4
+   ]
+  },
+  {
+   "id": 12,
+   "name": "Extensions",
+   "color": "#e48ead",
+   "size": 5,
+   "hemisphere": "right",
+   "center": [
+    79.8,
+    18.3,
+    -256.0
+   ]
+  },
+  {
+   "id": 13,
+   "name": "API/auth",
+   "color": "#61c361",
+   "size": 4,
+   "hemisphere": "left",
+   "center": [
+    -89.0,
+    -57.1,
+    -249.9
+   ]
+  },
+  {
+   "id": 14,
+   "name": "Workbench/Maintenance",
+   "color": "#b7b0f1",
+   "size": 4,
+   "hemisphere": "right",
+   "center": [
+    68.6,
+    43.1,
+    227.6
+   ]
+  },
+  {
+   "id": 15,
+   "name": "Command",
+   "color": "#ef9c9c",
+   "size": 4,
+   "hemisphere": "left",
+   "center": [
+    -88.4,
+    -85.1,
+    222.2
+   ]
+  },
+  {
+   "id": 16,
+   "name": "Plugs/Development/Reference",
+   "color": "#b0cff5",
+   "size": 3,
+   "hemisphere": "right",
+   "center": [
+    99.6,
+    -149.8,
+    -85.4
+   ]
+  },
+  {
+   "id": 17,
+   "name": "Service",
+   "color": "#f0bda8",
+   "size": 3,
+   "hemisphere": "left",
+   "center": [
+    -48.6,
+    99.5,
+    -83.0
+   ]
+  },
+  {
+   "id": 18,
+   "name": "Space Lua/Page Lua",
+   "color": "#a3d8c6",
+   "size": 3,
+   "hemisphere": "right",
+   "center": [
+    48.9,
+    97.3,
+    -92.3
+   ]
+  },
+  {
+   "id": 19,
+   "name": "Page Decorations",
+   "color": "#e9ce99",
+   "size": 3,
+   "hemisphere": "left",
+   "center": [
+    -89.7,
+    -143.1,
+    -89.4
+   ]
+  },
+  {
+   "id": 20,
+   "name": "Graph View",
+   "color": "#eeb9cd",
+   "size": 3,
+   "hemisphere": "right",
+   "center": [
+    77.7,
+    -79.4,
+    212.0
+   ]
+  },
+  {
+   "id": 21,
+   "name": "Library/silverbulletmd/Themes/Classic",
+   "color": "#9eda9e",
+   "size": 3,
+   "hemisphere": "left",
+   "center": [
+    -53.8,
+    25.2,
+    204.5
+   ]
+  },
+  {
+   "id": 22,
+   "name": "View",
+   "color": "#d3cef6",
+   "size": 3,
+   "hemisphere": "right",
+   "center": [
+    70.3,
+    -63.5,
+    -215.3
+   ]
+  },
+  {
+   "id": 23,
+   "name": "other",
+   "color": "#6b7280",
+   "size": 16,
+   "hemisphere": "both",
+   "center": [
+    -49.6,
+    4.4,
+    -198.4
+   ],
+   "merged": 11
+  }
+ ],
+ "nodes": [
+  {
+   "id": "ADR",
+   "label": "ADR",
+   "region": 3,
+   "degree": 18,
+   "x": 167.0,
+   "y": 20.8,
+   "z": 292.6,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "ADR/001 Offline-First PWA",
+   "label": "ADR/001 Offline-First PWA",
+   "region": 3,
+   "degree": 13,
+   "x": 117.1,
+   "y": -40.4,
+   "z": 284.0,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "ADR/002 Sync Engine",
+   "label": "ADR/002 Sync Engine",
+   "region": 3,
+   "degree": 10,
+   "x": 216.2,
+   "y": 23.4,
+   "z": 242.3,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "ADR/003 Indexed Object Graph",
+   "label": "ADR/003 Indexed Object Graph",
+   "region": 3,
+   "degree": 20,
+   "x": 191.1,
+   "y": -6.7,
+   "z": 278.0,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "ADR/004 Federation",
+   "label": "ADR/004 Federation",
+   "region": 3,
+   "degree": 4,
+   "x": 219.5,
+   "y": 68.2,
+   "z": 207.1,
+   "t": 1782198744,
+   "last": 1793539933
+  },
+  {
+   "id": "ADR/005 Space Lua",
+   "label": "ADR/005 Space Lua",
+   "region": 3,
+   "degree": 11,
+   "x": 214.3,
+   "y": -28.7,
+   "z": 243.7,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "ADR/006 Space Lua Integrated Query",
+   "label": "ADR/006 Space Lua Integrated Query",
+   "region": 3,
+   "degree": 6,
+   "x": 141.4,
+   "y": -68.8,
+   "z": 273.6,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "ADR/007 Core Application Logic on the Client",
+   "label": "ADR/007 Core Application Logic on the Client",
+   "region": 3,
+   "degree": 16,
+   "x": 142.1,
+   "y": -10.3,
+   "z": 299.4,
+   "t": 1782198744,
+   "last": 1794559913
+  },
+  {
+   "id": "ADR/008 Go Backend",
+   "label": "ADR/008 Go Backend",
+   "region": 3,
+   "degree": 5,
+   "x": 168.2,
+   "y": 76.7,
+   "z": 260.6,
+   "t": 1782198744,
+   "last": 1789116831
+  },
+  {
+   "id": "ADR/009 Client Build Toolchain",
+   "label": "ADR/009 Client Build Toolchain",
+   "region": 3,
+   "degree": 5,
+   "x": 67.3,
+   "y": -39.7,
+   "z": 227.2,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "ADR/010 Rust Backend",
+   "label": "ADR/010 Rust Backend",
+   "region": 3,
+   "degree": 11,
+   "x": 117.7,
+   "y": 18.5,
+   "z": 291.6,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "ADR/011 Link Resolution by Name",
+   "label": "ADR/011 Link Resolution by Name",
+   "region": 3,
+   "degree": 13,
+   "x": 142.6,
+   "y": 49.6,
+   "z": 286.6,
+   "t": 1787649749,
+   "last": 1793359470
+  },
+  {
+   "id": "ADR/012 Tooling Lives in Library",
+   "label": "ADR/012 Tooling Lives in Library",
+   "region": 3,
+   "degree": 7,
+   "x": 238.5,
+   "y": 5.7,
+   "z": 198.3,
+   "t": 1794225727,
+   "last": 1794239611
+  },
+  {
+   "id": "ADR/013 Server-Side Search",
+   "label": "ADR/013 Server-Side Search",
+   "region": 3,
+   "degree": 7,
+   "x": 118.7,
+   "y": 75.9,
+   "z": 260.8,
+   "t": 1794210681,
+   "last": 1794210681
+  },
+  {
+   "id": "ADR/014 Themes as Pages",
+   "label": "ADR/014 Themes as Pages",
+   "region": 5,
+   "degree": 8,
+   "x": 111.5,
+   "y": -119.9,
+   "z": -195.5,
+   "t": 1794555830,
+   "last": 1794555830
+  },
+  {
+   "id": "API",
+   "label": "API",
+   "region": 1,
+   "degree": 56,
+   "x": 226.8,
+   "y": -118.9,
+   "z": 78.2,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "API/asset",
+   "label": "API/asset",
+   "region": 16,
+   "degree": 2,
+   "x": 76.5,
+   "y": -135.3,
+   "z": -75.7,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/auth",
+   "label": "API/auth",
+   "region": 13,
+   "degree": 6,
+   "x": -88.1,
+   "y": -87.4,
+   "z": -218.9,
+   "t": 1792498119,
+   "last": 1794225727
+  },
+  {
+   "id": "API/capture",
+   "label": "API/capture",
+   "region": 17,
+   "degree": 2,
+   "x": -58.3,
+   "y": 118.3,
+   "z": -61.2,
+   "t": 1791270166,
+   "last": 1794239595
+  },
+  {
+   "id": "API/clientStore",
+   "label": "API/clientStore",
+   "region": 1,
+   "degree": 1,
+   "x": 208.2,
+   "y": -121.4,
+   "z": 140.1,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "API/codeWidget",
+   "label": "API/codeWidget",
+   "region": 23,
+   "degree": 5,
+   "x": -76.4,
+   "y": 123.9,
+   "z": -123.2,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/command",
+   "label": "API/command",
+   "region": 0,
+   "degree": 2,
+   "x": -238.8,
+   "y": -75.7,
+   "z": 144.0,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "API/config",
+   "label": "API/config",
+   "region": 5,
+   "degree": 9,
+   "x": 231.4,
+   "y": -65.8,
+   "z": -181.3,
+   "t": 1782198744,
+   "last": 1794559913
+  },
+  {
+   "id": "API/crypto",
+   "label": "API/crypto",
+   "region": 0,
+   "degree": 2,
+   "x": -197.7,
+   "y": -123.2,
+   "z": 158.9,
+   "t": 1792675801,
+   "last": 1793712965
+  },
+  {
+   "id": "API/datastore",
+   "label": "API/datastore",
+   "region": 7,
+   "degree": 3,
+   "x": 48.5,
+   "y": 107.5,
+   "z": -37.8,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/dom",
+   "label": "API/dom",
+   "region": 8,
+   "degree": 6,
+   "x": -142.5,
+   "y": 77.4,
+   "z": -266.2,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/editor",
+   "label": "API/editor",
+   "region": 1,
+   "degree": 6,
+   "x": 232.2,
+   "y": -85.3,
+   "z": 150.8,
+   "t": 1782198744,
+   "last": 1794616501
+  },
+  {
+   "id": "API/encoding",
+   "label": "API/encoding",
+   "region": 9,
+   "degree": 2,
+   "x": -148.7,
+   "y": -167.5,
+   "z": -21.4,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "API/event",
+   "label": "API/event",
+   "region": 8,
+   "degree": 4,
+   "x": -96.7,
+   "y": 117.5,
+   "z": -182.4,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/github",
+   "label": "API/github",
+   "region": 13,
+   "degree": 6,
+   "x": -115.4,
+   "y": -68.1,
+   "z": -265.6,
+   "t": 1792498151,
+   "last": 1794225727
+  },
+  {
+   "id": "API/global",
+   "label": "API/global",
+   "region": 9,
+   "degree": 2,
+   "x": -82.7,
+   "y": -144.8,
+   "z": 42.5,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/http",
+   "label": "API/http",
+   "region": 1,
+   "degree": 3,
+   "x": 201.4,
+   "y": -147.1,
+   "z": 48.1,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "API/icon",
+   "label": "API/icon",
+   "region": 11,
+   "degree": 4,
+   "x": -67.3,
+   "y": 94.3,
+   "z": 168.2,
+   "t": 1786449173,
+   "last": 1794225727
+  },
+  {
+   "id": "API/identity",
+   "label": "API/identity",
+   "region": 7,
+   "degree": 5,
+   "x": 178.0,
+   "y": 148.9,
+   "z": 112.9,
+   "t": 1787757094,
+   "last": 1794225727
+  },
+  {
+   "id": "API/index",
+   "label": "API/index",
+   "region": 7,
+   "degree": 9,
+   "x": 63.4,
+   "y": 128.9,
+   "z": 16.4,
+   "t": 1782198744,
+   "last": 1794239595
+  },
+  {
+   "id": "API/js",
+   "label": "API/js",
+   "region": 9,
+   "degree": 3,
+   "x": -135.9,
+   "y": -161.8,
+   "z": 78.4,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/jsonschema",
+   "label": "API/jsonschema",
+   "region": 1,
+   "degree": 2,
+   "x": 173.7,
+   "y": -163.2,
+   "z": 9.5,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/language",
+   "label": "API/language",
+   "region": 1,
+   "degree": 1,
+   "x": 91.4,
+   "y": -152.6,
+   "z": -4.6,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/lua",
+   "label": "API/lua",
+   "region": 1,
+   "degree": 1,
+   "x": 143.8,
+   "y": -167.2,
+   "z": -29.7,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/markdown",
+   "label": "API/markdown",
+   "region": 0,
+   "degree": 2,
+   "x": -166.1,
+   "y": -9.3,
+   "z": -294.9,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/markupBar",
+   "label": "API/markupBar",
+   "region": 1,
+   "degree": 5,
+   "x": 154.6,
+   "y": -162.4,
+   "z": 72.8,
+   "t": 1794555830,
+   "last": 1794559913
+  },
+  {
+   "id": "API/math",
+   "label": "API/math",
+   "region": 9,
+   "degree": 2,
+   "x": -183.3,
+   "y": -148.3,
+   "z": 105.2,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/mq",
+   "label": "API/mq",
+   "region": 16,
+   "degree": 2,
+   "x": 129.2,
+   "y": -151.8,
+   "z": -123.6,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/net",
+   "label": "API/net",
+   "region": 1,
+   "degree": 8,
+   "x": 249.6,
+   "y": -76.8,
+   "z": 89.6,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "API/oauth",
+   "label": "API/oauth",
+   "region": 13,
+   "degree": 3,
+   "x": -91.0,
+   "y": -40.3,
+   "z": -262.5,
+   "t": 1792498070,
+   "last": 1794559913
+  },
+  {
+   "id": "API/object",
+   "label": "API/object",
+   "region": 4,
+   "degree": 9,
+   "x": -135.6,
+   "y": -136.9,
+   "z": -172.8,
+   "t": 1792085301,
+   "last": 1794225727
+  },
+  {
+   "id": "API/os",
+   "label": "API/os",
+   "region": 9,
+   "degree": 2,
+   "x": -117.1,
+   "y": -163.9,
+   "z": 16.4,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/pageVars",
+   "label": "API/pageVars",
+   "region": 18,
+   "degree": 2,
+   "x": 35.6,
+   "y": 74.7,
+   "z": -74.9,
+   "t": 1791812323,
+   "last": 1794225727
+  },
+  {
+   "id": "API/sbShare",
+   "label": "API/sbShare",
+   "region": 13,
+   "degree": 3,
+   "x": -64.0,
+   "y": -60.9,
+   "z": -204.7,
+   "t": 1792498428,
+   "last": 1794150084
+  },
+  {
+   "id": "API/search",
+   "label": "API/search",
+   "region": 11,
+   "degree": 4,
+   "x": -53.1,
+   "y": 107.0,
+   "z": 81.6,
+   "t": 1786449173,
+   "last": 1794239595
+  },
+  {
+   "id": "API/service",
+   "label": "API/service",
+   "region": 17,
+   "degree": 5,
+   "x": -52.4,
+   "y": 87.1,
+   "z": -135.3,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/share",
+   "label": "API/share",
+   "region": 1,
+   "degree": 11,
+   "x": 254.0,
+   "y": -38.3,
+   "z": 129.2,
+   "t": 1792498428,
+   "last": 1794559913
+  },
+  {
+   "id": "API/shell",
+   "label": "API/shell",
+   "region": 0,
+   "degree": 2,
+   "x": -210.6,
+   "y": -90.1,
+   "z": 197.4,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/slashCommand",
+   "label": "API/slashCommand",
+   "region": 1,
+   "degree": 6,
+   "x": 124.4,
+   "y": -165.0,
+   "z": 31.5,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "API/space",
+   "label": "API/space",
+   "region": 14,
+   "degree": 4,
+   "x": 94.0,
+   "y": 43.7,
+   "z": 264.1,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/spacelua",
+   "label": "API/spacelua",
+   "region": 0,
+   "degree": 3,
+   "x": -226.2,
+   "y": -110.4,
+   "z": 113.2,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/string",
+   "label": "API/string",
+   "region": 3,
+   "degree": 3,
+   "x": 115.2,
+   "y": -92.8,
+   "z": 240.5,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/sync",
+   "label": "API/sync",
+   "region": 1,
+   "degree": 1,
+   "x": 235.5,
+   "y": 107.1,
+   "z": 76.9,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/syntax",
+   "label": "API/syntax",
+   "region": 2,
+   "degree": 9,
+   "x": 240.5,
+   "y": 104.2,
+   "z": -51.5,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/system",
+   "label": "API/system",
+   "region": 6,
+   "degree": 4,
+   "x": -161.7,
+   "y": 84.5,
+   "z": 255.9,
+   "t": 1782198744,
+   "last": 1793794673
+  },
+  {
+   "id": "API/table",
+   "label": "API/table",
+   "region": 3,
+   "degree": 4,
+   "x": 187.6,
+   "y": -112.4,
+   "z": 197.4,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/tag",
+   "label": "API/tag",
+   "region": 1,
+   "degree": 29,
+   "x": 256.4,
+   "y": -74.4,
+   "z": -26.1,
+   "t": 1782198744,
+   "last": 1794239595
+  },
+  {
+   "id": "API/taskState",
+   "label": "API/taskState",
+   "region": 4,
+   "degree": 6,
+   "x": -141.1,
+   "y": -40.5,
+   "z": -291.1,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/template",
+   "label": "API/template",
+   "region": 12,
+   "degree": 2,
+   "x": 116.6,
+   "y": -6.7,
+   "z": -292.6,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "API/theme",
+   "label": "API/theme",
+   "region": 5,
+   "degree": 5,
+   "x": 77.0,
+   "y": -99.5,
+   "z": -181.7,
+   "t": 1794555830,
+   "last": 1794555830
+  },
+  {
+   "id": "API/view",
+   "label": "API/view",
+   "region": 11,
+   "degree": 7,
+   "x": -40.5,
+   "y": 72.2,
+   "z": 112.6,
+   "t": 1787929501,
+   "last": 1794225727
+  },
+  {
+   "id": "API/widget",
+   "label": "API/widget",
+   "region": 11,
+   "degree": 22,
+   "x": -80.4,
+   "y": 126.1,
+   "z": 127.8,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "API/widgets",
+   "label": "API/widgets",
+   "region": 11,
+   "degree": 7,
+   "x": -110.3,
+   "y": 131.5,
+   "z": 168.5,
+   "t": 1791462966,
+   "last": 1793712965
+  },
+  {
+   "id": "API/yaml",
+   "label": "API/yaml",
+   "region": 1,
+   "degree": 1,
+   "x": 190.8,
+   "y": -153.0,
+   "z": -54.6,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Account",
+   "label": "Account",
+   "region": 0,
+   "degree": 5,
+   "x": -196.0,
+   "y": -153.0,
+   "z": 2.9,
+   "t": 1789550657,
+   "last": 1793539933
+  },
+  {
+   "id": "Administration",
+   "label": "Administration",
+   "region": 0,
+   "degree": 11,
+   "x": -125.2,
+   "y": 154.0,
+   "z": 111.4,
+   "t": 1789375053,
+   "last": 1793712965
+  },
+  {
+   "id": "Anything Picker",
+   "label": "Anything Picker",
+   "region": 19,
+   "degree": 6,
+   "x": -128.3,
+   "y": -160.5,
+   "z": -80.1,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Architecture",
+   "label": "Architecture",
+   "region": 0,
+   "degree": 25,
+   "x": -216.7,
+   "y": 136.4,
+   "z": -26.2,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Architecture/Client",
+   "label": "Architecture/Client",
+   "region": 10,
+   "degree": 12,
+   "x": 110.8,
+   "y": -131.5,
+   "z": 169.1,
+   "t": 1782198744,
+   "last": 1793539933
+  },
+  {
+   "id": "Architecture/Client Bundle Cache",
+   "label": "Architecture/Client Bundle Cache",
+   "region": 0,
+   "degree": 2,
+   "x": -169.0,
+   "y": 100.8,
+   "z": -232.6,
+   "t": 1782198744,
+   "last": 1782725315
+  },
+  {
+   "id": "Architecture/Datastore",
+   "label": "Architecture/Datastore",
+   "region": 10,
+   "degree": 6,
+   "x": 138.9,
+   "y": -117.9,
+   "z": 213.4,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Architecture/Editor",
+   "label": "Architecture/Editor",
+   "region": 2,
+   "degree": 5,
+   "x": 225.6,
+   "y": 4.5,
+   "z": -228.5,
+   "t": 1782198744,
+   "last": 1793290966
+  },
+  {
+   "id": "Architecture/Events",
+   "label": "Architecture/Events",
+   "region": 10,
+   "degree": 4,
+   "x": 182.4,
+   "y": -147.3,
+   "z": 111.4,
+   "t": 1782198744,
+   "last": 1789116831
+  },
+  {
+   "id": "Architecture/File System API",
+   "label": "Architecture/File System API",
+   "region": 0,
+   "degree": 4,
+   "x": -123.0,
+   "y": 141.8,
+   "z": -152.8,
+   "t": 1782198744,
+   "last": 1793539933
+  },
+  {
+   "id": "Architecture/Plugs",
+   "label": "Architecture/Plugs",
+   "region": 10,
+   "degree": 5,
+   "x": 103.0,
+   "y": -152.0,
+   "z": 82.3,
+   "t": 1782198744,
+   "last": 1793539933
+  },
+  {
+   "id": "Architecture/Runtime Manager",
+   "label": "Architecture/Runtime Manager",
+   "region": 0,
+   "degree": 4,
+   "x": -221.8,
+   "y": 85.5,
+   "z": -179.9,
+   "t": 1782198744,
+   "last": 1789559105
+  },
+  {
+   "id": "Architecture/Server",
+   "label": "Architecture/Server",
+   "region": 0,
+   "degree": 15,
+   "x": -256.2,
+   "y": 66.8,
+   "z": -66.4,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Architecture/Service Worker",
+   "label": "Architecture/Service Worker",
+   "region": 0,
+   "degree": 8,
+   "x": -151.4,
+   "y": 155.4,
+   "z": -112.4,
+   "t": 1782198744,
+   "last": 1793539933
+  },
+  {
+   "id": "Architecture/Services",
+   "label": "Architecture/Services",
+   "region": 10,
+   "degree": 5,
+   "x": 161.5,
+   "y": -137.0,
+   "z": 168.6,
+   "t": 1782198744,
+   "last": 1793539933
+  },
+  {
+   "id": "Architecture/Space Files",
+   "label": "Architecture/Space Files",
+   "region": 0,
+   "degree": 5,
+   "x": -197.6,
+   "y": 113.0,
+   "z": -181.7,
+   "t": 1782198744,
+   "last": 1793539933
+  },
+  {
+   "id": "Architecture/Space Lua",
+   "label": "Architecture/Space Lua",
+   "region": 10,
+   "degree": 5,
+   "x": 79.8,
+   "y": -129.6,
+   "z": 114.2,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Architecture/Synced Files",
+   "label": "Architecture/Synced Files",
+   "region": 0,
+   "degree": 5,
+   "x": -205.2,
+   "y": 134.8,
+   "z": -104.1,
+   "t": 1782198744,
+   "last": 1789116831
+  },
+  {
+   "id": "Architecture/Syscalls",
+   "label": "Architecture/Syscalls",
+   "region": 10,
+   "degree": 8,
+   "x": 133.5,
+   "y": -151.2,
+   "z": 128.2,
+   "t": 1782198744,
+   "last": 1782725315
+  },
+  {
+   "id": "Aspiring Pages",
+   "label": "Aspiring Pages",
+   "region": 6,
+   "degree": 11,
+   "x": -182.7,
+   "y": 35.3,
+   "z": 278.4,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "At-Mention",
+   "label": "At-Mention",
+   "region": 7,
+   "degree": 9,
+   "x": 107.5,
+   "y": 159.0,
+   "z": 42.8,
+   "t": 1787757094,
+   "last": 1793712965
+  },
+  {
+   "id": "Attribute",
+   "label": "Attribute",
+   "region": 4,
+   "degree": 13,
+   "x": -184.7,
+   "y": -132.3,
+   "z": -157.3,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Authelia",
+   "label": "Authelia",
+   "region": 0,
+   "degree": 2,
+   "x": -191.2,
+   "y": 21.5,
+   "z": -275.5,
+   "t": 1782198744,
+   "last": 1789116831
+  },
+  {
+   "id": "Authentication",
+   "label": "Authentication",
+   "region": 0,
+   "degree": 17,
+   "x": -268.3,
+   "y": 18.0,
+   "z": -37.2,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Authentication Proxy",
+   "label": "Authentication Proxy",
+   "region": 0,
+   "degree": 3,
+   "x": -240.1,
+   "y": 27.0,
+   "z": -187.8,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Authorship",
+   "label": "Authorship",
+   "region": 7,
+   "degree": 9,
+   "x": 80.7,
+   "y": 138.4,
+   "z": 78.6,
+   "t": 1787757094,
+   "last": 1793712965
+  },
+  {
+   "id": "Baked Sections",
+   "label": "Baked Sections",
+   "region": 3,
+   "degree": 16,
+   "x": 166.5,
+   "y": -38.8,
+   "z": 287.0,
+   "t": 1782227681,
+   "last": 1794555830
+  },
+  {
+   "id": "CHANGELOG",
+   "label": "CHANGELOG",
+   "region": 0,
+   "degree": 107,
+   "x": -96.2,
+   "y": -154.0,
+   "z": -37.5,
+   "t": 1782198744,
+   "last": 1794559913
+  },
+  {
+   "id": "CLI",
+   "label": "CLI",
+   "region": 0,
+   "degree": 16,
+   "x": -249.7,
+   "y": 86.0,
+   "z": 55.9,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "Client Encryption",
+   "label": "Client Encryption",
+   "region": 0,
+   "degree": 4,
+   "x": -238.1,
+   "y": -111.0,
+   "z": 22.9,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Collaboration",
+   "label": "Collaboration",
+   "region": 0,
+   "degree": 14,
+   "x": -265.8,
+   "y": -31.6,
+   "z": -51.6,
+   "t": 1787233771,
+   "last": 1793712965
+  },
+  {
+   "id": "Command",
+   "label": "Command",
+   "region": 15,
+   "degree": 13,
+   "x": -100.7,
+   "y": -99.5,
+   "z": 218.6,
+   "t": 1782198744,
+   "last": 1793539933
+  },
+  {
+   "id": "Command Palette",
+   "label": "Command Palette",
+   "region": 15,
+   "degree": 10,
+   "x": -66.1,
+   "y": -79.7,
+   "z": 188.0,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Completion",
+   "label": "Completion",
+   "region": 8,
+   "degree": 8,
+   "x": -145.4,
+   "y": 124.7,
+   "z": -201.0,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Configuration Manager",
+   "label": "Configuration Manager",
+   "region": 1,
+   "degree": 4,
+   "x": 224.0,
+   "y": 129.7,
+   "z": -7.4,
+   "t": 1782198744,
+   "last": 1793359470
+  },
+  {
+   "id": "Dashboard",
+   "label": "Dashboard",
+   "region": 0,
+   "degree": 19,
+   "x": -269.5,
+   "y": -11.9,
+   "z": 16.5,
+   "t": 1789550657,
+   "last": 1793539933
+  },
+  {
+   "id": "Deployments/Caddy",
+   "label": "Deployments/Caddy",
+   "region": 0,
+   "degree": 1,
+   "x": -193.2,
+   "y": 73.5,
+   "z": -243.0,
+   "t": 1782198744,
+   "last": 1789116831
+  },
+  {
+   "id": "Desktop",
+   "label": "Desktop",
+   "region": 0,
+   "degree": 10,
+   "x": -210.0,
+   "y": 93.7,
+   "z": 193.2,
+   "t": 1790673866,
+   "last": 1793712965
+  },
+  {
+   "id": "Desktop Sync",
+   "label": "Desktop Sync",
+   "region": 0,
+   "degree": 13,
+   "x": -174.6,
+   "y": 156.9,
+   "z": 78.4,
+   "t": 1790673866,
+   "last": 1793894570
+  },
+  {
+   "id": "Development",
+   "label": "Development",
+   "region": 0,
+   "degree": 7,
+   "x": -97.0,
+   "y": 100.3,
+   "z": 213.0,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Discovery",
+   "label": "Discovery",
+   "region": 6,
+   "degree": 3,
+   "x": -159.5,
+   "y": -45.0,
+   "z": 286.7,
+   "t": 1793712965,
+   "last": 1793712965
+  },
+  {
+   "id": "Document",
+   "label": "Document",
+   "region": 2,
+   "degree": 11,
+   "x": 76.7,
+   "y": 81.6,
+   "z": -207.6,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Document Editor",
+   "label": "Document Editor",
+   "region": 23,
+   "degree": 4,
+   "x": -166.8,
+   "y": 49.6,
+   "z": -281.4,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Editor",
+   "label": "Editor",
+   "region": 2,
+   "degree": 3,
+   "x": 243.0,
+   "y": -26.3,
+   "z": -179.4,
+   "t": 1782198744,
+   "last": 1789116831
+  },
+  {
+   "id": "Event",
+   "label": "Event",
+   "region": 8,
+   "degree": 15,
+   "x": -118.9,
+   "y": 101.2,
+   "z": -231.9,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Example/Person",
+   "label": "Example/Person",
+   "region": 7,
+   "degree": 1,
+   "x": 89.9,
+   "y": 151.3,
+   "z": -21.4,
+   "t": 1793889443,
+   "last": 1793889443
+  },
+  {
+   "id": "Examples/1/ambiguous link",
+   "label": "Examples/1/ambiguous link",
+   "region": 3,
+   "degree": 1,
+   "x": 144.3,
+   "y": 102.9,
+   "z": 237.1,
+   "t": 1787649749,
+   "last": 1789116831
+  },
+  {
+   "id": "Examples/2/ambiguous link",
+   "label": "Examples/2/ambiguous link",
+   "region": 3,
+   "degree": 1,
+   "x": 171.5,
+   "y": 121.3,
+   "z": 197.0,
+   "t": 1787649749,
+   "last": 1789116831
+  },
+  {
+   "id": "Examples/Budget",
+   "label": "Examples/Budget",
+   "region": 18,
+   "degree": 1,
+   "x": 74.4,
+   "y": 132.6,
+   "z": -80.4,
+   "t": 1791799394,
+   "last": 1791799394
+  },
+  {
+   "id": "Export",
+   "label": "Export",
+   "region": 1,
+   "degree": 6,
+   "x": 210.8,
+   "y": 137.9,
+   "z": 63.9,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Extensions",
+   "label": "Extensions",
+   "region": 12,
+   "degree": 11,
+   "x": 95.7,
+   "y": 42.6,
+   "z": -266.4,
+   "t": 1782198744,
+   "last": 1794239595
+  },
+  {
+   "id": "File Tree",
+   "label": "File Tree",
+   "region": 6,
+   "degree": 9,
+   "x": -137.9,
+   "y": 7.6,
+   "z": 299.3,
+   "t": 1789116831,
+   "last": 1794555830
+  },
+  {
+   "id": "Folder",
+   "label": "Folder",
+   "region": 6,
+   "degree": 5,
+   "x": -116.6,
+   "y": 58.7,
+   "z": 273.4,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Fonts",
+   "label": "Fonts",
+   "region": 5,
+   "degree": 12,
+   "x": 202.1,
+   "y": -72.9,
+   "z": -232.2,
+   "t": 1793805171,
+   "last": 1794555830
+  },
+  {
+   "id": "Frontmatter",
+   "label": "Frontmatter",
+   "region": 4,
+   "degree": 23,
+   "x": -229.5,
+   "y": -104.3,
+   "z": -118.0,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "Full Text Search",
+   "label": "Full Text Search",
+   "region": 0,
+   "degree": 2,
+   "x": -166.9,
+   "y": -123.7,
+   "z": 195.6,
+   "t": 1782198744,
+   "last": 1791894102
+  },
+  {
+   "id": "Getting Started",
+   "label": "Getting Started",
+   "region": 0,
+   "degree": 18,
+   "x": -95.2,
+   "y": 149.4,
+   "z": 72.7,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "Git",
+   "label": "Git",
+   "region": 0,
+   "degree": 5,
+   "x": -229.2,
+   "y": 54.2,
+   "z": 198.8,
+   "t": 1790075735,
+   "last": 1793539933
+  },
+  {
+   "id": "Glossary",
+   "label": "Glossary",
+   "region": 0,
+   "degree": 2,
+   "x": -215.6,
+   "y": 24.6,
+   "z": 242.9,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Graph View",
+   "label": "Graph View",
+   "region": 20,
+   "degree": 11,
+   "x": 62.9,
+   "y": -78.6,
+   "z": 181.7,
+   "t": 1793539933,
+   "last": 1794225727
+  },
+  {
+   "id": "Guide",
+   "label": "Guide",
+   "region": 0,
+   "degree": 1,
+   "x": -84.9,
+   "y": -117.6,
+   "z": 161.6,
+   "t": 1782198744,
+   "last": 1793539933
+  },
+  {
+   "id": "Guide/Add Structure and Query",
+   "label": "Guide/Add Structure and Query",
+   "region": 4,
+   "degree": 17,
+   "x": -210.0,
+   "y": -102.5,
+   "z": -178.2,
+   "t": 1793712965,
+   "last": 1794555830
+  },
+  {
+   "id": "Guide/Aggregator Pages",
+   "label": "Guide/Aggregator Pages",
+   "region": 2,
+   "degree": 8,
+   "x": 103.1,
+   "y": 143.3,
+   "z": -122.4,
+   "t": 1787822794,
+   "last": 1794555830
+  },
+  {
+   "id": "Guide/Best Practices",
+   "label": "Guide/Best Practices",
+   "region": 6,
+   "degree": 21,
+   "x": -149.4,
+   "y": 48.1,
+   "z": 287.1,
+   "t": 1787822794,
+   "last": 1794239595
+  },
+  {
+   "id": "Guide/Comments, Mentions and Replies",
+   "label": "Guide/Comments, Mentions and Replies",
+   "region": 7,
+   "degree": 8,
+   "x": 100.0,
+   "y": 136.3,
+   "z": 140.7,
+   "t": 1793712965,
+   "last": 1794149057
+  },
+  {
+   "id": "Guide/Desktop Setup",
+   "label": "Guide/Desktop Setup",
+   "region": 0,
+   "degree": 10,
+   "x": -161.1,
+   "y": 166.3,
+   "z": -14.2,
+   "t": 1793539933,
+   "last": 1793712965
+  },
+  {
+   "id": "Guide/Devices and Publishing",
+   "label": "Guide/Devices and Publishing",
+   "region": 0,
+   "degree": 8,
+   "x": -157.3,
+   "y": 147.4,
+   "z": 140.3,
+   "t": 1793539933,
+   "last": 1793712965
+  },
+  {
+   "id": "Guide/Find and Connect Pages",
+   "label": "Guide/Find and Connect Pages",
+   "region": 6,
+   "degree": 11,
+   "x": -203.5,
+   "y": -12.8,
+   "z": 263.4,
+   "t": 1793539933,
+   "last": 1793712965
+  },
+  {
+   "id": "Guide/Find and Connect Your Notes",
+   "label": "Guide/Find and Connect Your Notes",
+   "region": 6,
+   "degree": 1,
+   "x": -126.4,
+   "y": -33.1,
+   "z": 291.1,
+   "t": 1793539933,
+   "last": 1793539933
+  },
+  {
+   "id": "Guide/Finding Content",
+   "label": "Guide/Finding Content",
+   "region": 6,
+   "degree": 14,
+   "x": -105.0,
+   "y": 18.4,
+   "z": 283.4,
+   "t": 1793712965,
+   "last": 1794555830
+  },
+  {
+   "id": "Guide/Finding Your Notes",
+   "label": "Guide/Finding Your Notes",
+   "region": 6,
+   "degree": 1,
+   "x": -84.9,
+   "y": 63.2,
+   "z": 239.7,
+   "t": 1793539933,
+   "last": 1793712965
+  },
+  {
+   "id": "Guide/Git Sync",
+   "label": "Guide/Git Sync",
+   "region": 0,
+   "degree": 4,
+   "x": -195.4,
+   "y": 69.4,
+   "z": 244.2,
+   "t": 1793539933,
+   "last": 1793712965
+  },
+  {
+   "id": "Guide/Journal",
+   "label": "Guide/Journal",
+   "region": 1,
+   "degree": 5,
+   "x": 257.1,
+   "y": -39.1,
+   "z": -112.2,
+   "t": 1793712965,
+   "last": 1793712965
+  },
+  {
+   "id": "Guide/Knowledge Base",
+   "label": "Guide/Knowledge Base",
+   "region": 2,
+   "degree": 15,
+   "x": 89.2,
+   "y": 116.1,
+   "z": -173.1,
+   "t": 1787822794,
+   "last": 1794555830
+  },
+  {
+   "id": "Guide/Make it your own",
+   "label": "Guide/Make it your own",
+   "region": 5,
+   "degree": 11,
+   "x": 138.0,
+   "y": -58.5,
+   "z": -280.9,
+   "t": 1793866008,
+   "last": 1794555830
+  },
+  {
+   "id": "Guide/My First Markdown Page",
+   "label": "Guide/My First Markdown Page",
+   "region": 2,
+   "degree": 13,
+   "x": 254.3,
+   "y": 53.6,
+   "z": -108.7,
+   "t": 1793712965,
+   "last": 1793712965
+  },
+  {
+   "id": "Guide/Server Setup",
+   "label": "Guide/Server Setup",
+   "region": 0,
+   "degree": 21,
+   "x": -242.2,
+   "y": 102.4,
+   "z": -44.0,
+   "t": 1793539933,
+   "last": 1793712965
+  },
+  {
+   "id": "Guide/Task Management",
+   "label": "Guide/Task Management",
+   "region": 4,
+   "degree": 10,
+   "x": -162.9,
+   "y": -117.6,
+   "z": -209.5,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "Guide/When Results Update",
+   "label": "Guide/When Results Update",
+   "region": 3,
+   "degree": 16,
+   "x": 165.1,
+   "y": -93.9,
+   "z": 243.6,
+   "t": 1793539933,
+   "last": 1794239595
+  },
+  {
+   "id": "Guide/Working Together",
+   "label": "Guide/Working Together",
+   "region": 0,
+   "degree": 3,
+   "x": -217.3,
+   "y": 47.1,
+   "z": -229.1,
+   "t": 1789116831,
+   "last": 1793712965
+  },
+  {
+   "id": "Guides",
+   "label": "Guides",
+   "region": 0,
+   "degree": 6,
+   "x": -128.7,
+   "y": 95.9,
+   "z": 243.7,
+   "t": 1788356424,
+   "last": 1793712965
+  },
+  {
+   "id": "HTTP API",
+   "label": "HTTP API",
+   "region": 0,
+   "degree": 15,
+   "x": -194.3,
+   "y": 153.6,
+   "z": 19.6,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Identity",
+   "label": "Identity",
+   "region": 7,
+   "degree": 11,
+   "x": 156.3,
+   "y": 163.4,
+   "z": 63.5,
+   "t": 1787757094,
+   "last": 1794225727
+  },
+  {
+   "id": "Index Page",
+   "label": "Index Page",
+   "region": 0,
+   "degree": 6,
+   "x": -152.4,
+   "y": -148.0,
+   "z": 140.6,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Install",
+   "label": "Install",
+   "region": 0,
+   "degree": 12,
+   "x": -142.1,
+   "y": 165.8,
+   "z": 48.1,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Install/Configuration",
+   "label": "Install/Configuration",
+   "region": 0,
+   "degree": 13,
+   "x": -260.3,
+   "y": -64.6,
+   "z": -7.4,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Install/Desktop",
+   "label": "Install/Desktop",
+   "region": 0,
+   "degree": 8,
+   "x": -111.8,
+   "y": 162.4,
+   "z": 9.5,
+   "t": 1789650320,
+   "last": 1793712965
+  },
+  {
+   "id": "Install/Docker",
+   "label": "Install/Docker",
+   "region": 0,
+   "degree": 7,
+   "x": -130.6,
+   "y": 164.2,
+   "z": -54.6,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Install/Network and Internet",
+   "label": "Install/Network and Internet",
+   "region": 0,
+   "degree": 5,
+   "x": -229.8,
+   "y": 105.7,
+   "z": -112.5,
+   "t": 1782198744,
+   "last": 1793539933
+  },
+  {
+   "id": "Install/Server",
+   "label": "Install/Server",
+   "region": 0,
+   "degree": 10,
+   "x": -42.7,
+   "y": 99.9,
+   "z": -4.5,
+   "t": 1793539933,
+   "last": 1793539933
+  },
+  {
+   "id": "Install/Server Binary",
+   "label": "Install/Server Binary",
+   "region": 0,
+   "degree": 8,
+   "x": -83.9,
+   "y": 146.7,
+   "z": -29.6,
+   "t": 1789650320,
+   "last": 1793712965
+  },
+  {
+   "id": "Install/Server Modes",
+   "label": "Install/Server Modes",
+   "region": 0,
+   "degree": 7,
+   "x": -251.4,
+   "y": -80.2,
+   "z": 64.1,
+   "t": 1790063535,
+   "last": 1793712965
+  },
+  {
+   "id": "Keyboard Shortcuts",
+   "label": "Keyboard Shortcuts",
+   "region": 15,
+   "degree": 9,
+   "x": -80.6,
+   "y": -55.4,
+   "z": 239.7,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Knowledge Management System",
+   "label": "Knowledge Management System",
+   "region": 2,
+   "degree": 8,
+   "x": 206.0,
+   "y": 46.7,
+   "z": -247.6,
+   "t": 1789116831,
+   "last": 1789116831
+  },
+  {
+   "id": "Library",
+   "label": "Library",
+   "region": 1,
+   "degree": 29,
+   "x": 263.5,
+   "y": -49.8,
+   "z": 34.1,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "Library/ADR Styles",
+   "label": "Library/ADR Styles",
+   "region": 3,
+   "degree": 1,
+   "x": 242.7,
+   "y": 45.5,
+   "z": 167.9,
+   "t": 1791463040,
+   "last": 1794225727
+  },
+  {
+   "id": "Library/Config",
+   "label": "Library/Config",
+   "region": 1,
+   "degree": 1,
+   "x": 161.1,
+   "y": -158.0,
+   "z": -93.5,
+   "t": 1794239595,
+   "last": 1794555830
+  },
+  {
+   "id": "Library/Development",
+   "label": "Library/Development",
+   "region": 1,
+   "degree": 12,
+   "x": 267.6,
+   "y": -9.4,
+   "z": 55.8,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "Library/Page Templates/ADR",
+   "label": "Library/Page Templates/ADR",
+   "region": 3,
+   "degree": 1,
+   "x": 195.4,
+   "y": 95.2,
+   "z": 214.8,
+   "t": 1782198744,
+   "last": 1789116831
+  },
+  {
+   "id": "Library/Repository/SilverBulletMD",
+   "label": "Library/Repository/SilverBulletMD",
+   "region": 23,
+   "degree": 0,
+   "x": 56.1,
+   "y": 105.9,
+   "z": 102.1,
+   "t": 1794555830,
+   "last": 1794580197
+  },
+  {
+   "id": "Library/Website",
+   "label": "Library/Website",
+   "region": 23,
+   "degree": 0,
+   "x": 51.5,
+   "y": 68.1,
+   "z": 163.3,
+   "t": 1782198744,
+   "last": 1794580532
+  },
+  {
+   "id": "Library/Website Checks",
+   "label": "Library/Website Checks",
+   "region": 23,
+   "degree": 0,
+   "x": 148.6,
+   "y": 142.4,
+   "z": 158.7,
+   "t": 1790673866,
+   "last": 1794225727
+  },
+  {
+   "id": "Library/Website Templates",
+   "label": "Library/Website Templates",
+   "region": 23,
+   "degree": 0,
+   "x": 34.1,
+   "y": 59.5,
+   "z": 101.0,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Library/Website/Doc Examples",
+   "label": "Library/Website/Doc Examples",
+   "region": 19,
+   "degree": 5,
+   "x": -106.0,
+   "y": -143.9,
+   "z": -125.9,
+   "t": 1794225727,
+   "last": 1794225727
+  },
+  {
+   "id": "Library/silverbullet-diagram/Mermaid",
+   "label": "Library/silverbullet-diagram/Mermaid",
+   "region": 23,
+   "degree": 0,
+   "x": 95.9,
+   "y": 95.9,
+   "z": 218.1,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "Library/silverbulletmd/Themes/Classic",
+   "label": "Library/silverbulletmd/Themes/Classic",
+   "region": 21,
+   "degree": 2,
+   "x": -61.0,
+   "y": -13.7,
+   "z": 224.5,
+   "t": 1794580197,
+   "last": 1794580197
+  },
+  {
+   "id": "Library/silverbulletmd/Themes/Classic/Dark",
+   "label": "Library/silverbulletmd/Themes/Classic/Dark",
+   "region": 21,
+   "degree": 2,
+   "x": -43.5,
+   "y": 17.1,
+   "z": 178.3,
+   "t": 1794580197,
+   "last": 1794580197
+  },
+  {
+   "id": "Library/silverbulletmd/Themes/Classic/Light",
+   "label": "Library/silverbulletmd/Themes/Classic/Light",
+   "region": 21,
+   "degree": 2,
+   "x": -55.2,
+   "y": 56.7,
+   "z": 187.2,
+   "t": 1794580197,
+   "last": 1794580197
+  },
+  {
+   "id": "Licensing",
+   "label": "Licensing",
+   "region": 0,
+   "degree": 3,
+   "x": -173.8,
+   "y": 137.5,
+   "z": -157.0,
+   "t": 1790673866,
+   "last": 1793712965
+  },
+  {
+   "id": "Link",
+   "label": "Link",
+   "region": 2,
+   "degree": 26,
+   "x": 139.6,
+   "y": 73.3,
+   "z": -269.8,
+   "t": 1782198744,
+   "last": 1794239595
+  },
+  {
+   "id": "Linked Mention",
+   "label": "Linked Mention",
+   "region": 22,
+   "degree": 15,
+   "x": 58.1,
+   "y": -60.8,
+   "z": -190.7,
+   "t": 1782198744,
+   "last": 1793969240
+  },
+  {
+   "id": "Linked Tasks",
+   "label": "Linked Tasks",
+   "region": 22,
+   "degree": 7,
+   "x": 72.0,
+   "y": -33.4,
+   "z": -238.8,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Linking and Exploring",
+   "label": "Linking and Exploring",
+   "region": 6,
+   "degree": 2,
+   "x": -73.1,
+   "y": 23.7,
+   "z": 244.4,
+   "t": 1790673866,
+   "last": 1793712965
+  },
+  {
+   "id": "Live Object Edit",
+   "label": "Live Object Edit",
+   "region": 4,
+   "degree": 8,
+   "x": -204.7,
+   "y": -136.9,
+   "z": -96.4,
+   "t": 1793290966,
+   "last": 1794555830
+  },
+  {
+   "id": "Live Preview",
+   "label": "Live Preview",
+   "region": 2,
+   "degree": 14,
+   "x": 236.7,
+   "y": 85.4,
+   "z": -134.3,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "Local Space",
+   "label": "Local Space",
+   "region": 0,
+   "degree": 11,
+   "x": -191.3,
+   "y": 130.7,
+   "z": 151.1,
+   "t": 1790673866,
+   "last": 1793712965
+  },
+  {
+   "id": "Log",
+   "label": "Log",
+   "region": 0,
+   "degree": 8,
+   "x": -182.2,
+   "y": 155.5,
+   "z": -67.8,
+   "t": 1782198744,
+   "last": 1793539933
+  },
+  {
+   "id": "MCP",
+   "label": "MCP",
+   "region": 0,
+   "degree": 9,
+   "x": -247.0,
+   "y": 21.7,
+   "z": 168.3,
+   "t": 1793794673,
+   "last": 1793794673
+  },
+  {
+   "id": "Manual",
+   "label": "Manual",
+   "region": 0,
+   "degree": 6,
+   "x": -175.5,
+   "y": 113.1,
+   "z": 208.8,
+   "t": 1782198744,
+   "last": 1793539933
+  },
+  {
+   "id": "Markdown",
+   "label": "Markdown",
+   "region": 2,
+   "degree": 21,
+   "x": 200.8,
+   "y": 113.0,
+   "z": -176.1,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Markdown/Admonition",
+   "label": "Markdown/Admonition",
+   "region": 5,
+   "degree": 2,
+   "x": 149.6,
+   "y": -18.7,
+   "z": -297.8,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Markdown/Anchor",
+   "label": "Markdown/Anchor",
+   "region": 2,
+   "degree": 17,
+   "x": 152.3,
+   "y": 106.9,
+   "z": -230.6,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Markdown/Basics",
+   "label": "Markdown/Basics",
+   "region": 2,
+   "degree": 7,
+   "x": 218.6,
+   "y": 119.4,
+   "z": -113.9,
+   "t": 1782198744,
+   "last": 1793539933
+  },
+  {
+   "id": "Markdown/Comment",
+   "label": "Markdown/Comment",
+   "region": 23,
+   "degree": 9,
+   "x": -69.5,
+   "y": 35.1,
+   "z": -233.7,
+   "t": 1787037991,
+   "last": 1794559913
+  },
+  {
+   "id": "Markdown/Extensions",
+   "label": "Markdown/Extensions",
+   "region": 2,
+   "degree": 14,
+   "x": 185.8,
+   "y": 91.9,
+   "z": -230.6,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Markdown/Fenced Code Block",
+   "label": "Markdown/Fenced Code Block",
+   "region": 2,
+   "degree": 11,
+   "x": 183.0,
+   "y": 145.5,
+   "z": -117.8,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Markdown/Footnotes",
+   "label": "Markdown/Footnotes",
+   "region": 2,
+   "degree": 4,
+   "x": 254.9,
+   "y": 11.5,
+   "z": -140.8,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Markdown/HTML",
+   "label": "Markdown/HTML",
+   "region": 2,
+   "degree": 4,
+   "x": 219.9,
+   "y": 73.6,
+   "z": -200.1,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Markdown/Hashtags",
+   "label": "Markdown/Hashtags",
+   "region": 2,
+   "degree": 15,
+   "x": 133.9,
+   "y": 142.4,
+   "z": -157.2,
+   "t": 1782198744,
+   "last": 1794559913
+  },
+  {
+   "id": "Markdown/Syntax Highlighting",
+   "label": "Markdown/Syntax Highlighting",
+   "region": 2,
+   "degree": 4,
+   "x": 202.0,
+   "y": 145.6,
+   "z": -57.7,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Meta Space",
+   "label": "Meta Space",
+   "region": 0,
+   "degree": 6,
+   "x": -102.4,
+   "y": 149.7,
+   "z": -93.5,
+   "t": 1790673866,
+   "last": 1794555830
+  },
+  {
+   "id": "Metadata",
+   "label": "Metadata",
+   "region": 4,
+   "degree": 9,
+   "x": -233.7,
+   "y": -64.3,
+   "z": -176.5,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Migrate from v1",
+   "label": "Migrate from v1",
+   "region": 3,
+   "degree": 8,
+   "x": 235.5,
+   "y": -41.0,
+   "z": 192.7,
+   "t": 1782198744,
+   "last": 1794239595
+  },
+  {
+   "id": "Names",
+   "label": "Names",
+   "region": 2,
+   "degree": 8,
+   "x": 127.9,
+   "y": 34.2,
+   "z": -291.2,
+   "t": 1782198744,
+   "last": 1794559913
+  },
+  {
+   "id": "Object",
+   "label": "Object",
+   "region": 4,
+   "degree": 35,
+   "x": -188.5,
+   "y": -89.4,
+   "z": -230.9,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Object Graph",
+   "label": "Object Graph",
+   "region": 20,
+   "degree": 2,
+   "x": 91.1,
+   "y": -65.3,
+   "z": 246.1,
+   "t": 1782198744,
+   "last": 1793539933
+  },
+  {
+   "id": "Object Index",
+   "label": "Object Index",
+   "region": 3,
+   "degree": 29,
+   "x": 190.0,
+   "y": -63.1,
+   "z": 255.5,
+   "t": 1782198744,
+   "last": 1794580532
+  },
+  {
+   "id": "Outlines",
+   "label": "Outlines",
+   "region": 2,
+   "degree": 4,
+   "x": 238.5,
+   "y": 36.5,
+   "z": -187.3,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "PWA",
+   "label": "PWA",
+   "region": 0,
+   "degree": 8,
+   "x": -245.8,
+   "y": 59.5,
+   "z": -141.2,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Page",
+   "label": "Page",
+   "region": 2,
+   "degree": 18,
+   "x": 172.7,
+   "y": 60.4,
+   "z": -271.5,
+   "t": 1782198744,
+   "last": 1794580532
+  },
+  {
+   "id": "Page Decorations",
+   "label": "Page Decorations",
+   "region": 19,
+   "degree": 12,
+   "x": -73.0,
+   "y": -132.6,
+   "z": -73.6,
+   "t": 1782198744,
+   "last": 1794239595
+  },
+  {
+   "id": "Page Namer",
+   "label": "Page Namer",
+   "region": 2,
+   "degree": 3,
+   "x": 149.8,
+   "y": 158.9,
+   "z": -96.3,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Page Picker",
+   "label": "Page Picker",
+   "region": 6,
+   "degree": 24,
+   "x": -171.0,
+   "y": -4.2,
+   "z": 292.9,
+   "t": 1782198744,
+   "last": 1794580532
+  },
+  {
+   "id": "Page Template",
+   "label": "Page Template",
+   "region": 12,
+   "degree": 10,
+   "x": 84.2,
+   "y": 2.8,
+   "z": -264.0,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "Paths",
+   "label": "Paths",
+   "region": 2,
+   "degree": 4,
+   "x": 160.9,
+   "y": 22.2,
+   "z": -294.6,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Person/John",
+   "label": "Person/John",
+   "region": 23,
+   "degree": 0,
+   "x": 201.3,
+   "y": 126.2,
+   "z": 143.7,
+   "t": 1782198744,
+   "last": 1789116831
+  },
+  {
+   "id": "Plugs",
+   "label": "Plugs",
+   "region": 3,
+   "degree": 15,
+   "x": 92.9,
+   "y": -12.8,
+   "z": 273.3,
+   "t": 1782198744,
+   "last": 1793091021
+  },
+  {
+   "id": "Plugs/Development",
+   "label": "Plugs/Development",
+   "region": 23,
+   "degree": 11,
+   "x": -67.4,
+   "y": -16.2,
+   "z": -236.4,
+   "t": 1782198744,
+   "last": 1789116831
+  },
+  {
+   "id": "Plugs/Development/Architecture",
+   "label": "Plugs/Development/Architecture",
+   "region": 23,
+   "degree": 3,
+   "x": -116.5,
+   "y": -11.6,
+   "z": -292.0,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Plugs/Development/Distribution and Testing",
+   "label": "Plugs/Development/Distribution and Testing",
+   "region": 1,
+   "degree": 10,
+   "x": 250.3,
+   "y": 67.5,
+   "z": 107.0,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Plugs/Development/Document Editors",
+   "label": "Plugs/Development/Document Editors",
+   "region": 23,
+   "degree": 2,
+   "x": -141.5,
+   "y": 19.8,
+   "z": -297.9,
+   "t": 1793539933,
+   "last": 1793539933
+  },
+  {
+   "id": "Plugs/Development/Reference",
+   "label": "Plugs/Development/Reference",
+   "region": 16,
+   "degree": 13,
+   "x": 111.5,
+   "y": -158.6,
+   "z": -61.5,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "Publishing",
+   "label": "Publishing",
+   "region": 0,
+   "degree": 15,
+   "x": -261.5,
+   "y": 7.0,
+   "z": 107.4,
+   "t": 1790673866,
+   "last": 1793712965
+  },
+  {
+   "id": "Queries and Data",
+   "label": "Queries and Data",
+   "region": 1,
+   "degree": 2,
+   "x": 205.9,
+   "y": -132.1,
+   "z": -112.3,
+   "t": 1790673866,
+   "last": 1793889376
+  },
+  {
+   "id": "Recipient",
+   "label": "Recipient",
+   "region": 7,
+   "degree": 10,
+   "x": 127.1,
+   "y": 155.7,
+   "z": 105.2,
+   "t": 1787141492,
+   "last": 1793712965
+  },
+  {
+   "id": "Reference",
+   "label": "Reference",
+   "region": 0,
+   "degree": 10,
+   "x": -142.1,
+   "y": 126.4,
+   "z": 197.6,
+   "t": 1790673866,
+   "last": 1793712965
+  },
+  {
+   "id": "Reference/Concepts",
+   "label": "Reference/Concepts",
+   "region": 2,
+   "degree": 19,
+   "x": 107.4,
+   "y": 81.6,
+   "z": -247.3,
+   "t": 1793712965,
+   "last": 1794225727
+  },
+  {
+   "id": "Reference/Indexing Internals",
+   "label": "Reference/Indexing Internals",
+   "region": 7,
+   "degree": 8,
+   "x": 39.8,
+   "y": 91.3,
+   "z": 43.0,
+   "t": 1793539933,
+   "last": 1793712965
+  },
+  {
+   "id": "Reference/SilverBullet Features",
+   "label": "Reference/SilverBullet Features",
+   "region": 0,
+   "degree": 74,
+   "x": -262.1,
+   "y": 43.0,
+   "z": 70.6,
+   "t": 1793712965,
+   "last": 1794580532
+  },
+  {
+   "id": "Reference/Space Lua and APIs",
+   "label": "Reference/Space Lua and APIs",
+   "region": 8,
+   "degree": 28,
+   "x": -93.8,
+   "y": 70.3,
+   "z": -244.9,
+   "t": 1793539933,
+   "last": 1794239595
+  },
+  {
+   "id": "Reference/Technical Reference",
+   "label": "Reference/Technical Reference",
+   "region": 0,
+   "degree": 15,
+   "x": -227.4,
+   "y": 103.0,
+   "z": 129.6,
+   "t": 1793539933,
+   "last": 1793794673
+  },
+  {
+   "id": "Repository",
+   "label": "Repository",
+   "region": 1,
+   "degree": 12,
+   "x": 263.4,
+   "y": 36.2,
+   "z": 70.4,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Revisions",
+   "label": "Revisions",
+   "region": 0,
+   "degree": 15,
+   "x": -245.6,
+   "y": 68.6,
+   "z": 128.5,
+   "t": 1787570782,
+   "last": 1794559913
+  },
+  {
+   "id": "Runtime API",
+   "label": "Runtime API",
+   "region": 0,
+   "degree": 12,
+   "x": -260.2,
+   "y": 21.8,
+   "z": -109.1,
+   "t": 1782198744,
+   "last": 1794559913
+  },
+  {
+   "id": "Schema",
+   "label": "Schema",
+   "region": 1,
+   "degree": 11,
+   "x": 232.9,
+   "y": -112.8,
+   "z": -67.6,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Search",
+   "label": "Search",
+   "region": 0,
+   "degree": 20,
+   "x": -262.5,
+   "y": -37.3,
+   "z": 77.1,
+   "t": 1791894102,
+   "last": 1794555830
+  },
+  {
+   "id": "Security",
+   "label": "Security",
+   "region": 0,
+   "degree": 8,
+   "x": -177.8,
+   "y": -158.1,
+   "z": -61.5,
+   "t": 1788434814,
+   "last": 1793712965
+  },
+  {
+   "id": "Security Profiles",
+   "label": "Security Profiles",
+   "region": 0,
+   "degree": 4,
+   "x": -212.1,
+   "y": -136.8,
+   "z": 63.6,
+   "t": 1789116831,
+   "last": 1793539933
+  },
+  {
+   "id": "Service",
+   "label": "Service",
+   "region": 17,
+   "degree": 6,
+   "x": -35.6,
+   "y": 74.8,
+   "z": -74.5,
+   "t": 1782198744,
+   "last": 1793539933
+  },
+  {
+   "id": "Share",
+   "label": "Share",
+   "region": 1,
+   "degree": 18,
+   "x": 250.6,
+   "y": 89.1,
+   "z": 16.4,
+   "t": 1782198744,
+   "last": 1794239595
+  },
+  {
+   "id": "SilverBullet",
+   "label": "SilverBullet",
+   "region": 0,
+   "degree": 18,
+   "x": -67.5,
+   "y": 132.3,
+   "z": 31.4,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "Single Sign-On",
+   "label": "Single Sign-On",
+   "region": 0,
+   "degree": 5,
+   "x": -222.5,
+   "y": -130.0,
+   "z": -33.7,
+   "t": 1789116831,
+   "last": 1793712965
+  },
+  {
+   "id": "Slash Command",
+   "label": "Slash Command",
+   "region": 1,
+   "degree": 12,
+   "x": 218.2,
+   "y": -135.5,
+   "z": -14.2,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "Slash Templates",
+   "label": "Slash Templates",
+   "region": 12,
+   "degree": 10,
+   "x": 64.9,
+   "y": 43.0,
+   "z": -220.6,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "Space",
+   "label": "Space",
+   "region": 0,
+   "degree": 26,
+   "x": -262.3,
+   "y": 57.8,
+   "z": 0.0,
+   "t": 1782198744,
+   "last": 1794239595
+  },
+  {
+   "id": "Space Lua",
+   "label": "Space Lua",
+   "region": 0,
+   "degree": 67,
+   "x": -250.4,
+   "y": -35.6,
+   "z": 147.5,
+   "t": 1782198744,
+   "last": 1794559913
+  },
+  {
+   "id": "Space Lua/Conventions",
+   "label": "Space Lua/Conventions",
+   "region": 4,
+   "degree": 7,
+   "x": -112.2,
+   "y": -114.2,
+   "z": -206.7,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Space Lua/DOM",
+   "label": "Space Lua/DOM",
+   "region": 8,
+   "degree": 5,
+   "x": -92.4,
+   "y": 15.0,
+   "z": -272.4,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Space Lua/Integrated Query",
+   "label": "Space Lua/Integrated Query",
+   "region": 3,
+   "degree": 21,
+   "x": 212.1,
+   "y": -79.7,
+   "z": 208.4,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Space Lua/Integrated Query/Aggregating",
+   "label": "Space Lua/Integrated Query/Aggregating",
+   "region": 23,
+   "degree": 5,
+   "x": -45.5,
+   "y": -1.3,
+   "z": -187.0,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Space Lua/Integrated Query/Grouping",
+   "label": "Space Lua/Integrated Query/Grouping",
+   "region": 23,
+   "degree": 4,
+   "x": -48.7,
+   "y": 44.5,
+   "z": -179.4,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Space Lua/JavaScript Interop",
+   "label": "Space Lua/JavaScript Interop",
+   "region": 9,
+   "degree": 4,
+   "x": -102.4,
+   "y": -148.1,
+   "z": 101.3,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Space Lua/Page Lua",
+   "label": "Space Lua/Page Lua",
+   "region": 18,
+   "degree": 8,
+   "x": 60.8,
+   "y": 104.3,
+   "z": -126.6,
+   "t": 1791799394,
+   "last": 1793712965
+  },
+  {
+   "id": "Space Lua/Quirks",
+   "label": "Space Lua/Quirks",
+   "region": 0,
+   "degree": 2,
+   "x": -119.5,
+   "y": -137.4,
+   "z": 162.4,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Space Lua/Standard Library",
+   "label": "Space Lua/Standard Library",
+   "region": 9,
+   "degree": 9,
+   "x": -167.0,
+   "y": -163.4,
+   "z": 42.8,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Space Lua/Thread Locals",
+   "label": "Space Lua/Thread Locals",
+   "region": 0,
+   "degree": 2,
+   "x": -179.9,
+   "y": -90.9,
+   "z": 237.3,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Space Style",
+   "label": "Space Style",
+   "region": 5,
+   "degree": 24,
+   "x": 170.7,
+   "y": -69.0,
+   "z": -266.1,
+   "t": 1782198744,
+   "last": 1794559913
+  },
+  {
+   "id": "Sync",
+   "label": "Sync",
+   "region": 0,
+   "degree": 20,
+   "x": -231.7,
+   "y": 119.1,
+   "z": 34.2,
+   "t": 1782198744,
+   "last": 1794239595
+  },
+  {
+   "id": "TLS",
+   "label": "TLS",
+   "region": 0,
+   "degree": 9,
+   "x": -255.8,
+   "y": -17.4,
+   "z": -134.7,
+   "t": 1782198744,
+   "last": 1793539933
+  },
+  {
+   "id": "Tag",
+   "label": "Tag",
+   "region": 4,
+   "degree": 33,
+   "x": -212.9,
+   "y": -55.2,
+   "z": -231.0,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Tag Picker",
+   "label": "Tag Picker",
+   "region": 6,
+   "degree": 5,
+   "x": -93.3,
+   "y": -21.1,
+   "z": 272.1,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Tag/ambiguous-link",
+   "label": "Tag/ambiguous-link",
+   "region": 14,
+   "degree": 4,
+   "x": 71.7,
+   "y": 61.5,
+   "z": 219.8,
+   "t": 1792393117,
+   "last": 1793712965
+  },
+  {
+   "id": "Tag/anchor",
+   "label": "Tag/anchor",
+   "region": 6,
+   "degree": 7,
+   "x": -191.9,
+   "y": -52.8,
+   "z": 261.0,
+   "t": 1792393117,
+   "last": 1793712965
+  },
+  {
+   "id": "Tag/aspiring-page",
+   "label": "Tag/aspiring-page",
+   "region": 14,
+   "degree": 4,
+   "x": 48.3,
+   "y": 22.6,
+   "z": 190.9,
+   "t": 1792393117,
+   "last": 1793955151
+  },
+  {
+   "id": "Tag/data",
+   "label": "Tag/data",
+   "region": 1,
+   "degree": 19,
+   "x": 242.9,
+   "y": -103.5,
+   "z": 19.6,
+   "t": 1792393117,
+   "last": 1794239595
+  },
+  {
+   "id": "Tag/document",
+   "label": "Tag/document",
+   "region": 4,
+   "degree": 2,
+   "x": -190.1,
+   "y": -35.5,
+   "z": -271.9,
+   "t": 1792393117,
+   "last": 1793539933
+  },
+  {
+   "id": "Tag/header",
+   "label": "Tag/header",
+   "region": 4,
+   "degree": 2,
+   "x": -214.8,
+   "y": -2.5,
+   "z": -248.1,
+   "t": 1792393117,
+   "last": 1793712965
+  },
+  {
+   "id": "Tag/identity",
+   "label": "Tag/identity",
+   "region": 7,
+   "degree": 4,
+   "x": 188.2,
+   "y": 156.8,
+   "z": 22.8,
+   "t": 1792393117,
+   "last": 1793539933
+  },
+  {
+   "id": "Tag/item",
+   "label": "Tag/item",
+   "region": 4,
+   "degree": 7,
+   "x": -165.3,
+   "y": -67.7,
+   "z": -269.9,
+   "t": 1792393117,
+   "last": 1793712965
+  },
+  {
+   "id": "Tag/meta/theme",
+   "label": "Tag/meta/theme",
+   "region": 5,
+   "degree": 7,
+   "x": 176.3,
+   "y": -138.0,
+   "z": -152.8,
+   "t": 1794555830,
+   "last": 1794555830
+  },
+  {
+   "id": "Tag/page",
+   "label": "Tag/page",
+   "region": 4,
+   "degree": 7,
+   "x": -251.8,
+   "y": -58.8,
+   "z": -114.2,
+   "t": 1792393117,
+   "last": 1793712965
+  },
+  {
+   "id": "Tag/paragraph",
+   "label": "Tag/paragraph",
+   "region": 4,
+   "degree": 3,
+   "x": -236.7,
+   "y": -17.6,
+   "z": -200.7,
+   "t": 1792393117,
+   "last": 1794239595
+  },
+  {
+   "id": "Tag/relation",
+   "label": "Tag/relation",
+   "region": 7,
+   "degree": 13,
+   "x": 136.5,
+   "y": 167.7,
+   "z": 2.9,
+   "t": 1792393117,
+   "last": 1794225727
+  },
+  {
+   "id": "Tag/space-lua",
+   "label": "Tag/space-lua",
+   "region": 23,
+   "degree": 5,
+   "x": 74.9,
+   "y": 106.8,
+   "z": 163.0,
+   "t": 1792393117,
+   "last": 1794225727
+  },
+  {
+   "id": "Tag/space-style",
+   "label": "Tag/space-style",
+   "region": 23,
+   "degree": 4,
+   "x": 121.4,
+   "y": 123.8,
+   "z": 195.6,
+   "t": 1792393117,
+   "last": 1794225727
+  },
+  {
+   "id": "Tag/table",
+   "label": "Tag/table",
+   "region": 4,
+   "degree": 3,
+   "x": -82.4,
+   "y": -119.6,
+   "z": -151.2,
+   "t": 1792393117,
+   "last": 1793712965
+  },
+  {
+   "id": "Tag/tag",
+   "label": "Tag/tag",
+   "region": 6,
+   "degree": 5,
+   "x": -147.6,
+   "y": -83.1,
+   "z": 260.6,
+   "t": 1792393117,
+   "last": 1793539933
+  },
+  {
+   "id": "Tag/task",
+   "label": "Tag/task",
+   "region": 4,
+   "degree": 8,
+   "x": -139.5,
+   "y": -95.1,
+   "z": -247.0,
+   "t": 1792393117,
+   "last": 1793712965
+  },
+  {
+   "id": "Task",
+   "label": "Task",
+   "region": 2,
+   "degree": 14,
+   "x": 166.6,
+   "y": 131.9,
+   "z": -177.9,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "Template",
+   "label": "Template",
+   "region": 12,
+   "degree": 9,
+   "x": 53.2,
+   "y": 4.5,
+   "z": -207.8,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Theming",
+   "label": "Theming",
+   "region": 5,
+   "degree": 14,
+   "x": 158.4,
+   "y": -104.8,
+   "z": -232.0,
+   "t": 1794555830,
+   "last": 1794559913
+  },
+  {
+   "id": "Theming/Creating a Theme",
+   "label": "Theming/Creating a Theme",
+   "region": 5,
+   "degree": 12,
+   "x": 144.7,
+   "y": -133.2,
+   "z": -182.7,
+   "t": 1794554243,
+   "last": 1794559913
+  },
+  {
+   "id": "Theming/Selectors",
+   "label": "Theming/Selectors",
+   "region": 5,
+   "degree": 5,
+   "x": 189.8,
+   "y": -108.8,
+   "z": -200.8,
+   "t": 1794554243,
+   "last": 1794559913
+  },
+  {
+   "id": "Theming/Selectors/Data",
+   "label": "Theming/Selectors/Data",
+   "region": 5,
+   "degree": 1,
+   "x": 219.3,
+   "y": -102.2,
+   "z": -156.7,
+   "t": 1794554243,
+   "last": 1794554243
+  },
+  {
+   "id": "Theming/Upgrading Existing Styles",
+   "label": "Theming/Upgrading Existing Styles",
+   "region": 5,
+   "degree": 5,
+   "x": 95.4,
+   "y": -134.8,
+   "z": -136.4,
+   "t": 1794554243,
+   "last": 1794559913
+  },
+  {
+   "id": "Theming/Variables",
+   "label": "Theming/Variables",
+   "region": 5,
+   "degree": 7,
+   "x": 125.6,
+   "y": -93.4,
+   "z": -245.5,
+   "t": 1794554243,
+   "last": 1794559913
+  },
+  {
+   "id": "Theming/Variables/Data",
+   "label": "Theming/Variables/Data",
+   "region": 5,
+   "degree": 1,
+   "x": 104.9,
+   "y": -45.3,
+   "z": -273.4,
+   "t": 1794554243,
+   "last": 1794559913
+  },
+  {
+   "id": "Tool Page",
+   "label": "Tool Page",
+   "region": 1,
+   "degree": 33,
+   "x": 268.8,
+   "y": 23.3,
+   "z": 0.0,
+   "t": 1794225727,
+   "last": 1794580532
+  },
+  {
+   "id": "Tool Page Picker",
+   "label": "Tool Page Picker",
+   "region": 2,
+   "degree": 5,
+   "x": 48.5,
+   "y": 68.4,
+   "z": -152.9,
+   "t": 1794580507,
+   "last": 1794580532
+  },
+  {
+   "id": "Top Bar",
+   "label": "Top Bar",
+   "region": 0,
+   "degree": 7,
+   "x": -234.4,
+   "y": -13.0,
+   "z": 207.7,
+   "t": 1782198744,
+   "last": 1794555830
+  },
+  {
+   "id": "Transclusions",
+   "label": "Transclusions",
+   "region": 2,
+   "degree": 9,
+   "x": 119.9,
+   "y": 115.9,
+   "z": -209.5,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "Troubleshooting",
+   "label": "Troubleshooting",
+   "region": 0,
+   "degree": 15,
+   "x": -209.8,
+   "y": 134.2,
+   "z": 89.9,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "URI",
+   "label": "URI",
+   "region": 1,
+   "degree": 10,
+   "x": 257.9,
+   "y": 3.4,
+   "z": 128.1,
+   "t": 1782198744,
+   "last": 1789116831
+  },
+  {
+   "id": "Videos",
+   "label": "Videos",
+   "region": 0,
+   "degree": 1,
+   "x": -134.4,
+   "y": -114.9,
+   "z": 217.6,
+   "t": 1789650320,
+   "last": 1793712965
+  },
+  {
+   "id": "View",
+   "label": "View",
+   "region": 22,
+   "degree": 19,
+   "x": 92.0,
+   "y": -77.7,
+   "z": -235.3,
+   "t": 1789559105,
+   "last": 1794555830
+  },
+  {
+   "id": "Vim",
+   "label": "Vim",
+   "region": 15,
+   "degree": 5,
+   "x": -114.3,
+   "y": -70.1,
+   "z": 263.3,
+   "t": 1782198744,
+   "last": 1794239595
+  },
+  {
+   "id": "Virtual Pages",
+   "label": "Virtual Pages",
+   "region": 8,
+   "degree": 6,
+   "x": -72.0,
+   "y": 84.5,
+   "z": -194.5,
+   "t": 1782198744,
+   "last": 1794225727
+  },
+  {
+   "id": "Widget",
+   "label": "Widget",
+   "region": 8,
+   "degree": 8,
+   "x": -117.2,
+   "y": 47.5,
+   "z": -280.6,
+   "t": 1791201672,
+   "last": 1794555830
+  },
+  {
+   "id": "Workbench",
+   "label": "Workbench",
+   "region": 1,
+   "degree": 24,
+   "x": 266.8,
+   "y": -28.5,
+   "z": -43.9,
+   "t": 1792161830,
+   "last": 1794239595
+  },
+  {
+   "id": "Workbench/Code",
+   "label": "Workbench/Code",
+   "region": 5,
+   "degree": 6,
+   "x": 182.2,
+   "y": -29.2,
+   "z": -281.1,
+   "t": 1793889376,
+   "last": 1793894570
+  },
+  {
+   "id": "Workbench/Code/Scripts",
+   "label": "Workbench/Code/Scripts",
+   "region": 5,
+   "degree": 7,
+   "x": 193.7,
+   "y": 10.8,
+   "z": -275.0,
+   "t": 1793894570,
+   "last": 1794225727
+  },
+  {
+   "id": "Workbench/Code/Styles",
+   "label": "Workbench/Code/Styles",
+   "region": 5,
+   "degree": 8,
+   "x": 213.7,
+   "y": -33.7,
+   "z": -242.5,
+   "t": 1793894570,
+   "last": 1794559913
+  },
+  {
+   "id": "Workbench/Configuration",
+   "label": "Workbench/Configuration",
+   "region": 1,
+   "degree": 20,
+   "x": 266.6,
+   "y": 11.6,
+   "z": -66.1,
+   "t": 1793359470,
+   "last": 1794555830
+  },
+  {
+   "id": "Workbench/Console",
+   "label": "Workbench/Console",
+   "region": 0,
+   "degree": 13,
+   "x": -246.4,
+   "y": -92.4,
+   "z": -57.8,
+   "t": 1793091021,
+   "last": 1793712965
+  },
+  {
+   "id": "Workbench/Data",
+   "label": "Workbench/Data",
+   "region": 1,
+   "degree": 19,
+   "x": 245.8,
+   "y": -80.1,
+   "z": -103.8,
+   "t": 1793889376,
+   "last": 1794559913
+  },
+  {
+   "id": "Workbench/Libraries",
+   "label": "Workbench/Libraries",
+   "region": 1,
+   "degree": 14,
+   "x": 260.1,
+   "y": 62.0,
+   "z": -37.1,
+   "t": 1793091021,
+   "last": 1794559913
+  },
+  {
+   "id": "Workbench/Maintenance",
+   "label": "Workbench/Maintenance",
+   "region": 14,
+   "degree": 7,
+   "x": 69.7,
+   "y": 9.8,
+   "z": 241.6,
+   "t": 1793955151,
+   "last": 1793955151
+  },
+  {
+   "id": "Workbench/Overview",
+   "label": "Workbench/Overview",
+   "region": 7,
+   "degree": 6,
+   "x": 118.8,
+   "y": 161.0,
+   "z": -61.5,
+   "t": 1793091021,
+   "last": 1793539933
+  },
+  {
+   "id": "Writing",
+   "label": "Writing",
+   "region": 2,
+   "degree": 2,
+   "x": 167.9,
+   "y": 163.9,
+   "z": -33.7,
+   "t": 1790673866,
+   "last": 1793712965
+  },
+  {
+   "id": "X-Ray",
+   "label": "X-Ray",
+   "region": 20,
+   "degree": 6,
+   "x": 87.0,
+   "y": -106.1,
+   "z": 189.0,
+   "t": 1782198744,
+   "last": 1793539933
+  },
+  {
+   "id": "YAML",
+   "label": "YAML",
+   "region": 4,
+   "degree": 6,
+   "x": -157.6,
+   "y": -152.3,
+   "z": -122.3,
+   "t": 1782198744,
+   "last": 1793290966
+  },
+  {
+   "id": "Zef Hemel",
+   "label": "Zef Hemel",
+   "region": 3,
+   "degree": 16,
+   "x": 192.4,
+   "y": 48.7,
+   "z": 262.9,
+   "t": 1782198744,
+   "last": 1790774517
+  },
+  {
+   "id": "Zero Tracking",
+   "label": "Zero Tracking",
+   "region": 1,
+   "degree": 4,
+   "x": 225.5,
+   "y": 98.1,
+   "z": 147.1,
+   "t": 1782198744,
+   "last": 1793712965
+  },
+  {
+   "id": "index",
+   "label": "index",
+   "region": 0,
+   "degree": 1,
+   "x": -222.6,
+   "y": -52.0,
+   "z": 215.3,
+   "t": 1656418455,
+   "last": 1782198744
+  }
+ ],
+ "edges": [
+  {
+   "source": "ADR",
+   "target": "ADR/001 Offline-First PWA"
+  },
+  {
+   "source": "ADR",
+   "target": "ADR/002 Sync Engine"
+  },
+  {
+   "source": "ADR",
+   "target": "ADR/003 Indexed Object Graph"
+  },
+  {
+   "source": "ADR",
+   "target": "ADR/004 Federation"
+  },
+  {
+   "source": "ADR",
+   "target": "ADR/005 Space Lua"
+  },
+  {
+   "source": "ADR",
+   "target": "ADR/006 Space Lua Integrated Query"
+  },
+  {
+   "source": "ADR",
+   "target": "ADR/007 Core Application Logic on the Client"
+  },
+  {
+   "source": "ADR",
+   "target": "ADR/008 Go Backend"
+  },
+  {
+   "source": "ADR",
+   "target": "ADR/009 Client Build Toolchain"
+  },
+  {
+   "source": "ADR",
+   "target": "ADR/010 Rust Backend"
+  },
+  {
+   "source": "ADR",
+   "target": "ADR/011 Link Resolution by Name"
+  },
+  {
+   "source": "ADR",
+   "target": "ADR/012 Tooling Lives in Library"
+  },
+  {
+   "source": "ADR",
+   "target": "ADR/013 Server-Side Search"
+  },
+  {
+   "source": "ADR",
+   "target": "Architecture"
+  },
+  {
+   "source": "ADR",
+   "target": "Baked Sections"
+  },
+  {
+   "source": "ADR",
+   "target": "Library/ADR Styles"
+  },
+  {
+   "source": "ADR",
+   "target": "Reference/Technical Reference"
+  },
+  {
+   "source": "ADR",
+   "target": "Zef Hemel"
+  },
+  {
+   "source": "ADR/001 Offline-First PWA",
+   "target": "ADR/002 Sync Engine"
+  },
+  {
+   "source": "ADR/001 Offline-First PWA",
+   "target": "ADR/003 Indexed Object Graph"
+  },
+  {
+   "source": "ADR/001 Offline-First PWA",
+   "target": "ADR/007 Core Application Logic on the Client"
+  },
+  {
+   "source": "ADR/001 Offline-First PWA",
+   "target": "ADR/010 Rust Backend"
+  },
+  {
+   "source": "ADR/001 Offline-First PWA",
+   "target": "ADR/012 Tooling Lives in Library"
+  },
+  {
+   "source": "ADR/001 Offline-First PWA",
+   "target": "ADR/013 Server-Side Search"
+  },
+  {
+   "source": "ADR/001 Offline-First PWA",
+   "target": "Architecture"
+  },
+  {
+   "source": "ADR/001 Offline-First PWA",
+   "target": "Baked Sections"
+  },
+  {
+   "source": "ADR/001 Offline-First PWA",
+   "target": "Object Index"
+  },
+  {
+   "source": "ADR/001 Offline-First PWA",
+   "target": "Space"
+  },
+  {
+   "source": "ADR/001 Offline-First PWA",
+   "target": "Sync"
+  },
+  {
+   "source": "ADR/001 Offline-First PWA",
+   "target": "Zef Hemel"
+  },
+  {
+   "source": "ADR/002 Sync Engine",
+   "target": "ADR/003 Indexed Object Graph"
+  },
+  {
+   "source": "ADR/002 Sync Engine",
+   "target": "ADR/007 Core Application Logic on the Client"
+  },
+  {
+   "source": "ADR/002 Sync Engine",
+   "target": "ADR/008 Go Backend"
+  },
+  {
+   "source": "ADR/002 Sync Engine",
+   "target": "ADR/010 Rust Backend"
+  },
+  {
+   "source": "ADR/002 Sync Engine",
+   "target": "Architecture"
+  },
+  {
+   "source": "ADR/002 Sync Engine",
+   "target": "Baked Sections"
+  },
+  {
+   "source": "ADR/002 Sync Engine",
+   "target": "Sync"
+  },
+  {
+   "source": "ADR/002 Sync Engine",
+   "target": "Zef Hemel"
+  },
+  {
+   "source": "ADR/003 Indexed Object Graph",
+   "target": "ADR/005 Space Lua"
+  },
+  {
+   "source": "ADR/003 Indexed Object Graph",
+   "target": "ADR/006 Space Lua Integrated Query"
+  },
+  {
+   "source": "ADR/003 Indexed Object Graph",
+   "target": "ADR/007 Core Application Logic on the Client"
+  },
+  {
+   "source": "ADR/003 Indexed Object Graph",
+   "target": "ADR/011 Link Resolution by Name"
+  },
+  {
+   "source": "ADR/003 Indexed Object Graph",
+   "target": "ADR/012 Tooling Lives in Library"
+  },
+  {
+   "source": "ADR/003 Indexed Object Graph",
+   "target": "API/index"
+  },
+  {
+   "source": "ADR/003 Indexed Object Graph",
+   "target": "Graph View"
+  },
+  {
+   "source": "ADR/003 Indexed Object Graph",
+   "target": "Linked Mention"
+  },
+  {
+   "source": "ADR/003 Indexed Object Graph",
+   "target": "Linked Tasks"
+  },
+  {
+   "source": "ADR/003 Indexed Object Graph",
+   "target": "Object"
+  },
+  {
+   "source": "ADR/003 Indexed Object Graph",
+   "target": "Object Index"
+  },
+  {
+   "source": "ADR/003 Indexed Object Graph",
+   "target": "Space Lua/Integrated Query"
+  },
+  {
+   "source": "ADR/003 Indexed Object Graph",
+   "target": "Tag"
+  },
+  {
+   "source": "ADR/003 Indexed Object Graph",
+   "target": "Tag/page"
+  },
+  {
+   "source": "ADR/003 Indexed Object Graph",
+   "target": "Tag/relation"
+  },
+  {
+   "source": "ADR/003 Indexed Object Graph",
+   "target": "Tag/task"
+  },
+  {
+   "source": "ADR/003 Indexed Object Graph",
+   "target": "Zef Hemel"
+  },
+  {
+   "source": "ADR/004 Federation",
+   "target": "Library"
+  },
+  {
+   "source": "ADR/004 Federation",
+   "target": "Space Lua"
+  },
+  {
+   "source": "ADR/004 Federation",
+   "target": "Zef Hemel"
+  },
+  {
+   "source": "ADR/005 Space Lua",
+   "target": "ADR/006 Space Lua Integrated Query"
+  },
+  {
+   "source": "ADR/005 Space Lua",
+   "target": "ADR/012 Tooling Lives in Library"
+  },
+  {
+   "source": "ADR/005 Space Lua",
+   "target": "ADR/014 Themes as Pages"
+  },
+  {
+   "source": "ADR/005 Space Lua",
+   "target": "Live Preview"
+  },
+  {
+   "source": "ADR/005 Space Lua",
+   "target": "Migrate from v1"
+  },
+  {
+   "source": "ADR/005 Space Lua",
+   "target": "Object Index"
+  },
+  {
+   "source": "ADR/005 Space Lua",
+   "target": "Space Lua"
+  },
+  {
+   "source": "ADR/005 Space Lua",
+   "target": "Space Lua/Integrated Query"
+  },
+  {
+   "source": "ADR/005 Space Lua",
+   "target": "Zef Hemel"
+  },
+  {
+   "source": "ADR/006 Space Lua Integrated Query",
+   "target": "Object Index"
+  },
+  {
+   "source": "ADR/006 Space Lua Integrated Query",
+   "target": "Space Lua/Integrated Query"
+  },
+  {
+   "source": "ADR/006 Space Lua Integrated Query",
+   "target": "Zef Hemel"
+  },
+  {
+   "source": "ADR/007 Core Application Logic on the Client",
+   "target": "ADR/008 Go Backend"
+  },
+  {
+   "source": "ADR/007 Core Application Logic on the Client",
+   "target": "ADR/009 Client Build Toolchain"
+  },
+  {
+   "source": "ADR/007 Core Application Logic on the Client",
+   "target": "ADR/010 Rust Backend"
+  },
+  {
+   "source": "ADR/007 Core Application Logic on the Client",
+   "target": "ADR/011 Link Resolution by Name"
+  },
+  {
+   "source": "ADR/007 Core Application Logic on the Client",
+   "target": "ADR/013 Server-Side Search"
+  },
+  {
+   "source": "ADR/007 Core Application Logic on the Client",
+   "target": "Architecture"
+  },
+  {
+   "source": "ADR/007 Core Application Logic on the Client",
+   "target": "Document"
+  },
+  {
+   "source": "ADR/007 Core Application Logic on the Client",
+   "target": "Object Index"
+  },
+  {
+   "source": "ADR/007 Core Application Logic on the Client",
+   "target": "Plugs"
+  },
+  {
+   "source": "ADR/007 Core Application Logic on the Client",
+   "target": "Space Lua"
+  },
+  {
+   "source": "ADR/007 Core Application Logic on the Client",
+   "target": "Sync"
+  },
+  {
+   "source": "ADR/007 Core Application Logic on the Client",
+   "target": "Zef Hemel"
+  },
+  {
+   "source": "ADR/008 Go Backend",
+   "target": "ADR/010 Rust Backend"
+  },
+  {
+   "source": "ADR/008 Go Backend",
+   "target": "Zef Hemel"
+  },
+  {
+   "source": "ADR/009 Client Build Toolchain",
+   "target": "ADR/010 Rust Backend"
+  },
+  {
+   "source": "ADR/009 Client Build Toolchain",
+   "target": "Plugs"
+  },
+  {
+   "source": "ADR/009 Client Build Toolchain",
+   "target": "Zef Hemel"
+  },
+  {
+   "source": "ADR/010 Rust Backend",
+   "target": "ADR/011 Link Resolution by Name"
+  },
+  {
+   "source": "ADR/010 Rust Backend",
+   "target": "ADR/013 Server-Side Search"
+  },
+  {
+   "source": "ADR/010 Rust Backend",
+   "target": "Plugs"
+  },
+  {
+   "source": "ADR/010 Rust Backend",
+   "target": "Runtime API"
+  },
+  {
+   "source": "ADR/010 Rust Backend",
+   "target": "Zef Hemel"
+  },
+  {
+   "source": "ADR/011 Link Resolution by Name",
+   "target": "Aspiring Pages"
+  },
+  {
+   "source": "ADR/011 Link Resolution by Name",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "ADR/011 Link Resolution by Name",
+   "target": "Examples/1/ambiguous link"
+  },
+  {
+   "source": "ADR/011 Link Resolution by Name",
+   "target": "Examples/2/ambiguous link"
+  },
+  {
+   "source": "ADR/011 Link Resolution by Name",
+   "target": "Link"
+  },
+  {
+   "source": "ADR/011 Link Resolution by Name",
+   "target": "Tag/ambiguous-link"
+  },
+  {
+   "source": "ADR/011 Link Resolution by Name",
+   "target": "Transclusions"
+  },
+  {
+   "source": "ADR/011 Link Resolution by Name",
+   "target": "Workbench/Configuration"
+  },
+  {
+   "source": "ADR/011 Link Resolution by Name",
+   "target": "Zef Hemel"
+  },
+  {
+   "source": "ADR/012 Tooling Lives in Library",
+   "target": "ADR/014 Themes as Pages"
+  },
+  {
+   "source": "ADR/012 Tooling Lives in Library",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "ADR/012 Tooling Lives in Library",
+   "target": "Zef Hemel"
+  },
+  {
+   "source": "ADR/013 Server-Side Search",
+   "target": "Revisions"
+  },
+  {
+   "source": "ADR/013 Server-Side Search",
+   "target": "Search"
+  },
+  {
+   "source": "ADR/013 Server-Side Search",
+   "target": "Zef Hemel"
+  },
+  {
+   "source": "ADR/014 Themes as Pages",
+   "target": "API/theme"
+  },
+  {
+   "source": "ADR/014 Themes as Pages",
+   "target": "Fonts"
+  },
+  {
+   "source": "ADR/014 Themes as Pages",
+   "target": "Library"
+  },
+  {
+   "source": "ADR/014 Themes as Pages",
+   "target": "Space Style"
+  },
+  {
+   "source": "ADR/014 Themes as Pages",
+   "target": "Tag/meta/theme"
+  },
+  {
+   "source": "ADR/014 Themes as Pages",
+   "target": "Zef Hemel"
+  },
+  {
+   "source": "API",
+   "target": "API/asset"
+  },
+  {
+   "source": "API",
+   "target": "API/auth"
+  },
+  {
+   "source": "API",
+   "target": "API/capture"
+  },
+  {
+   "source": "API",
+   "target": "API/clientStore"
+  },
+  {
+   "source": "API",
+   "target": "API/codeWidget"
+  },
+  {
+   "source": "API",
+   "target": "API/command"
+  },
+  {
+   "source": "API",
+   "target": "API/config"
+  },
+  {
+   "source": "API",
+   "target": "API/crypto"
+  },
+  {
+   "source": "API",
+   "target": "API/datastore"
+  },
+  {
+   "source": "API",
+   "target": "API/dom"
+  },
+  {
+   "source": "API",
+   "target": "API/editor"
+  },
+  {
+   "source": "API",
+   "target": "API/encoding"
+  },
+  {
+   "source": "API",
+   "target": "API/event"
+  },
+  {
+   "source": "API",
+   "target": "API/github"
+  },
+  {
+   "source": "API",
+   "target": "API/global"
+  },
+  {
+   "source": "API",
+   "target": "API/http"
+  },
+  {
+   "source": "API",
+   "target": "API/icon"
+  },
+  {
+   "source": "API",
+   "target": "API/identity"
+  },
+  {
+   "source": "API",
+   "target": "API/index"
+  },
+  {
+   "source": "API",
+   "target": "API/js"
+  },
+  {
+   "source": "API",
+   "target": "API/jsonschema"
+  },
+  {
+   "source": "API",
+   "target": "API/language"
+  },
+  {
+   "source": "API",
+   "target": "API/lua"
+  },
+  {
+   "source": "API",
+   "target": "API/markdown"
+  },
+  {
+   "source": "API",
+   "target": "API/markupBar"
+  },
+  {
+   "source": "API",
+   "target": "API/math"
+  },
+  {
+   "source": "API",
+   "target": "API/mq"
+  },
+  {
+   "source": "API",
+   "target": "API/net"
+  },
+  {
+   "source": "API",
+   "target": "API/oauth"
+  },
+  {
+   "source": "API",
+   "target": "API/object"
+  },
+  {
+   "source": "API",
+   "target": "API/os"
+  },
+  {
+   "source": "API",
+   "target": "API/pageVars"
+  },
+  {
+   "source": "API",
+   "target": "API/sbShare"
+  },
+  {
+   "source": "API",
+   "target": "API/search"
+  },
+  {
+   "source": "API",
+   "target": "API/service"
+  },
+  {
+   "source": "API",
+   "target": "API/share"
+  },
+  {
+   "source": "API",
+   "target": "API/shell"
+  },
+  {
+   "source": "API",
+   "target": "API/slashCommand"
+  },
+  {
+   "source": "API",
+   "target": "API/space"
+  },
+  {
+   "source": "API",
+   "target": "API/spacelua"
+  },
+  {
+   "source": "API",
+   "target": "API/string"
+  },
+  {
+   "source": "API",
+   "target": "API/sync"
+  },
+  {
+   "source": "API",
+   "target": "API/syntax"
+  },
+  {
+   "source": "API",
+   "target": "API/system"
+  },
+  {
+   "source": "API",
+   "target": "API/table"
+  },
+  {
+   "source": "API",
+   "target": "API/tag"
+  },
+  {
+   "source": "API",
+   "target": "API/taskState"
+  },
+  {
+   "source": "API",
+   "target": "API/template"
+  },
+  {
+   "source": "API",
+   "target": "API/view"
+  },
+  {
+   "source": "API",
+   "target": "API/widget"
+  },
+  {
+   "source": "API",
+   "target": "API/widgets"
+  },
+  {
+   "source": "API",
+   "target": "API/yaml"
+  },
+  {
+   "source": "API",
+   "target": "Architecture/Space Lua"
+  },
+  {
+   "source": "API",
+   "target": "Plugs/Development"
+  },
+  {
+   "source": "API",
+   "target": "Reference/Space Lua and APIs"
+  },
+  {
+   "source": "API",
+   "target": "Space Lua"
+  },
+  {
+   "source": "API/asset",
+   "target": "Plugs/Development/Reference"
+  },
+  {
+   "source": "API/auth",
+   "target": "API/github"
+  },
+  {
+   "source": "API/auth",
+   "target": "API/net"
+  },
+  {
+   "source": "API/auth",
+   "target": "API/oauth"
+  },
+  {
+   "source": "API/auth",
+   "target": "API/sbShare"
+  },
+  {
+   "source": "API/auth",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/capture",
+   "target": "Service"
+  },
+  {
+   "source": "API/codeWidget",
+   "target": "API/tag"
+  },
+  {
+   "source": "API/codeWidget",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/codeWidget",
+   "target": "Markdown/Comment"
+  },
+  {
+   "source": "API/codeWidget",
+   "target": "Tag/data"
+  },
+  {
+   "source": "API/command",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/config",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/config",
+   "target": "Fonts"
+  },
+  {
+   "source": "API/config",
+   "target": "Migrate from v1"
+  },
+  {
+   "source": "API/config",
+   "target": "Schema"
+  },
+  {
+   "source": "API/config",
+   "target": "Space Lua/Conventions"
+  },
+  {
+   "source": "API/config",
+   "target": "Theming"
+  },
+  {
+   "source": "API/config",
+   "target": "Virtual Pages"
+  },
+  {
+   "source": "API/config",
+   "target": "Workbench/Configuration"
+  },
+  {
+   "source": "API/crypto",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/datastore",
+   "target": "Architecture/Datastore"
+  },
+  {
+   "source": "API/datastore",
+   "target": "Reference/Indexing Internals"
+  },
+  {
+   "source": "API/dom",
+   "target": "API/tag"
+  },
+  {
+   "source": "API/dom",
+   "target": "API/widget"
+  },
+  {
+   "source": "API/dom",
+   "target": "API/widgets"
+  },
+  {
+   "source": "API/dom",
+   "target": "Space Lua/DOM"
+  },
+  {
+   "source": "API/dom",
+   "target": "Widget"
+  },
+  {
+   "source": "API/editor",
+   "target": "API/share"
+  },
+  {
+   "source": "API/editor",
+   "target": "API/view"
+  },
+  {
+   "source": "API/editor",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/editor",
+   "target": "CLI"
+  },
+  {
+   "source": "API/editor",
+   "target": "Space Lua"
+  },
+  {
+   "source": "API/encoding",
+   "target": "Space Lua/Standard Library"
+  },
+  {
+   "source": "API/event",
+   "target": "Completion"
+  },
+  {
+   "source": "API/event",
+   "target": "Event"
+  },
+  {
+   "source": "API/event",
+   "target": "Virtual Pages"
+  },
+  {
+   "source": "API/github",
+   "target": "API/oauth"
+  },
+  {
+   "source": "API/github",
+   "target": "API/share"
+  },
+  {
+   "source": "API/github",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/github",
+   "target": "Share"
+  },
+  {
+   "source": "API/global",
+   "target": "Space Lua/Standard Library"
+  },
+  {
+   "source": "API/http",
+   "target": "API/net"
+  },
+  {
+   "source": "API/http",
+   "target": "Plugs/Development/Distribution and Testing"
+  },
+  {
+   "source": "API/icon",
+   "target": "API/view"
+  },
+  {
+   "source": "API/icon",
+   "target": "API/widget"
+  },
+  {
+   "source": "API/icon",
+   "target": "Widget"
+  },
+  {
+   "source": "API/identity",
+   "target": "Authorship"
+  },
+  {
+   "source": "API/identity",
+   "target": "CLI"
+  },
+  {
+   "source": "API/identity",
+   "target": "Identity"
+  },
+  {
+   "source": "API/identity",
+   "target": "Recipient"
+  },
+  {
+   "source": "API/index",
+   "target": "API/object"
+  },
+  {
+   "source": "API/index",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/index",
+   "target": "Object Index"
+  },
+  {
+   "source": "API/index",
+   "target": "Reference/Indexing Internals"
+  },
+  {
+   "source": "API/index",
+   "target": "Space Lua/Integrated Query"
+  },
+  {
+   "source": "API/index",
+   "target": "Tag/data"
+  },
+  {
+   "source": "API/index",
+   "target": "Tag/relation"
+  },
+  {
+   "source": "API/js",
+   "target": "Library/Development"
+  },
+  {
+   "source": "API/js",
+   "target": "Space Lua/JavaScript Interop"
+  },
+  {
+   "source": "API/jsonschema",
+   "target": "Schema"
+  },
+  {
+   "source": "API/markdown",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/markupBar",
+   "target": "API/slashCommand"
+  },
+  {
+   "source": "API/markupBar",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/markupBar",
+   "target": "Slash Command"
+  },
+  {
+   "source": "API/markupBar",
+   "target": "Slash Templates"
+  },
+  {
+   "source": "API/math",
+   "target": "Space Lua/Standard Library"
+  },
+  {
+   "source": "API/mq",
+   "target": "Plugs/Development/Reference"
+  },
+  {
+   "source": "API/net",
+   "target": "API/share"
+  },
+  {
+   "source": "API/net",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/net",
+   "target": "HTTP API"
+  },
+  {
+   "source": "API/net",
+   "target": "Security"
+  },
+  {
+   "source": "API/net",
+   "target": "URI"
+  },
+  {
+   "source": "API/object",
+   "target": "API/tag"
+  },
+  {
+   "source": "API/object",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/object",
+   "target": "Live Object Edit"
+  },
+  {
+   "source": "API/object",
+   "target": "Object"
+  },
+  {
+   "source": "API/object",
+   "target": "Tag/data"
+  },
+  {
+   "source": "API/object",
+   "target": "Tag/table"
+  },
+  {
+   "source": "API/object",
+   "target": "Task"
+  },
+  {
+   "source": "API/os",
+   "target": "Space Lua/Standard Library"
+  },
+  {
+   "source": "API/pageVars",
+   "target": "Space Lua/Page Lua"
+  },
+  {
+   "source": "API/sbShare",
+   "target": "API/share"
+  },
+  {
+   "source": "API/search",
+   "target": "API/widget"
+  },
+  {
+   "source": "API/search",
+   "target": "Search"
+  },
+  {
+   "source": "API/search",
+   "target": "Space Lua"
+  },
+  {
+   "source": "API/service",
+   "target": "API/share"
+  },
+  {
+   "source": "API/service",
+   "target": "Event"
+  },
+  {
+   "source": "API/service",
+   "target": "Service"
+  },
+  {
+   "source": "API/service",
+   "target": "Workbench/Console"
+  },
+  {
+   "source": "API/share",
+   "target": "Baked Sections"
+  },
+  {
+   "source": "API/share",
+   "target": "Link"
+  },
+  {
+   "source": "API/share",
+   "target": "Share"
+  },
+  {
+   "source": "API/share",
+   "target": "URI"
+  },
+  {
+   "source": "API/share",
+   "target": "Workbench/Libraries"
+  },
+  {
+   "source": "API/shell",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/slashCommand",
+   "target": "Plugs/Development/Reference"
+  },
+  {
+   "source": "API/slashCommand",
+   "target": "Slash Command"
+  },
+  {
+   "source": "API/slashCommand",
+   "target": "Slash Templates"
+  },
+  {
+   "source": "API/slashCommand",
+   "target": "Space Lua/Conventions"
+  },
+  {
+   "source": "API/space",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/space",
+   "target": "CLI"
+  },
+  {
+   "source": "API/space",
+   "target": "Workbench/Maintenance"
+  },
+  {
+   "source": "API/spacelua",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/spacelua",
+   "target": "Space Lua"
+  },
+  {
+   "source": "API/string",
+   "target": "Space Lua/Integrated Query"
+  },
+  {
+   "source": "API/string",
+   "target": "Space Lua/Standard Library"
+  },
+  {
+   "source": "API/syntax",
+   "target": "API/widget"
+  },
+  {
+   "source": "API/syntax",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/syntax",
+   "target": "Library/Website/Doc Examples"
+  },
+  {
+   "source": "API/syntax",
+   "target": "Live Preview"
+  },
+  {
+   "source": "API/syntax",
+   "target": "Markdown"
+  },
+  {
+   "source": "API/syntax",
+   "target": "Space Style"
+  },
+  {
+   "source": "API/syntax",
+   "target": "Tool Page"
+  },
+  {
+   "source": "API/syntax",
+   "target": "Widget"
+  },
+  {
+   "source": "API/system",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/system",
+   "target": "Guide/Best Practices"
+  },
+  {
+   "source": "API/system",
+   "target": "Guide/When Results Update"
+  },
+  {
+   "source": "API/table",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/table",
+   "target": "Space Lua/Integrated Query"
+  },
+  {
+   "source": "API/table",
+   "target": "Space Lua/Standard Library"
+  },
+  {
+   "source": "API/tag",
+   "target": "API/widgets"
+  },
+  {
+   "source": "API/tag",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/tag",
+   "target": "Frontmatter"
+  },
+  {
+   "source": "API/tag",
+   "target": "Guide/Aggregator Pages"
+  },
+  {
+   "source": "API/tag",
+   "target": "Guide/When Results Update"
+  },
+  {
+   "source": "API/tag",
+   "target": "Library/Config"
+  },
+  {
+   "source": "API/tag",
+   "target": "Library/Website/Doc Examples"
+  },
+  {
+   "source": "API/tag",
+   "target": "Live Object Edit"
+  },
+  {
+   "source": "API/tag",
+   "target": "Log"
+  },
+  {
+   "source": "API/tag",
+   "target": "Metadata"
+  },
+  {
+   "source": "API/tag",
+   "target": "Object"
+  },
+  {
+   "source": "API/tag",
+   "target": "Object Index"
+  },
+  {
+   "source": "API/tag",
+   "target": "Page Decorations"
+  },
+  {
+   "source": "API/tag",
+   "target": "Reference/Indexing Internals"
+  },
+  {
+   "source": "API/tag",
+   "target": "Schema"
+  },
+  {
+   "source": "API/tag",
+   "target": "Space Lua"
+  },
+  {
+   "source": "API/tag",
+   "target": "Space Lua/Conventions"
+  },
+  {
+   "source": "API/tag",
+   "target": "Space Style"
+  },
+  {
+   "source": "API/tag",
+   "target": "Tag"
+  },
+  {
+   "source": "API/tag",
+   "target": "Tag/data"
+  },
+  {
+   "source": "API/tag",
+   "target": "Tool Page"
+  },
+  {
+   "source": "API/tag",
+   "target": "Workbench"
+  },
+  {
+   "source": "API/tag",
+   "target": "Workbench/Configuration"
+  },
+  {
+   "source": "API/tag",
+   "target": "Workbench/Data"
+  },
+  {
+   "source": "API/tag",
+   "target": "X-Ray"
+  },
+  {
+   "source": "API/taskState",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/taskState",
+   "target": "Markdown/Basics"
+  },
+  {
+   "source": "API/taskState",
+   "target": "Space Lua/Conventions"
+  },
+  {
+   "source": "API/taskState",
+   "target": "Tag/task"
+  },
+  {
+   "source": "API/taskState",
+   "target": "Task"
+  },
+  {
+   "source": "API/template",
+   "target": "Template"
+  },
+  {
+   "source": "API/theme",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/theme",
+   "target": "Theming"
+  },
+  {
+   "source": "API/theme",
+   "target": "Theming/Creating a Theme"
+  },
+  {
+   "source": "API/theme",
+   "target": "Theming/Upgrading Existing Styles"
+  },
+  {
+   "source": "API/view",
+   "target": "API/widget"
+  },
+  {
+   "source": "API/view",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/view",
+   "target": "Command"
+  },
+  {
+   "source": "API/view",
+   "target": "View"
+  },
+  {
+   "source": "API/widget",
+   "target": "API/widgets"
+  },
+  {
+   "source": "API/widget",
+   "target": "Baked Sections"
+  },
+  {
+   "source": "API/widget",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "API/widget",
+   "target": "Extensions"
+  },
+  {
+   "source": "API/widget",
+   "target": "Library/Website/Doc Examples"
+  },
+  {
+   "source": "API/widget",
+   "target": "Live Preview"
+  },
+  {
+   "source": "API/widget",
+   "target": "Object Index"
+  },
+  {
+   "source": "API/widget",
+   "target": "Space Lua"
+  },
+  {
+   "source": "API/widget",
+   "target": "Space Lua/Conventions"
+  },
+  {
+   "source": "API/widget",
+   "target": "Space Lua/DOM"
+  },
+  {
+   "source": "API/widget",
+   "target": "Space Lua/Page Lua"
+  },
+  {
+   "source": "API/widget",
+   "target": "Space Style"
+  },
+  {
+   "source": "API/widget",
+   "target": "Template"
+  },
+  {
+   "source": "API/widget",
+   "target": "Tool Page"
+  },
+  {
+   "source": "API/widget",
+   "target": "View"
+  },
+  {
+   "source": "API/widget",
+   "target": "Widget"
+  },
+  {
+   "source": "API/widgets",
+   "target": "Command"
+  },
+  {
+   "source": "API/widgets",
+   "target": "Space Lua"
+  },
+  {
+   "source": "API/widgets",
+   "target": "Workbench/Libraries"
+  },
+  {
+   "source": "Account",
+   "target": "Authentication"
+  },
+  {
+   "source": "Account",
+   "target": "Dashboard"
+  },
+  {
+   "source": "Account",
+   "target": "Identity"
+  },
+  {
+   "source": "Account",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Account",
+   "target": "Single Sign-On"
+  },
+  {
+   "source": "Administration",
+   "target": "Getting Started"
+  },
+  {
+   "source": "Administration",
+   "target": "Guide/Desktop Setup"
+  },
+  {
+   "source": "Administration",
+   "target": "Guide/Devices and Publishing"
+  },
+  {
+   "source": "Administration",
+   "target": "Guide/Git Sync"
+  },
+  {
+   "source": "Administration",
+   "target": "Guide/Server Setup"
+  },
+  {
+   "source": "Administration",
+   "target": "Guides"
+  },
+  {
+   "source": "Administration",
+   "target": "Install"
+  },
+  {
+   "source": "Administration",
+   "target": "Log"
+  },
+  {
+   "source": "Administration",
+   "target": "Manual"
+  },
+  {
+   "source": "Administration",
+   "target": "SilverBullet"
+  },
+  {
+   "source": "Administration",
+   "target": "Troubleshooting"
+  },
+  {
+   "source": "Anything Picker",
+   "target": "Command Palette"
+  },
+  {
+   "source": "Anything Picker",
+   "target": "Page Decorations"
+  },
+  {
+   "source": "Anything Picker",
+   "target": "Page Picker"
+  },
+  {
+   "source": "Anything Picker",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Anything Picker",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Anything Picker",
+   "target": "View"
+  },
+  {
+   "source": "Architecture",
+   "target": "Architecture/Client"
+  },
+  {
+   "source": "Architecture",
+   "target": "Architecture/Client Bundle Cache"
+  },
+  {
+   "source": "Architecture",
+   "target": "Architecture/Datastore"
+  },
+  {
+   "source": "Architecture",
+   "target": "Architecture/Editor"
+  },
+  {
+   "source": "Architecture",
+   "target": "Architecture/Events"
+  },
+  {
+   "source": "Architecture",
+   "target": "Architecture/File System API"
+  },
+  {
+   "source": "Architecture",
+   "target": "Architecture/Plugs"
+  },
+  {
+   "source": "Architecture",
+   "target": "Architecture/Runtime Manager"
+  },
+  {
+   "source": "Architecture",
+   "target": "Architecture/Server"
+  },
+  {
+   "source": "Architecture",
+   "target": "Architecture/Service Worker"
+  },
+  {
+   "source": "Architecture",
+   "target": "Architecture/Services"
+  },
+  {
+   "source": "Architecture",
+   "target": "Architecture/Space Files"
+  },
+  {
+   "source": "Architecture",
+   "target": "Architecture/Space Lua"
+  },
+  {
+   "source": "Architecture",
+   "target": "Architecture/Synced Files"
+  },
+  {
+   "source": "Architecture",
+   "target": "Architecture/Syscalls"
+  },
+  {
+   "source": "Architecture",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "Architecture",
+   "target": "Desktop Sync"
+  },
+  {
+   "source": "Architecture",
+   "target": "PWA"
+  },
+  {
+   "source": "Architecture",
+   "target": "Reference/Technical Reference"
+  },
+  {
+   "source": "Architecture",
+   "target": "Runtime API"
+  },
+  {
+   "source": "Architecture",
+   "target": "Sync"
+  },
+  {
+   "source": "Architecture/Client",
+   "target": "Architecture/Datastore"
+  },
+  {
+   "source": "Architecture/Client",
+   "target": "Architecture/Editor"
+  },
+  {
+   "source": "Architecture/Client",
+   "target": "Architecture/Events"
+  },
+  {
+   "source": "Architecture/Client",
+   "target": "Architecture/Plugs"
+  },
+  {
+   "source": "Architecture/Client",
+   "target": "Architecture/Runtime Manager"
+  },
+  {
+   "source": "Architecture/Client",
+   "target": "Architecture/Server"
+  },
+  {
+   "source": "Architecture/Client",
+   "target": "Architecture/Service Worker"
+  },
+  {
+   "source": "Architecture/Client",
+   "target": "Architecture/Services"
+  },
+  {
+   "source": "Architecture/Client",
+   "target": "Architecture/Space Lua"
+  },
+  {
+   "source": "Architecture/Client",
+   "target": "Architecture/Syscalls"
+  },
+  {
+   "source": "Architecture/Client",
+   "target": "HTTP API"
+  },
+  {
+   "source": "Architecture/Client Bundle Cache",
+   "target": "Architecture/Service Worker"
+  },
+  {
+   "source": "Architecture/Datastore",
+   "target": "Architecture/Syscalls"
+  },
+  {
+   "source": "Architecture/Datastore",
+   "target": "Object Index"
+  },
+  {
+   "source": "Architecture/Datastore",
+   "target": "Sync"
+  },
+  {
+   "source": "Architecture/Editor",
+   "target": "Architecture/Syscalls"
+  },
+  {
+   "source": "Architecture/Editor",
+   "target": "Editor"
+  },
+  {
+   "source": "Architecture/Editor",
+   "target": "Markdown/Extensions"
+  },
+  {
+   "source": "Architecture/Events",
+   "target": "Architecture/Syscalls"
+  },
+  {
+   "source": "Architecture/Events",
+   "target": "Event"
+  },
+  {
+   "source": "Architecture/File System API",
+   "target": "Architecture/Server"
+  },
+  {
+   "source": "Architecture/File System API",
+   "target": "Architecture/Space Files"
+  },
+  {
+   "source": "Architecture/File System API",
+   "target": "HTTP API"
+  },
+  {
+   "source": "Architecture/Plugs",
+   "target": "Architecture/Syscalls"
+  },
+  {
+   "source": "Architecture/Plugs",
+   "target": "Library"
+  },
+  {
+   "source": "Architecture/Plugs",
+   "target": "Plugs"
+  },
+  {
+   "source": "Architecture/Runtime Manager",
+   "target": "Architecture/Server"
+  },
+  {
+   "source": "Architecture/Runtime Manager",
+   "target": "Runtime API"
+  },
+  {
+   "source": "Architecture/Server",
+   "target": "Architecture/Service Worker"
+  },
+  {
+   "source": "Architecture/Server",
+   "target": "Architecture/Space Files"
+  },
+  {
+   "source": "Architecture/Server",
+   "target": "Architecture/Synced Files"
+  },
+  {
+   "source": "Architecture/Server",
+   "target": "Dashboard"
+  },
+  {
+   "source": "Architecture/Server",
+   "target": "Desktop Sync"
+  },
+  {
+   "source": "Architecture/Server",
+   "target": "HTTP API"
+  },
+  {
+   "source": "Architecture/Server",
+   "target": "Object Index"
+  },
+  {
+   "source": "Architecture/Server",
+   "target": "Revisions"
+  },
+  {
+   "source": "Architecture/Server",
+   "target": "Runtime API"
+  },
+  {
+   "source": "Architecture/Server",
+   "target": "Search"
+  },
+  {
+   "source": "Architecture/Server",
+   "target": "Sync"
+  },
+  {
+   "source": "Architecture/Service Worker",
+   "target": "Architecture/Space Files"
+  },
+  {
+   "source": "Architecture/Service Worker",
+   "target": "Architecture/Synced Files"
+  },
+  {
+   "source": "Architecture/Service Worker",
+   "target": "HTTP API"
+  },
+  {
+   "source": "Architecture/Service Worker",
+   "target": "Sync"
+  },
+  {
+   "source": "Architecture/Services",
+   "target": "Architecture/Syscalls"
+  },
+  {
+   "source": "Architecture/Services",
+   "target": "Service"
+  },
+  {
+   "source": "Architecture/Services",
+   "target": "Share"
+  },
+  {
+   "source": "Architecture/Space Files",
+   "target": "Space"
+  },
+  {
+   "source": "Architecture/Space Lua",
+   "target": "Architecture/Syscalls"
+  },
+  {
+   "source": "Architecture/Space Lua",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Architecture/Synced Files",
+   "target": "Space"
+  },
+  {
+   "source": "Architecture/Synced Files",
+   "target": "Sync"
+  },
+  {
+   "source": "Aspiring Pages",
+   "target": "Completion"
+  },
+  {
+   "source": "Aspiring Pages",
+   "target": "Graph View"
+  },
+  {
+   "source": "Aspiring Pages",
+   "target": "Guide/Best Practices"
+  },
+  {
+   "source": "Aspiring Pages",
+   "target": "Guide/Find and Connect Pages"
+  },
+  {
+   "source": "Aspiring Pages",
+   "target": "Link"
+  },
+  {
+   "source": "Aspiring Pages",
+   "target": "Object Index"
+  },
+  {
+   "source": "Aspiring Pages",
+   "target": "Page"
+  },
+  {
+   "source": "Aspiring Pages",
+   "target": "Page Picker"
+  },
+  {
+   "source": "Aspiring Pages",
+   "target": "Reference/Concepts"
+  },
+  {
+   "source": "Aspiring Pages",
+   "target": "Tag/aspiring-page"
+  },
+  {
+   "source": "At-Mention",
+   "target": "Authorship"
+  },
+  {
+   "source": "At-Mention",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "At-Mention",
+   "target": "Guide/Comments, Mentions and Replies"
+  },
+  {
+   "source": "At-Mention",
+   "target": "Identity"
+  },
+  {
+   "source": "At-Mention",
+   "target": "Recipient"
+  },
+  {
+   "source": "At-Mention",
+   "target": "Reference/Indexing Internals"
+  },
+  {
+   "source": "At-Mention",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "At-Mention",
+   "target": "Tag/identity"
+  },
+  {
+   "source": "At-Mention",
+   "target": "Tag/relation"
+  },
+  {
+   "source": "Attribute",
+   "target": "Frontmatter"
+  },
+  {
+   "source": "Attribute",
+   "target": "Guide/Add Structure and Query"
+  },
+  {
+   "source": "Attribute",
+   "target": "Guide/Best Practices"
+  },
+  {
+   "source": "Attribute",
+   "target": "Guide/Knowledge Base"
+  },
+  {
+   "source": "Attribute",
+   "target": "Guide/Task Management"
+  },
+  {
+   "source": "Attribute",
+   "target": "Knowledge Management System"
+  },
+  {
+   "source": "Attribute",
+   "target": "Markdown/Extensions"
+  },
+  {
+   "source": "Attribute",
+   "target": "Metadata"
+  },
+  {
+   "source": "Attribute",
+   "target": "Object"
+  },
+  {
+   "source": "Attribute",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Attribute",
+   "target": "Tag/item"
+  },
+  {
+   "source": "Attribute",
+   "target": "Task"
+  },
+  {
+   "source": "Attribute",
+   "target": "YAML"
+  },
+  {
+   "source": "Authelia",
+   "target": "PWA"
+  },
+  {
+   "source": "Authelia",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Authentication",
+   "target": "Authentication Proxy"
+  },
+  {
+   "source": "Authentication",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "Authentication",
+   "target": "CLI"
+  },
+  {
+   "source": "Authentication",
+   "target": "Client Encryption"
+  },
+  {
+   "source": "Authentication",
+   "target": "Dashboard"
+  },
+  {
+   "source": "Authentication",
+   "target": "Desktop Sync"
+  },
+  {
+   "source": "Authentication",
+   "target": "Guide/Server Setup"
+  },
+  {
+   "source": "Authentication",
+   "target": "HTTP API"
+  },
+  {
+   "source": "Authentication",
+   "target": "Install/Configuration"
+  },
+  {
+   "source": "Authentication",
+   "target": "Install/Docker"
+  },
+  {
+   "source": "Authentication",
+   "target": "Install/Network and Internet"
+  },
+  {
+   "source": "Authentication",
+   "target": "Install/Server Binary"
+  },
+  {
+   "source": "Authentication",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Authentication",
+   "target": "Single Sign-On"
+  },
+  {
+   "source": "Authentication",
+   "target": "Space"
+  },
+  {
+   "source": "Authentication",
+   "target": "TLS"
+  },
+  {
+   "source": "Authentication Proxy",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Authentication Proxy",
+   "target": "TLS"
+  },
+  {
+   "source": "Authorship",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "Authorship",
+   "target": "Guide/Comments, Mentions and Replies"
+  },
+  {
+   "source": "Authorship",
+   "target": "Identity"
+  },
+  {
+   "source": "Authorship",
+   "target": "Recipient"
+  },
+  {
+   "source": "Authorship",
+   "target": "Reference/Indexing Internals"
+  },
+  {
+   "source": "Authorship",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Authorship",
+   "target": "Revisions"
+  },
+  {
+   "source": "Baked Sections",
+   "target": "CHANGELOG"
+  },
+  {
+   "source": "Baked Sections",
+   "target": "Export"
+  },
+  {
+   "source": "Baked Sections",
+   "target": "Guide/Aggregator Pages"
+  },
+  {
+   "source": "Baked Sections",
+   "target": "Guide/Knowledge Base"
+  },
+  {
+   "source": "Baked Sections",
+   "target": "Guide/When Results Update"
+  },
+  {
+   "source": "Baked Sections",
+   "target": "Live Preview"
+  },
+  {
+   "source": "Baked Sections",
+   "target": "Markdown"
+  },
+  {
+   "source": "Baked Sections",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Baked Sections",
+   "target": "Share"
+  },
+  {
+   "source": "Baked Sections",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Baked Sections",
+   "target": "Space Lua/Integrated Query"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "CLI"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Client Encryption"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Collaboration"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Configuration Manager"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Dashboard"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Desktop"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Event"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Export"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Frontmatter"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Full Text Search"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Guide/Journal"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Identity"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Install/Configuration"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Keyboard Shortcuts"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Library"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Library/Development"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Link"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Linked Mention"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Live Object Edit"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Live Preview"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "MCP"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Markdown/Anchor"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Markdown/Comment"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Markdown/Fenced Code Block"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Markdown/Footnotes"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Object"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Object Graph"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Outlines"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Page Decorations"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Page Picker"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Page Template"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Plugs/Development"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Plugs/Development/Reference"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Recipient"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Reference/Technical Reference"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Repository"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Revisions"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Runtime API"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Schema"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Search"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Service"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Share"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Single Sign-On"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Slash Command"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Space"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Space Lua"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Space Lua/Integrated Query"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Space Lua/Integrated Query/Aggregating"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Space Lua/Integrated Query/Grouping"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Space Lua/Page Lua"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Space Style"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Sync"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "TLS"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Tag"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Tag Picker"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Tag/data"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Tag/relation"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Task"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Theming"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Theming/Creating a Theme"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Theming/Upgrading Existing Styles"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Tool Page"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Transclusions"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Troubleshooting"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "URI"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "View"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Vim"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Virtual Pages"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Workbench"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Workbench/Code"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Workbench/Configuration"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Workbench/Console"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Workbench/Data"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Workbench/Libraries"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Workbench/Maintenance"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "Workbench/Overview"
+  },
+  {
+   "source": "CHANGELOG",
+   "target": "X-Ray"
+  },
+  {
+   "source": "CLI",
+   "target": "HTTP API"
+  },
+  {
+   "source": "CLI",
+   "target": "Install/Configuration"
+  },
+  {
+   "source": "CLI",
+   "target": "Install/Desktop"
+  },
+  {
+   "source": "CLI",
+   "target": "Install/Server Binary"
+  },
+  {
+   "source": "CLI",
+   "target": "Install/Server Modes"
+  },
+  {
+   "source": "CLI",
+   "target": "Local Space"
+  },
+  {
+   "source": "CLI",
+   "target": "MCP"
+  },
+  {
+   "source": "CLI",
+   "target": "Reference/Technical Reference"
+  },
+  {
+   "source": "CLI",
+   "target": "Runtime API"
+  },
+  {
+   "source": "CLI",
+   "target": "Search"
+  },
+  {
+   "source": "CLI",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Client Encryption",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Client Encryption",
+   "target": "TLS"
+  },
+  {
+   "source": "Collaboration",
+   "target": "Dashboard"
+  },
+  {
+   "source": "Collaboration",
+   "target": "Desktop Sync"
+  },
+  {
+   "source": "Collaboration",
+   "target": "Guide/Comments, Mentions and Replies"
+  },
+  {
+   "source": "Collaboration",
+   "target": "Guide/Server Setup"
+  },
+  {
+   "source": "Collaboration",
+   "target": "Guide/Working Together"
+  },
+  {
+   "source": "Collaboration",
+   "target": "HTTP API"
+  },
+  {
+   "source": "Collaboration",
+   "target": "Live Preview"
+  },
+  {
+   "source": "Collaboration",
+   "target": "Markdown/Comment"
+  },
+  {
+   "source": "Collaboration",
+   "target": "PWA"
+  },
+  {
+   "source": "Collaboration",
+   "target": "Recipient"
+  },
+  {
+   "source": "Collaboration",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Collaboration",
+   "target": "Space"
+  },
+  {
+   "source": "Collaboration",
+   "target": "Sync"
+  },
+  {
+   "source": "Command",
+   "target": "Command Palette"
+  },
+  {
+   "source": "Command",
+   "target": "Extensions"
+  },
+  {
+   "source": "Command",
+   "target": "Keyboard Shortcuts"
+  },
+  {
+   "source": "Command",
+   "target": "Local Space"
+  },
+  {
+   "source": "Command",
+   "target": "Plugs"
+  },
+  {
+   "source": "Command",
+   "target": "Plugs/Development/Reference"
+  },
+  {
+   "source": "Command",
+   "target": "Reference/Space Lua and APIs"
+  },
+  {
+   "source": "Command",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Command",
+   "target": "View"
+  },
+  {
+   "source": "Command",
+   "target": "Vim"
+  },
+  {
+   "source": "Command",
+   "target": "Workbench/Configuration"
+  },
+  {
+   "source": "Command Palette",
+   "target": "Guide/My First Markdown Page"
+  },
+  {
+   "source": "Command Palette",
+   "target": "Keyboard Shortcuts"
+  },
+  {
+   "source": "Command Palette",
+   "target": "Page Picker"
+  },
+  {
+   "source": "Command Palette",
+   "target": "Plugs/Development"
+  },
+  {
+   "source": "Command Palette",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Command Palette",
+   "target": "Top Bar"
+  },
+  {
+   "source": "Command Palette",
+   "target": "View"
+  },
+  {
+   "source": "Command Palette",
+   "target": "Workbench/Configuration"
+  },
+  {
+   "source": "Completion",
+   "target": "Event"
+  },
+  {
+   "source": "Completion",
+   "target": "Frontmatter"
+  },
+  {
+   "source": "Completion",
+   "target": "Link"
+  },
+  {
+   "source": "Completion",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Completion",
+   "target": "Slash Command"
+  },
+  {
+   "source": "Completion",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Configuration Manager",
+   "target": "Workbench"
+  },
+  {
+   "source": "Configuration Manager",
+   "target": "Workbench/Configuration"
+  },
+  {
+   "source": "Configuration Manager",
+   "target": "Workbench/Libraries"
+  },
+  {
+   "source": "Dashboard",
+   "target": "Guide/Server Setup"
+  },
+  {
+   "source": "Dashboard",
+   "target": "HTTP API"
+  },
+  {
+   "source": "Dashboard",
+   "target": "Index Page"
+  },
+  {
+   "source": "Dashboard",
+   "target": "Install/Configuration"
+  },
+  {
+   "source": "Dashboard",
+   "target": "Install/Server Binary"
+  },
+  {
+   "source": "Dashboard",
+   "target": "Install/Server Modes"
+  },
+  {
+   "source": "Dashboard",
+   "target": "MCP"
+  },
+  {
+   "source": "Dashboard",
+   "target": "Publishing"
+  },
+  {
+   "source": "Dashboard",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Dashboard",
+   "target": "Revisions"
+  },
+  {
+   "source": "Dashboard",
+   "target": "Security"
+  },
+  {
+   "source": "Dashboard",
+   "target": "Security Profiles"
+  },
+  {
+   "source": "Dashboard",
+   "target": "Space"
+  },
+  {
+   "source": "Dashboard",
+   "target": "Troubleshooting"
+  },
+  {
+   "source": "Deployments/Caddy",
+   "target": "Guide/Server Setup"
+  },
+  {
+   "source": "Desktop",
+   "target": "Desktop Sync"
+  },
+  {
+   "source": "Desktop",
+   "target": "Guide/Server Setup"
+  },
+  {
+   "source": "Desktop",
+   "target": "Install"
+  },
+  {
+   "source": "Desktop",
+   "target": "MCP"
+  },
+  {
+   "source": "Desktop",
+   "target": "PWA"
+  },
+  {
+   "source": "Desktop",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Desktop",
+   "target": "SilverBullet"
+  },
+  {
+   "source": "Desktop",
+   "target": "Sync"
+  },
+  {
+   "source": "Desktop",
+   "target": "Videos"
+  },
+  {
+   "source": "Desktop Sync",
+   "target": "Guide/Desktop Setup"
+  },
+  {
+   "source": "Desktop Sync",
+   "target": "Guide/Devices and Publishing"
+  },
+  {
+   "source": "Desktop Sync",
+   "target": "Install"
+  },
+  {
+   "source": "Desktop Sync",
+   "target": "Install/Desktop"
+  },
+  {
+   "source": "Desktop Sync",
+   "target": "Local Space"
+  },
+  {
+   "source": "Desktop Sync",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Desktop Sync",
+   "target": "Sync"
+  },
+  {
+   "source": "Desktop Sync",
+   "target": "Troubleshooting"
+  },
+  {
+   "source": "Development",
+   "target": "Library/Development"
+  },
+  {
+   "source": "Development",
+   "target": "Manual"
+  },
+  {
+   "source": "Development",
+   "target": "Plugs"
+  },
+  {
+   "source": "Development",
+   "target": "Plugs/Development"
+  },
+  {
+   "source": "Development",
+   "target": "Plugs/Development/Distribution and Testing"
+  },
+  {
+   "source": "Development",
+   "target": "SilverBullet"
+  },
+  {
+   "source": "Development",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Discovery",
+   "target": "Guide/Find and Connect Pages"
+  },
+  {
+   "source": "Discovery",
+   "target": "Guide/Finding Content"
+  },
+  {
+   "source": "Discovery",
+   "target": "Guide/My First Markdown Page"
+  },
+  {
+   "source": "Document",
+   "target": "File Tree"
+  },
+  {
+   "source": "Document",
+   "target": "Guide/Knowledge Base"
+  },
+  {
+   "source": "Document",
+   "target": "Link"
+  },
+  {
+   "source": "Document",
+   "target": "Names"
+  },
+  {
+   "source": "Document",
+   "target": "Page"
+  },
+  {
+   "source": "Document",
+   "target": "Reference/Concepts"
+  },
+  {
+   "source": "Document",
+   "target": "Space"
+  },
+  {
+   "source": "Document",
+   "target": "Sync"
+  },
+  {
+   "source": "Document",
+   "target": "Transclusions"
+  },
+  {
+   "source": "Document",
+   "target": "Workbench/Overview"
+  },
+  {
+   "source": "Document Editor",
+   "target": "File Tree"
+  },
+  {
+   "source": "Document Editor",
+   "target": "Plugs/Development/Document Editors"
+  },
+  {
+   "source": "Document Editor",
+   "target": "Reference/Space Lua and APIs"
+  },
+  {
+   "source": "Document Editor",
+   "target": "Workbench/Libraries"
+  },
+  {
+   "source": "Editor",
+   "target": "Markdown"
+  },
+  {
+   "source": "Editor",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Event",
+   "target": "Log"
+  },
+  {
+   "source": "Event",
+   "target": "Object"
+  },
+  {
+   "source": "Event",
+   "target": "Object Index"
+  },
+  {
+   "source": "Event",
+   "target": "Plugs/Development/Reference"
+  },
+  {
+   "source": "Event",
+   "target": "Reference/Space Lua and APIs"
+  },
+  {
+   "source": "Event",
+   "target": "Service"
+  },
+  {
+   "source": "Event",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Event",
+   "target": "Vim"
+  },
+  {
+   "source": "Event",
+   "target": "Virtual Pages"
+  },
+  {
+   "source": "Event",
+   "target": "Widget"
+  },
+  {
+   "source": "Example/Person",
+   "target": "Tag/relation"
+  },
+  {
+   "source": "Examples/Budget",
+   "target": "Space Lua/Page Lua"
+  },
+  {
+   "source": "Export",
+   "target": "Guide/Devices and Publishing"
+  },
+  {
+   "source": "Export",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Export",
+   "target": "Share"
+  },
+  {
+   "source": "Export",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Extensions",
+   "target": "Library"
+  },
+  {
+   "source": "Extensions",
+   "target": "Page Template"
+  },
+  {
+   "source": "Extensions",
+   "target": "Plugs"
+  },
+  {
+   "source": "Extensions",
+   "target": "Reference/Space Lua and APIs"
+  },
+  {
+   "source": "Extensions",
+   "target": "Slash Templates"
+  },
+  {
+   "source": "Extensions",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Extensions",
+   "target": "Space Style"
+  },
+  {
+   "source": "Extensions",
+   "target": "Virtual Pages"
+  },
+  {
+   "source": "Extensions",
+   "target": "Workbench/Libraries"
+  },
+  {
+   "source": "File Tree",
+   "target": "Guide/Best Practices"
+  },
+  {
+   "source": "File Tree",
+   "target": "Guide/Find and Connect Pages"
+  },
+  {
+   "source": "File Tree",
+   "target": "Guide/Finding Content"
+  },
+  {
+   "source": "File Tree",
+   "target": "Page"
+  },
+  {
+   "source": "File Tree",
+   "target": "Page Picker"
+  },
+  {
+   "source": "File Tree",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "File Tree",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Folder",
+   "target": "Guide/Best Practices"
+  },
+  {
+   "source": "Folder",
+   "target": "Page Picker"
+  },
+  {
+   "source": "Folder",
+   "target": "Reference/Concepts"
+  },
+  {
+   "source": "Folder",
+   "target": "Space"
+  },
+  {
+   "source": "Folder",
+   "target": "Tag"
+  },
+  {
+   "source": "Fonts",
+   "target": "Guide/Make it your own"
+  },
+  {
+   "source": "Fonts",
+   "target": "Library"
+  },
+  {
+   "source": "Fonts",
+   "target": "Markdown/Fenced Code Block"
+  },
+  {
+   "source": "Fonts",
+   "target": "Space Style"
+  },
+  {
+   "source": "Fonts",
+   "target": "Tag/meta/theme"
+  },
+  {
+   "source": "Fonts",
+   "target": "Theming"
+  },
+  {
+   "source": "Fonts",
+   "target": "Theming/Creating a Theme"
+  },
+  {
+   "source": "Fonts",
+   "target": "Theming/Variables"
+  },
+  {
+   "source": "Fonts",
+   "target": "Workbench"
+  },
+  {
+   "source": "Fonts",
+   "target": "Workbench/Configuration"
+  },
+  {
+   "source": "Frontmatter",
+   "target": "Guide/Add Structure and Query"
+  },
+  {
+   "source": "Frontmatter",
+   "target": "Guide/Best Practices"
+  },
+  {
+   "source": "Frontmatter",
+   "target": "Guide/Knowledge Base"
+  },
+  {
+   "source": "Frontmatter",
+   "target": "Library/Development"
+  },
+  {
+   "source": "Frontmatter",
+   "target": "Live Object Edit"
+  },
+  {
+   "source": "Frontmatter",
+   "target": "Markdown/Anchor"
+  },
+  {
+   "source": "Frontmatter",
+   "target": "Markdown/Extensions"
+  },
+  {
+   "source": "Frontmatter",
+   "target": "Metadata"
+  },
+  {
+   "source": "Frontmatter",
+   "target": "Migrate from v1"
+  },
+  {
+   "source": "Frontmatter",
+   "target": "Page Decorations"
+  },
+  {
+   "source": "Frontmatter",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Frontmatter",
+   "target": "Schema"
+  },
+  {
+   "source": "Frontmatter",
+   "target": "Share"
+  },
+  {
+   "source": "Frontmatter",
+   "target": "Slash Templates"
+  },
+  {
+   "source": "Frontmatter",
+   "target": "Tag"
+  },
+  {
+   "source": "Frontmatter",
+   "target": "Tag/meta/theme"
+  },
+  {
+   "source": "Frontmatter",
+   "target": "Tag/page"
+  },
+  {
+   "source": "Frontmatter",
+   "target": "Tag/tag"
+  },
+  {
+   "source": "Frontmatter",
+   "target": "YAML"
+  },
+  {
+   "source": "Full Text Search",
+   "target": "Search"
+  },
+  {
+   "source": "Getting Started",
+   "target": "Guide/Add Structure and Query"
+  },
+  {
+   "source": "Getting Started",
+   "target": "Guide/Best Practices"
+  },
+  {
+   "source": "Getting Started",
+   "target": "Guide/Find and Connect Pages"
+  },
+  {
+   "source": "Getting Started",
+   "target": "Guide/Finding Content"
+  },
+  {
+   "source": "Getting Started",
+   "target": "Guide/Knowledge Base"
+  },
+  {
+   "source": "Getting Started",
+   "target": "Guide/Make it your own"
+  },
+  {
+   "source": "Getting Started",
+   "target": "Guide/My First Markdown Page"
+  },
+  {
+   "source": "Getting Started",
+   "target": "Guide/Task Management"
+  },
+  {
+   "source": "Getting Started",
+   "target": "Guides"
+  },
+  {
+   "source": "Getting Started",
+   "target": "Install"
+  },
+  {
+   "source": "Getting Started",
+   "target": "Install/Desktop"
+  },
+  {
+   "source": "Getting Started",
+   "target": "Install/Server"
+  },
+  {
+   "source": "Getting Started",
+   "target": "Install/Server Binary"
+  },
+  {
+   "source": "Getting Started",
+   "target": "Manual"
+  },
+  {
+   "source": "Getting Started",
+   "target": "Reference"
+  },
+  {
+   "source": "Getting Started",
+   "target": "SilverBullet"
+  },
+  {
+   "source": "Getting Started",
+   "target": "Writing"
+  },
+  {
+   "source": "Git",
+   "target": "Guide/Devices and Publishing"
+  },
+  {
+   "source": "Git",
+   "target": "Guide/Git Sync"
+  },
+  {
+   "source": "Git",
+   "target": "Local Space"
+  },
+  {
+   "source": "Git",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Git",
+   "target": "Revisions"
+  },
+  {
+   "source": "Glossary",
+   "target": "Reference"
+  },
+  {
+   "source": "Glossary",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Graph View",
+   "target": "Guide/Find and Connect Pages"
+  },
+  {
+   "source": "Graph View",
+   "target": "Object"
+  },
+  {
+   "source": "Graph View",
+   "target": "Object Graph"
+  },
+  {
+   "source": "Graph View",
+   "target": "Plugs/Development/Reference"
+  },
+  {
+   "source": "Graph View",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Graph View",
+   "target": "Tag"
+  },
+  {
+   "source": "Graph View",
+   "target": "Tag/relation"
+  },
+  {
+   "source": "Graph View",
+   "target": "View"
+  },
+  {
+   "source": "Graph View",
+   "target": "X-Ray"
+  },
+  {
+   "source": "Guide",
+   "target": "Guides"
+  },
+  {
+   "source": "Guide/Add Structure and Query",
+   "target": "Guide/Best Practices"
+  },
+  {
+   "source": "Guide/Add Structure and Query",
+   "target": "Guide/Find and Connect Pages"
+  },
+  {
+   "source": "Guide/Add Structure and Query",
+   "target": "Guide/Task Management"
+  },
+  {
+   "source": "Guide/Add Structure and Query",
+   "target": "Live Object Edit"
+  },
+  {
+   "source": "Guide/Add Structure and Query",
+   "target": "Metadata"
+  },
+  {
+   "source": "Guide/Add Structure and Query",
+   "target": "Object"
+  },
+  {
+   "source": "Guide/Add Structure and Query",
+   "target": "Tag"
+  },
+  {
+   "source": "Guide/Add Structure and Query",
+   "target": "Tag/data"
+  },
+  {
+   "source": "Guide/Add Structure and Query",
+   "target": "Tag/item"
+  },
+  {
+   "source": "Guide/Add Structure and Query",
+   "target": "Tag/page"
+  },
+  {
+   "source": "Guide/Add Structure and Query",
+   "target": "Tag/paragraph"
+  },
+  {
+   "source": "Guide/Add Structure and Query",
+   "target": "Tag/task"
+  },
+  {
+   "source": "Guide/Add Structure and Query",
+   "target": "Workbench/Data"
+  },
+  {
+   "source": "Guide/Add Structure and Query",
+   "target": "YAML"
+  },
+  {
+   "source": "Guide/Aggregator Pages",
+   "target": "Guide/Best Practices"
+  },
+  {
+   "source": "Guide/Aggregator Pages",
+   "target": "Guide/Knowledge Base"
+  },
+  {
+   "source": "Guide/Aggregator Pages",
+   "target": "Guide/When Results Update"
+  },
+  {
+   "source": "Guide/Aggregator Pages",
+   "target": "Markdown/Hashtags"
+  },
+  {
+   "source": "Guide/Aggregator Pages",
+   "target": "Object Index"
+  },
+  {
+   "source": "Guide/Aggregator Pages",
+   "target": "Workbench/Data"
+  },
+  {
+   "source": "Guide/Best Practices",
+   "target": "Guide/Finding Content"
+  },
+  {
+   "source": "Guide/Best Practices",
+   "target": "Guide/Knowledge Base"
+  },
+  {
+   "source": "Guide/Best Practices",
+   "target": "Guide/When Results Update"
+  },
+  {
+   "source": "Guide/Best Practices",
+   "target": "Library"
+  },
+  {
+   "source": "Guide/Best Practices",
+   "target": "Link"
+  },
+  {
+   "source": "Guide/Best Practices",
+   "target": "Markdown/Hashtags"
+  },
+  {
+   "source": "Guide/Best Practices",
+   "target": "Names"
+  },
+  {
+   "source": "Guide/Best Practices",
+   "target": "Object Index"
+  },
+  {
+   "source": "Guide/Best Practices",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Guide/Best Practices",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Guide/Best Practices",
+   "target": "Workbench/Console"
+  },
+  {
+   "source": "Guide/Best Practices",
+   "target": "Workbench/Data"
+  },
+  {
+   "source": "Guide/Comments, Mentions and Replies",
+   "target": "Guide/Working Together"
+  },
+  {
+   "source": "Guide/Comments, Mentions and Replies",
+   "target": "Identity"
+  },
+  {
+   "source": "Guide/Comments, Mentions and Replies",
+   "target": "Markdown/Comment"
+  },
+  {
+   "source": "Guide/Comments, Mentions and Replies",
+   "target": "Recipient"
+  },
+  {
+   "source": "Guide/Comments, Mentions and Replies",
+   "target": "Revisions"
+  },
+  {
+   "source": "Guide/Desktop Setup",
+   "target": "Guide/My First Markdown Page"
+  },
+  {
+   "source": "Guide/Desktop Setup",
+   "target": "Guide/Server Setup"
+  },
+  {
+   "source": "Guide/Desktop Setup",
+   "target": "Install"
+  },
+  {
+   "source": "Guide/Desktop Setup",
+   "target": "Install/Desktop"
+  },
+  {
+   "source": "Guide/Desktop Setup",
+   "target": "Local Space"
+  },
+  {
+   "source": "Guide/Desktop Setup",
+   "target": "Log"
+  },
+  {
+   "source": "Guide/Desktop Setup",
+   "target": "Meta Space"
+  },
+  {
+   "source": "Guide/Desktop Setup",
+   "target": "Troubleshooting"
+  },
+  {
+   "source": "Guide/Devices and Publishing",
+   "target": "Guide/Git Sync"
+  },
+  {
+   "source": "Guide/Devices and Publishing",
+   "target": "Publishing"
+  },
+  {
+   "source": "Guide/Devices and Publishing",
+   "target": "Share"
+  },
+  {
+   "source": "Guide/Devices and Publishing",
+   "target": "Sync"
+  },
+  {
+   "source": "Guide/Find and Connect Pages",
+   "target": "Guide/Find and Connect Your Notes"
+  },
+  {
+   "source": "Guide/Find and Connect Pages",
+   "target": "Guide/My First Markdown Page"
+  },
+  {
+   "source": "Guide/Find and Connect Pages",
+   "target": "Linked Mention"
+  },
+  {
+   "source": "Guide/Find and Connect Pages",
+   "target": "Page Picker"
+  },
+  {
+   "source": "Guide/Find and Connect Pages",
+   "target": "Search"
+  },
+  {
+   "source": "Guide/Finding Content",
+   "target": "Guide/Finding Your Notes"
+  },
+  {
+   "source": "Guide/Finding Content",
+   "target": "Guide/Knowledge Base"
+  },
+  {
+   "source": "Guide/Finding Content",
+   "target": "Link"
+  },
+  {
+   "source": "Guide/Finding Content",
+   "target": "Linked Mention"
+  },
+  {
+   "source": "Guide/Finding Content",
+   "target": "Linking and Exploring"
+  },
+  {
+   "source": "Guide/Finding Content",
+   "target": "Markdown/Anchor"
+  },
+  {
+   "source": "Guide/Finding Content",
+   "target": "Names"
+  },
+  {
+   "source": "Guide/Finding Content",
+   "target": "Page Picker"
+  },
+  {
+   "source": "Guide/Finding Content",
+   "target": "Search"
+  },
+  {
+   "source": "Guide/Finding Content",
+   "target": "Tag Picker"
+  },
+  {
+   "source": "Guide/Git Sync",
+   "target": "Revisions"
+  },
+  {
+   "source": "Guide/Journal",
+   "target": "Guide/Knowledge Base"
+  },
+  {
+   "source": "Guide/Journal",
+   "target": "Linked Mention"
+  },
+  {
+   "source": "Guide/Journal",
+   "target": "Page Template"
+  },
+  {
+   "source": "Guide/Journal",
+   "target": "Workbench/Configuration"
+  },
+  {
+   "source": "Guide/Knowledge Base",
+   "target": "Linked Mention"
+  },
+  {
+   "source": "Guide/Knowledge Base",
+   "target": "Markdown/Hashtags"
+  },
+  {
+   "source": "Guide/Knowledge Base",
+   "target": "Page Picker"
+  },
+  {
+   "source": "Guide/Knowledge Base",
+   "target": "Search"
+  },
+  {
+   "source": "Guide/Knowledge Base",
+   "target": "Transclusions"
+  },
+  {
+   "source": "Guide/Knowledge Base",
+   "target": "Workbench/Data"
+  },
+  {
+   "source": "Guide/Make it your own",
+   "target": "Keyboard Shortcuts"
+  },
+  {
+   "source": "Guide/Make it your own",
+   "target": "Library"
+  },
+  {
+   "source": "Guide/Make it your own",
+   "target": "Page Template"
+  },
+  {
+   "source": "Guide/Make it your own",
+   "target": "Slash Templates"
+  },
+  {
+   "source": "Guide/Make it your own",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Guide/Make it your own",
+   "target": "Space Style"
+  },
+  {
+   "source": "Guide/Make it your own",
+   "target": "Theming"
+  },
+  {
+   "source": "Guide/Make it your own",
+   "target": "Workbench"
+  },
+  {
+   "source": "Guide/Make it your own",
+   "target": "Workbench/Libraries"
+  },
+  {
+   "source": "Guide/My First Markdown Page",
+   "target": "Live Preview"
+  },
+  {
+   "source": "Guide/My First Markdown Page",
+   "target": "Markdown"
+  },
+  {
+   "source": "Guide/My First Markdown Page",
+   "target": "Markdown/Footnotes"
+  },
+  {
+   "source": "Guide/My First Markdown Page",
+   "target": "Markdown/Syntax Highlighting"
+  },
+  {
+   "source": "Guide/My First Markdown Page",
+   "target": "Outlines"
+  },
+  {
+   "source": "Guide/My First Markdown Page",
+   "target": "Page"
+  },
+  {
+   "source": "Guide/My First Markdown Page",
+   "target": "Page Picker"
+  },
+  {
+   "source": "Guide/My First Markdown Page",
+   "target": "Slash Command"
+  },
+  {
+   "source": "Guide/Server Setup",
+   "target": "Guide/Working Together"
+  },
+  {
+   "source": "Guide/Server Setup",
+   "target": "Install"
+  },
+  {
+   "source": "Guide/Server Setup",
+   "target": "Install/Configuration"
+  },
+  {
+   "source": "Guide/Server Setup",
+   "target": "Install/Docker"
+  },
+  {
+   "source": "Guide/Server Setup",
+   "target": "Install/Network and Internet"
+  },
+  {
+   "source": "Guide/Server Setup",
+   "target": "Install/Server"
+  },
+  {
+   "source": "Guide/Server Setup",
+   "target": "Install/Server Binary"
+  },
+  {
+   "source": "Guide/Server Setup",
+   "target": "Install/Server Modes"
+  },
+  {
+   "source": "Guide/Server Setup",
+   "target": "Log"
+  },
+  {
+   "source": "Guide/Server Setup",
+   "target": "Publishing"
+  },
+  {
+   "source": "Guide/Server Setup",
+   "target": "Security"
+  },
+  {
+   "source": "Guide/Server Setup",
+   "target": "TLS"
+  },
+  {
+   "source": "Guide/Server Setup",
+   "target": "Troubleshooting"
+  },
+  {
+   "source": "Guide/Server Setup",
+   "target": "Workbench/Configuration"
+  },
+  {
+   "source": "Guide/Task Management",
+   "target": "Guide/When Results Update"
+  },
+  {
+   "source": "Guide/Task Management",
+   "target": "Linked Mention"
+  },
+  {
+   "source": "Guide/Task Management",
+   "target": "Linked Tasks"
+  },
+  {
+   "source": "Guide/Task Management",
+   "target": "Markdown/Hashtags"
+  },
+  {
+   "source": "Guide/Task Management",
+   "target": "Tag/task"
+  },
+  {
+   "source": "Guide/Task Management",
+   "target": "Task"
+  },
+  {
+   "source": "Guide/Task Management",
+   "target": "Workbench/Data"
+  },
+  {
+   "source": "Guide/When Results Update",
+   "target": "Object Index"
+  },
+  {
+   "source": "Guide/When Results Update",
+   "target": "Reference/Indexing Internals"
+  },
+  {
+   "source": "Guide/When Results Update",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Guide/When Results Update",
+   "target": "Search"
+  },
+  {
+   "source": "Guide/When Results Update",
+   "target": "Space Lua/Integrated Query"
+  },
+  {
+   "source": "Guide/When Results Update",
+   "target": "Space Lua/Page Lua"
+  },
+  {
+   "source": "Guide/When Results Update",
+   "target": "Template"
+  },
+  {
+   "source": "Guide/When Results Update",
+   "target": "Workbench/Code/Scripts"
+  },
+  {
+   "source": "Guide/When Results Update",
+   "target": "Workbench/Console"
+  },
+  {
+   "source": "Guide/When Results Update",
+   "target": "Workbench/Data"
+  },
+  {
+   "source": "Guides",
+   "target": "Manual"
+  },
+  {
+   "source": "Guides",
+   "target": "Reference"
+  },
+  {
+   "source": "Guides",
+   "target": "SilverBullet"
+  },
+  {
+   "source": "HTTP API",
+   "target": "Install/Configuration"
+  },
+  {
+   "source": "HTTP API",
+   "target": "MCP"
+  },
+  {
+   "source": "HTTP API",
+   "target": "Reference/Technical Reference"
+  },
+  {
+   "source": "HTTP API",
+   "target": "Revisions"
+  },
+  {
+   "source": "HTTP API",
+   "target": "Runtime API"
+  },
+  {
+   "source": "HTTP API",
+   "target": "Search"
+  },
+  {
+   "source": "Identity",
+   "target": "Recipient"
+  },
+  {
+   "source": "Identity",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Identity",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Identity",
+   "target": "Tag/identity"
+  },
+  {
+   "source": "Identity",
+   "target": "Tag/relation"
+  },
+  {
+   "source": "Index Page",
+   "target": "Page"
+  },
+  {
+   "source": "Index Page",
+   "target": "Publishing"
+  },
+  {
+   "source": "Index Page",
+   "target": "Reference/Concepts"
+  },
+  {
+   "source": "Index Page",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Index Page",
+   "target": "Top Bar"
+  },
+  {
+   "source": "Install",
+   "target": "Install/Desktop"
+  },
+  {
+   "source": "Install",
+   "target": "Install/Docker"
+  },
+  {
+   "source": "Install",
+   "target": "Install/Network and Internet"
+  },
+  {
+   "source": "Install",
+   "target": "Install/Server"
+  },
+  {
+   "source": "Install",
+   "target": "Install/Server Binary"
+  },
+  {
+   "source": "Install",
+   "target": "SilverBullet"
+  },
+  {
+   "source": "Install/Configuration",
+   "target": "Install/Docker"
+  },
+  {
+   "source": "Install/Configuration",
+   "target": "Install/Server Modes"
+  },
+  {
+   "source": "Install/Configuration",
+   "target": "Publishing"
+  },
+  {
+   "source": "Install/Configuration",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Install/Configuration",
+   "target": "Search"
+  },
+  {
+   "source": "Install/Configuration",
+   "target": "Sync"
+  },
+  {
+   "source": "Install/Configuration",
+   "target": "Troubleshooting"
+  },
+  {
+   "source": "Install/Desktop",
+   "target": "Install/Server"
+  },
+  {
+   "source": "Install/Desktop",
+   "target": "Licensing"
+  },
+  {
+   "source": "Install/Desktop",
+   "target": "Local Space"
+  },
+  {
+   "source": "Install/Docker",
+   "target": "Install/Server"
+  },
+  {
+   "source": "Install/Docker",
+   "target": "Runtime API"
+  },
+  {
+   "source": "Install/Docker",
+   "target": "SilverBullet"
+  },
+  {
+   "source": "Install/Network and Internet",
+   "target": "TLS"
+  },
+  {
+   "source": "Install/Network and Internet",
+   "target": "Troubleshooting"
+  },
+  {
+   "source": "Install/Server",
+   "target": "Install/Server Binary"
+  },
+  {
+   "source": "Install/Server",
+   "target": "Reference/Technical Reference"
+  },
+  {
+   "source": "Install/Server",
+   "target": "Sync"
+  },
+  {
+   "source": "Install/Server",
+   "target": "TLS"
+  },
+  {
+   "source": "Install/Server",
+   "target": "Troubleshooting"
+  },
+  {
+   "source": "Install/Server Binary",
+   "target": "SilverBullet"
+  },
+  {
+   "source": "Install/Server Modes",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Install/Server Modes",
+   "target": "Revisions"
+  },
+  {
+   "source": "Install/Server Modes",
+   "target": "Single Sign-On"
+  },
+  {
+   "source": "Keyboard Shortcuts",
+   "target": "Outlines"
+  },
+  {
+   "source": "Keyboard Shortcuts",
+   "target": "Page Template"
+  },
+  {
+   "source": "Keyboard Shortcuts",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Keyboard Shortcuts",
+   "target": "Vim"
+  },
+  {
+   "source": "Keyboard Shortcuts",
+   "target": "Workbench/Configuration"
+  },
+  {
+   "source": "Knowledge Management System",
+   "target": "Link"
+  },
+  {
+   "source": "Knowledge Management System",
+   "target": "Markdown"
+  },
+  {
+   "source": "Knowledge Management System",
+   "target": "Object"
+  },
+  {
+   "source": "Knowledge Management System",
+   "target": "Page"
+  },
+  {
+   "source": "Knowledge Management System",
+   "target": "Space"
+  },
+  {
+   "source": "Knowledge Management System",
+   "target": "Space Lua/Integrated Query"
+  },
+  {
+   "source": "Knowledge Management System",
+   "target": "Task"
+  },
+  {
+   "source": "Library",
+   "target": "Library/Development"
+  },
+  {
+   "source": "Library",
+   "target": "Markdown/Comment"
+  },
+  {
+   "source": "Library",
+   "target": "Page"
+  },
+  {
+   "source": "Library",
+   "target": "Page Template"
+  },
+  {
+   "source": "Library",
+   "target": "Plugs"
+  },
+  {
+   "source": "Library",
+   "target": "Plugs/Development"
+  },
+  {
+   "source": "Library",
+   "target": "Plugs/Development/Distribution and Testing"
+  },
+  {
+   "source": "Library",
+   "target": "Reference/Space Lua and APIs"
+  },
+  {
+   "source": "Library",
+   "target": "Repository"
+  },
+  {
+   "source": "Library",
+   "target": "Share"
+  },
+  {
+   "source": "Library",
+   "target": "Slash Command"
+  },
+  {
+   "source": "Library",
+   "target": "Space"
+  },
+  {
+   "source": "Library",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Library",
+   "target": "Space Style"
+  },
+  {
+   "source": "Library",
+   "target": "Theming"
+  },
+  {
+   "source": "Library",
+   "target": "Theming/Creating a Theme"
+  },
+  {
+   "source": "Library",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Library",
+   "target": "Workbench"
+  },
+  {
+   "source": "Library",
+   "target": "Workbench/Libraries"
+  },
+  {
+   "source": "Library",
+   "target": "Workbench/Maintenance"
+  },
+  {
+   "source": "Library",
+   "target": "Zero Tracking"
+  },
+  {
+   "source": "Library/Development",
+   "target": "Plugs/Development/Distribution and Testing"
+  },
+  {
+   "source": "Library/Development",
+   "target": "Repository"
+  },
+  {
+   "source": "Library/Development",
+   "target": "Share"
+  },
+  {
+   "source": "Library/Development",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Library/Development",
+   "target": "Tag/data"
+  },
+  {
+   "source": "Library/Development",
+   "target": "Theming/Creating a Theme"
+  },
+  {
+   "source": "Library/Development",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Library/Page Templates/ADR",
+   "target": "Zef Hemel"
+  },
+  {
+   "source": "Library/Website/Doc Examples",
+   "target": "Page Decorations"
+  },
+  {
+   "source": "Library/Website/Doc Examples",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Library/silverbulletmd/Themes/Classic",
+   "target": "Library/silverbulletmd/Themes/Classic/Dark"
+  },
+  {
+   "source": "Library/silverbulletmd/Themes/Classic",
+   "target": "Library/silverbulletmd/Themes/Classic/Light"
+  },
+  {
+   "source": "Library/silverbulletmd/Themes/Classic/Dark",
+   "target": "Library/silverbulletmd/Themes/Classic/Light"
+  },
+  {
+   "source": "Licensing",
+   "target": "Meta Space"
+  },
+  {
+   "source": "Licensing",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Link",
+   "target": "Linked Mention"
+  },
+  {
+   "source": "Link",
+   "target": "Linked Tasks"
+  },
+  {
+   "source": "Link",
+   "target": "Markdown/Anchor"
+  },
+  {
+   "source": "Link",
+   "target": "Markdown/Extensions"
+  },
+  {
+   "source": "Link",
+   "target": "Names"
+  },
+  {
+   "source": "Link",
+   "target": "Page Picker"
+  },
+  {
+   "source": "Link",
+   "target": "Paths"
+  },
+  {
+   "source": "Link",
+   "target": "Reference/Concepts"
+  },
+  {
+   "source": "Link",
+   "target": "Share"
+  },
+  {
+   "source": "Link",
+   "target": "SilverBullet"
+  },
+  {
+   "source": "Link",
+   "target": "Tag/ambiguous-link"
+  },
+  {
+   "source": "Link",
+   "target": "Tag/item"
+  },
+  {
+   "source": "Link",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Link",
+   "target": "Transclusions"
+  },
+  {
+   "source": "Link",
+   "target": "URI"
+  },
+  {
+   "source": "Link",
+   "target": "Workbench/Maintenance"
+  },
+  {
+   "source": "Link",
+   "target": "YAML"
+  },
+  {
+   "source": "Linked Mention",
+   "target": "Linked Tasks"
+  },
+  {
+   "source": "Linked Mention",
+   "target": "Object"
+  },
+  {
+   "source": "Linked Mention",
+   "target": "Object Index"
+  },
+  {
+   "source": "Linked Mention",
+   "target": "Publishing"
+  },
+  {
+   "source": "Linked Mention",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Linked Mention",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Linked Mention",
+   "target": "View"
+  },
+  {
+   "source": "Linked Tasks",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Linked Tasks",
+   "target": "Task"
+  },
+  {
+   "source": "Linked Tasks",
+   "target": "View"
+  },
+  {
+   "source": "Linking and Exploring",
+   "target": "Reference/Concepts"
+  },
+  {
+   "source": "Live Object Edit",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Live Object Edit",
+   "target": "Tag/data"
+  },
+  {
+   "source": "Live Object Edit",
+   "target": "Workbench/Configuration"
+  },
+  {
+   "source": "Live Preview",
+   "target": "Markdown"
+  },
+  {
+   "source": "Live Preview",
+   "target": "Markdown/Basics"
+  },
+  {
+   "source": "Live Preview",
+   "target": "Markdown/Footnotes"
+  },
+  {
+   "source": "Live Preview",
+   "target": "Markdown/HTML"
+  },
+  {
+   "source": "Live Preview",
+   "target": "Publishing"
+  },
+  {
+   "source": "Live Preview",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Live Preview",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Local Space",
+   "target": "Meta Space"
+  },
+  {
+   "source": "Local Space",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Local Space",
+   "target": "Revisions"
+  },
+  {
+   "source": "Local Space",
+   "target": "Space"
+  },
+  {
+   "source": "Local Space",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Log",
+   "target": "Sync"
+  },
+  {
+   "source": "Log",
+   "target": "Troubleshooting"
+  },
+  {
+   "source": "Log",
+   "target": "Workbench/Console"
+  },
+  {
+   "source": "MCP",
+   "target": "Reference/Technical Reference"
+  },
+  {
+   "source": "MCP",
+   "target": "Runtime API"
+  },
+  {
+   "source": "MCP",
+   "target": "Search"
+  },
+  {
+   "source": "MCP",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Manual",
+   "target": "Reference"
+  },
+  {
+   "source": "Manual",
+   "target": "SilverBullet"
+  },
+  {
+   "source": "Markdown",
+   "target": "Markdown/Anchor"
+  },
+  {
+   "source": "Markdown",
+   "target": "Markdown/Basics"
+  },
+  {
+   "source": "Markdown",
+   "target": "Markdown/Extensions"
+  },
+  {
+   "source": "Markdown",
+   "target": "Markdown/Fenced Code Block"
+  },
+  {
+   "source": "Markdown",
+   "target": "Markdown/HTML"
+  },
+  {
+   "source": "Markdown",
+   "target": "Markdown/Hashtags"
+  },
+  {
+   "source": "Markdown",
+   "target": "Markdown/Syntax Highlighting"
+  },
+  {
+   "source": "Markdown",
+   "target": "Object"
+  },
+  {
+   "source": "Markdown",
+   "target": "Page"
+  },
+  {
+   "source": "Markdown",
+   "target": "Reference"
+  },
+  {
+   "source": "Markdown",
+   "target": "SilverBullet"
+  },
+  {
+   "source": "Markdown",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Markdown",
+   "target": "Task"
+  },
+  {
+   "source": "Markdown",
+   "target": "Transclusions"
+  },
+  {
+   "source": "Markdown",
+   "target": "Writing"
+  },
+  {
+   "source": "Markdown/Admonition",
+   "target": "Markdown/Extensions"
+  },
+  {
+   "source": "Markdown/Admonition",
+   "target": "Space Style"
+  },
+  {
+   "source": "Markdown/Anchor",
+   "target": "Markdown/Extensions"
+  },
+  {
+   "source": "Markdown/Anchor",
+   "target": "Markdown/Fenced Code Block"
+  },
+  {
+   "source": "Markdown/Anchor",
+   "target": "Markdown/Hashtags"
+  },
+  {
+   "source": "Markdown/Anchor",
+   "target": "Object"
+  },
+  {
+   "source": "Markdown/Anchor",
+   "target": "Page Picker"
+  },
+  {
+   "source": "Markdown/Anchor",
+   "target": "Reference/Concepts"
+  },
+  {
+   "source": "Markdown/Anchor",
+   "target": "Space"
+  },
+  {
+   "source": "Markdown/Anchor",
+   "target": "Tag/anchor"
+  },
+  {
+   "source": "Markdown/Anchor",
+   "target": "Tag/data"
+  },
+  {
+   "source": "Markdown/Anchor",
+   "target": "Task"
+  },
+  {
+   "source": "Markdown/Anchor",
+   "target": "Transclusions"
+  },
+  {
+   "source": "Markdown/Anchor",
+   "target": "View"
+  },
+  {
+   "source": "Markdown/Basics",
+   "target": "Markdown/Extensions"
+  },
+  {
+   "source": "Markdown/Basics",
+   "target": "Markdown/Syntax Highlighting"
+  },
+  {
+   "source": "Markdown/Basics",
+   "target": "SilverBullet"
+  },
+  {
+   "source": "Markdown/Basics",
+   "target": "Task"
+  },
+  {
+   "source": "Markdown/Comment",
+   "target": "Object"
+  },
+  {
+   "source": "Markdown/Comment",
+   "target": "Object Index"
+  },
+  {
+   "source": "Markdown/Comment",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Markdown/Comment",
+   "target": "Tag/space-lua"
+  },
+  {
+   "source": "Markdown/Extensions",
+   "target": "Markdown/Fenced Code Block"
+  },
+  {
+   "source": "Markdown/Extensions",
+   "target": "Markdown/Footnotes"
+  },
+  {
+   "source": "Markdown/Extensions",
+   "target": "Markdown/HTML"
+  },
+  {
+   "source": "Markdown/Extensions",
+   "target": "Markdown/Hashtags"
+  },
+  {
+   "source": "Markdown/Extensions",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Markdown/Extensions",
+   "target": "Transclusions"
+  },
+  {
+   "source": "Markdown/Fenced Code Block",
+   "target": "Markdown/Hashtags"
+  },
+  {
+   "source": "Markdown/Fenced Code Block",
+   "target": "Markdown/Syntax Highlighting"
+  },
+  {
+   "source": "Markdown/Fenced Code Block",
+   "target": "Plugs"
+  },
+  {
+   "source": "Markdown/Fenced Code Block",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Markdown/Fenced Code Block",
+   "target": "Space Style"
+  },
+  {
+   "source": "Markdown/Fenced Code Block",
+   "target": "Tag/data"
+  },
+  {
+   "source": "Markdown/HTML",
+   "target": "Space Style"
+  },
+  {
+   "source": "Markdown/Hashtags",
+   "target": "Metadata"
+  },
+  {
+   "source": "Markdown/Hashtags",
+   "target": "Object"
+  },
+  {
+   "source": "Markdown/Hashtags",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Markdown/Hashtags",
+   "target": "Tag"
+  },
+  {
+   "source": "Markdown/Hashtags",
+   "target": "Tag/data"
+  },
+  {
+   "source": "Markdown/Hashtags",
+   "target": "Tag/tag"
+  },
+  {
+   "source": "Markdown/Hashtags",
+   "target": "Task"
+  },
+  {
+   "source": "Meta Space",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Meta Space",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Meta Space",
+   "target": "Workbench/Configuration"
+  },
+  {
+   "source": "Metadata",
+   "target": "Object"
+  },
+  {
+   "source": "Metadata",
+   "target": "Page"
+  },
+  {
+   "source": "Metadata",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Metadata",
+   "target": "Tag"
+  },
+  {
+   "source": "Migrate from v1",
+   "target": "Object"
+  },
+  {
+   "source": "Migrate from v1",
+   "target": "Reference/Technical Reference"
+  },
+  {
+   "source": "Migrate from v1",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Migrate from v1",
+   "target": "Space Lua/Integrated Query"
+  },
+  {
+   "source": "Migrate from v1",
+   "target": "Workbench/Libraries"
+  },
+  {
+   "source": "Names",
+   "target": "Page"
+  },
+  {
+   "source": "Names",
+   "target": "Paths"
+  },
+  {
+   "source": "Names",
+   "target": "Reference/Concepts"
+  },
+  {
+   "source": "Names",
+   "target": "SilverBullet"
+  },
+  {
+   "source": "Object",
+   "target": "Object Index"
+  },
+  {
+   "source": "Object",
+   "target": "Page"
+  },
+  {
+   "source": "Object",
+   "target": "Page Picker"
+  },
+  {
+   "source": "Object",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Object",
+   "target": "Schema"
+  },
+  {
+   "source": "Object",
+   "target": "Space"
+  },
+  {
+   "source": "Object",
+   "target": "Space Lua/Integrated Query"
+  },
+  {
+   "source": "Object",
+   "target": "Tag"
+  },
+  {
+   "source": "Object",
+   "target": "Tag/document"
+  },
+  {
+   "source": "Object",
+   "target": "Tag/header"
+  },
+  {
+   "source": "Object",
+   "target": "Tag/item"
+  },
+  {
+   "source": "Object",
+   "target": "Tag/page"
+  },
+  {
+   "source": "Object",
+   "target": "Tag/paragraph"
+  },
+  {
+   "source": "Object",
+   "target": "Tag/relation"
+  },
+  {
+   "source": "Object",
+   "target": "Tag/table"
+  },
+  {
+   "source": "Object",
+   "target": "Tag/task"
+  },
+  {
+   "source": "Object",
+   "target": "View"
+  },
+  {
+   "source": "Object",
+   "target": "Workbench"
+  },
+  {
+   "source": "Object",
+   "target": "X-Ray"
+  },
+  {
+   "source": "Object Index",
+   "target": "Page Picker"
+  },
+  {
+   "source": "Object Index",
+   "target": "Recipient"
+  },
+  {
+   "source": "Object Index",
+   "target": "Reference/Indexing Internals"
+  },
+  {
+   "source": "Object Index",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Object Index",
+   "target": "Space"
+  },
+  {
+   "source": "Object Index",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Object Index",
+   "target": "Space Lua/Integrated Query"
+  },
+  {
+   "source": "Object Index",
+   "target": "Tag"
+  },
+  {
+   "source": "Object Index",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Object Index",
+   "target": "Tool Page Picker"
+  },
+  {
+   "source": "Object Index",
+   "target": "Workbench/Data"
+  },
+  {
+   "source": "Outlines",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "PWA",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "PWA",
+   "target": "Search"
+  },
+  {
+   "source": "PWA",
+   "target": "Sync"
+  },
+  {
+   "source": "PWA",
+   "target": "TLS"
+  },
+  {
+   "source": "Page",
+   "target": "Page Namer"
+  },
+  {
+   "source": "Page",
+   "target": "Page Picker"
+  },
+  {
+   "source": "Page",
+   "target": "Reference/Concepts"
+  },
+  {
+   "source": "Page",
+   "target": "SilverBullet"
+  },
+  {
+   "source": "Page",
+   "target": "Space"
+  },
+  {
+   "source": "Page",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Page",
+   "target": "Tool Page Picker"
+  },
+  {
+   "source": "Page Decorations",
+   "target": "Page Picker"
+  },
+  {
+   "source": "Page Decorations",
+   "target": "Publishing"
+  },
+  {
+   "source": "Page Decorations",
+   "target": "Reference/Space Lua and APIs"
+  },
+  {
+   "source": "Page Decorations",
+   "target": "Space Style"
+  },
+  {
+   "source": "Page Decorations",
+   "target": "Tag/page"
+  },
+  {
+   "source": "Page Decorations",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Page Decorations",
+   "target": "View"
+  },
+  {
+   "source": "Page Namer",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Page Namer",
+   "target": "Top Bar"
+  },
+  {
+   "source": "Page Picker",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Page Picker",
+   "target": "Search"
+  },
+  {
+   "source": "Page Picker",
+   "target": "Space"
+  },
+  {
+   "source": "Page Picker",
+   "target": "Tag/anchor"
+  },
+  {
+   "source": "Page Picker",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Page Picker",
+   "target": "Tool Page Picker"
+  },
+  {
+   "source": "Page Picker",
+   "target": "Top Bar"
+  },
+  {
+   "source": "Page Picker",
+   "target": "View"
+  },
+  {
+   "source": "Page Template",
+   "target": "Reference/Concepts"
+  },
+  {
+   "source": "Page Template",
+   "target": "Slash Templates"
+  },
+  {
+   "source": "Page Template",
+   "target": "Template"
+  },
+  {
+   "source": "Page Template",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Paths",
+   "target": "Reference/Concepts"
+  },
+  {
+   "source": "Paths",
+   "target": "URI"
+  },
+  {
+   "source": "Plugs",
+   "target": "Plugs/Development"
+  },
+  {
+   "source": "Plugs",
+   "target": "Reference/Space Lua and APIs"
+  },
+  {
+   "source": "Plugs",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Plugs",
+   "target": "Troubleshooting"
+  },
+  {
+   "source": "Plugs",
+   "target": "Workbench/Console"
+  },
+  {
+   "source": "Plugs",
+   "target": "Workbench/Libraries"
+  },
+  {
+   "source": "Plugs/Development",
+   "target": "Plugs/Development/Architecture"
+  },
+  {
+   "source": "Plugs/Development",
+   "target": "Plugs/Development/Distribution and Testing"
+  },
+  {
+   "source": "Plugs/Development",
+   "target": "Plugs/Development/Reference"
+  },
+  {
+   "source": "Plugs/Development",
+   "target": "Space"
+  },
+  {
+   "source": "Plugs/Development",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Plugs/Development/Architecture",
+   "target": "Plugs/Development/Reference"
+  },
+  {
+   "source": "Plugs/Development/Architecture",
+   "target": "Reference/Technical Reference"
+  },
+  {
+   "source": "Plugs/Development/Distribution and Testing",
+   "target": "Repository"
+  },
+  {
+   "source": "Plugs/Development/Distribution and Testing",
+   "target": "Share"
+  },
+  {
+   "source": "Plugs/Development/Distribution and Testing",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Plugs/Development/Distribution and Testing",
+   "target": "URI"
+  },
+  {
+   "source": "Plugs/Development/Distribution and Testing",
+   "target": "Workbench/Libraries"
+  },
+  {
+   "source": "Plugs/Development/Document Editors",
+   "target": "Reference/Technical Reference"
+  },
+  {
+   "source": "Plugs/Development/Reference",
+   "target": "Reference/Technical Reference"
+  },
+  {
+   "source": "Plugs/Development/Reference",
+   "target": "Slash Command"
+  },
+  {
+   "source": "Plugs/Development/Reference",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Plugs/Development/Reference",
+   "target": "View"
+  },
+  {
+   "source": "Publishing",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Publishing",
+   "target": "Revisions"
+  },
+  {
+   "source": "Publishing",
+   "target": "Runtime API"
+  },
+  {
+   "source": "Publishing",
+   "target": "Search"
+  },
+  {
+   "source": "Publishing",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Publishing",
+   "target": "Space Lua/Integrated Query"
+  },
+  {
+   "source": "Publishing",
+   "target": "Space Style"
+  },
+  {
+   "source": "Queries and Data",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Queries and Data",
+   "target": "Workbench/Data"
+  },
+  {
+   "source": "Recipient",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Recipient",
+   "target": "View"
+  },
+  {
+   "source": "Reference",
+   "target": "Reference/Concepts"
+  },
+  {
+   "source": "Reference",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Reference",
+   "target": "Reference/Space Lua and APIs"
+  },
+  {
+   "source": "Reference",
+   "target": "Reference/Technical Reference"
+  },
+  {
+   "source": "Reference",
+   "target": "SilverBullet"
+  },
+  {
+   "source": "Reference/Concepts",
+   "target": "Reference/SilverBullet Features"
+  },
+  {
+   "source": "Reference/Concepts",
+   "target": "Slash Templates"
+  },
+  {
+   "source": "Reference/Concepts",
+   "target": "Space"
+  },
+  {
+   "source": "Reference/Concepts",
+   "target": "Tag"
+  },
+  {
+   "source": "Reference/Concepts",
+   "target": "Task"
+  },
+  {
+   "source": "Reference/Concepts",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Reference/Concepts",
+   "target": "Transclusions"
+  },
+  {
+   "source": "Reference/Indexing Internals",
+   "target": "Reference/Technical Reference"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Revisions"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Schema"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Search"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Security"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Security Profiles"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Share"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Single Sign-On"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Slash Command"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Sync"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "TLS"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Tag Picker"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Tool Page Picker"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Top Bar"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Vim"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Workbench"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Workbench/Code/Scripts"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Workbench/Code/Styles"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Workbench/Configuration"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Workbench/Console"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Workbench/Data"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Workbench/Libraries"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Workbench/Maintenance"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Workbench/Overview"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "X-Ray"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "YAML"
+  },
+  {
+   "source": "Reference/SilverBullet Features",
+   "target": "Zero Tracking"
+  },
+  {
+   "source": "Reference/Space Lua and APIs",
+   "target": "Repository"
+  },
+  {
+   "source": "Reference/Space Lua and APIs",
+   "target": "Service"
+  },
+  {
+   "source": "Reference/Space Lua and APIs",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Reference/Space Lua and APIs",
+   "target": "Space Lua/Conventions"
+  },
+  {
+   "source": "Reference/Space Lua and APIs",
+   "target": "Space Lua/DOM"
+  },
+  {
+   "source": "Reference/Space Lua and APIs",
+   "target": "Space Lua/Integrated Query"
+  },
+  {
+   "source": "Reference/Space Lua and APIs",
+   "target": "Space Lua/Integrated Query/Aggregating"
+  },
+  {
+   "source": "Reference/Space Lua and APIs",
+   "target": "Space Lua/Integrated Query/Grouping"
+  },
+  {
+   "source": "Reference/Space Lua and APIs",
+   "target": "Space Lua/JavaScript Interop"
+  },
+  {
+   "source": "Reference/Space Lua and APIs",
+   "target": "Space Lua/Page Lua"
+  },
+  {
+   "source": "Reference/Space Lua and APIs",
+   "target": "Space Lua/Quirks"
+  },
+  {
+   "source": "Reference/Space Lua and APIs",
+   "target": "Space Lua/Standard Library"
+  },
+  {
+   "source": "Reference/Space Lua and APIs",
+   "target": "Space Lua/Thread Locals"
+  },
+  {
+   "source": "Reference/Space Lua and APIs",
+   "target": "Space Style"
+  },
+  {
+   "source": "Reference/Space Lua and APIs",
+   "target": "Template"
+  },
+  {
+   "source": "Reference/Space Lua and APIs",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Reference/Space Lua and APIs",
+   "target": "View"
+  },
+  {
+   "source": "Reference/Space Lua and APIs",
+   "target": "Virtual Pages"
+  },
+  {
+   "source": "Reference/Space Lua and APIs",
+   "target": "Widget"
+  },
+  {
+   "source": "Reference/Technical Reference",
+   "target": "Runtime API"
+  },
+  {
+   "source": "Reference/Technical Reference",
+   "target": "URI"
+  },
+  {
+   "source": "Repository",
+   "target": "Share"
+  },
+  {
+   "source": "Repository",
+   "target": "Tag/data"
+  },
+  {
+   "source": "Repository",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Repository",
+   "target": "URI"
+  },
+  {
+   "source": "Repository",
+   "target": "Workbench"
+  },
+  {
+   "source": "Repository",
+   "target": "Workbench/Libraries"
+  },
+  {
+   "source": "Repository",
+   "target": "Zero Tracking"
+  },
+  {
+   "source": "Revisions",
+   "target": "Space"
+  },
+  {
+   "source": "Revisions",
+   "target": "Troubleshooting"
+  },
+  {
+   "source": "Runtime API",
+   "target": "Security"
+  },
+  {
+   "source": "Schema",
+   "target": "Tag"
+  },
+  {
+   "source": "Schema",
+   "target": "Tag/meta/theme"
+  },
+  {
+   "source": "Schema",
+   "target": "Workbench"
+  },
+  {
+   "source": "Schema",
+   "target": "Workbench/Data"
+  },
+  {
+   "source": "Search",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Search",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Search",
+   "target": "Top Bar"
+  },
+  {
+   "source": "Security",
+   "target": "Security Profiles"
+  },
+  {
+   "source": "Security",
+   "target": "Space"
+  },
+  {
+   "source": "Security",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Security Profiles",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Share",
+   "target": "Space"
+  },
+  {
+   "source": "Share",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Share",
+   "target": "URI"
+  },
+  {
+   "source": "Share",
+   "target": "Workbench/Configuration"
+  },
+  {
+   "source": "SilverBullet",
+   "target": "Tag"
+  },
+  {
+   "source": "SilverBullet",
+   "target": "Workbench"
+  },
+  {
+   "source": "SilverBullet",
+   "target": "index"
+  },
+  {
+   "source": "Slash Command",
+   "target": "Slash Templates"
+  },
+  {
+   "source": "Slash Command",
+   "target": "Tag/data"
+  },
+  {
+   "source": "Slash Command",
+   "target": "Template"
+  },
+  {
+   "source": "Slash Command",
+   "target": "Workbench"
+  },
+  {
+   "source": "Slash Templates",
+   "target": "Template"
+  },
+  {
+   "source": "Slash Templates",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Space",
+   "target": "Space Lua"
+  },
+  {
+   "source": "Space",
+   "target": "Tag/anchor"
+  },
+  {
+   "source": "Space",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Space",
+   "target": "URI"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Space Lua/Conventions"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Space Lua/DOM"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Space Lua/Integrated Query"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Space Lua/JavaScript Interop"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Space Lua/Page Lua"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Space Lua/Quirks"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Space Lua/Standard Library"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Space Lua/Thread Locals"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Space Style"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Tag/space-lua"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Template"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Troubleshooting"
+  },
+  {
+   "source": "Space Lua",
+   "target": "View"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Workbench"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Workbench/Code"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Workbench/Code/Scripts"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Workbench/Configuration"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Workbench/Console"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Workbench/Data"
+  },
+  {
+   "source": "Space Lua",
+   "target": "Zero Tracking"
+  },
+  {
+   "source": "Space Lua/DOM",
+   "target": "Widget"
+  },
+  {
+   "source": "Space Lua/Integrated Query",
+   "target": "Space Lua/Integrated Query/Aggregating"
+  },
+  {
+   "source": "Space Lua/Integrated Query",
+   "target": "Space Lua/Integrated Query/Grouping"
+  },
+  {
+   "source": "Space Lua/Integrated Query",
+   "target": "Task"
+  },
+  {
+   "source": "Space Lua/Integrated Query",
+   "target": "Template"
+  },
+  {
+   "source": "Space Lua/Integrated Query",
+   "target": "Workbench"
+  },
+  {
+   "source": "Space Lua/Integrated Query/Aggregating",
+   "target": "Space Lua/Integrated Query/Grouping"
+  },
+  {
+   "source": "Space Lua/Integrated Query/Aggregating",
+   "target": "Workbench/Data"
+  },
+  {
+   "source": "Space Lua/JavaScript Interop",
+   "target": "Space Lua/Standard Library"
+  },
+  {
+   "source": "Space Lua/Page Lua",
+   "target": "Workbench/Console"
+  },
+  {
+   "source": "Space Style",
+   "target": "Tag/space-style"
+  },
+  {
+   "source": "Space Style",
+   "target": "Theming"
+  },
+  {
+   "source": "Space Style",
+   "target": "Theming/Selectors"
+  },
+  {
+   "source": "Space Style",
+   "target": "Theming/Variables"
+  },
+  {
+   "source": "Space Style",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Space Style",
+   "target": "Troubleshooting"
+  },
+  {
+   "source": "Space Style",
+   "target": "Workbench/Code"
+  },
+  {
+   "source": "Space Style",
+   "target": "Workbench/Code/Styles"
+  },
+  {
+   "source": "Sync",
+   "target": "Top Bar"
+  },
+  {
+   "source": "Tag",
+   "target": "Tag Picker"
+  },
+  {
+   "source": "Tag",
+   "target": "Tag/ambiguous-link"
+  },
+  {
+   "source": "Tag",
+   "target": "Tag/anchor"
+  },
+  {
+   "source": "Tag",
+   "target": "Tag/aspiring-page"
+  },
+  {
+   "source": "Tag",
+   "target": "Tag/data"
+  },
+  {
+   "source": "Tag",
+   "target": "Tag/document"
+  },
+  {
+   "source": "Tag",
+   "target": "Tag/header"
+  },
+  {
+   "source": "Tag",
+   "target": "Tag/identity"
+  },
+  {
+   "source": "Tag",
+   "target": "Tag/item"
+  },
+  {
+   "source": "Tag",
+   "target": "Tag/page"
+  },
+  {
+   "source": "Tag",
+   "target": "Tag/paragraph"
+  },
+  {
+   "source": "Tag",
+   "target": "Tag/relation"
+  },
+  {
+   "source": "Tag",
+   "target": "Tag/space-lua"
+  },
+  {
+   "source": "Tag",
+   "target": "Tag/space-style"
+  },
+  {
+   "source": "Tag",
+   "target": "Tag/table"
+  },
+  {
+   "source": "Tag",
+   "target": "Tag/tag"
+  },
+  {
+   "source": "Tag",
+   "target": "Tag/task"
+  },
+  {
+   "source": "Tag",
+   "target": "Workbench/Data"
+  },
+  {
+   "source": "Tag",
+   "target": "Workbench/Overview"
+  },
+  {
+   "source": "Tag Picker",
+   "target": "Tag/tag"
+  },
+  {
+   "source": "Tag/ambiguous-link",
+   "target": "Tag/aspiring-page"
+  },
+  {
+   "source": "Tag/anchor",
+   "target": "Tag/data"
+  },
+  {
+   "source": "Tag/anchor",
+   "target": "Tag/item"
+  },
+  {
+   "source": "Tag/anchor",
+   "target": "Tag/relation"
+  },
+  {
+   "source": "Tag/aspiring-page",
+   "target": "Workbench/Maintenance"
+  },
+  {
+   "source": "Tag/data",
+   "target": "Tag/relation"
+  },
+  {
+   "source": "Tag/data",
+   "target": "Tag/tag"
+  },
+  {
+   "source": "Tag/data",
+   "target": "Workbench/Configuration"
+  },
+  {
+   "source": "Tag/data",
+   "target": "Workbench/Data"
+  },
+  {
+   "source": "Tag/identity",
+   "target": "Tag/relation"
+  },
+  {
+   "source": "Tag/item",
+   "target": "Tag/task"
+  },
+  {
+   "source": "Tag/meta/theme",
+   "target": "Tag/page"
+  },
+  {
+   "source": "Tag/meta/theme",
+   "target": "Theming"
+  },
+  {
+   "source": "Tag/meta/theme",
+   "target": "Theming/Creating a Theme"
+  },
+  {
+   "source": "Tag/relation",
+   "target": "Workbench/Overview"
+  },
+  {
+   "source": "Tag/space-lua",
+   "target": "Tag/space-style"
+  },
+  {
+   "source": "Tag/space-lua",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Tag/space-style",
+   "target": "Tool Page"
+  },
+  {
+   "source": "Tag/task",
+   "target": "Task"
+  },
+  {
+   "source": "Theming",
+   "target": "Theming/Creating a Theme"
+  },
+  {
+   "source": "Theming",
+   "target": "Theming/Selectors"
+  },
+  {
+   "source": "Theming",
+   "target": "Theming/Upgrading Existing Styles"
+  },
+  {
+   "source": "Theming",
+   "target": "Theming/Variables"
+  },
+  {
+   "source": "Theming",
+   "target": "Workbench/Code/Styles"
+  },
+  {
+   "source": "Theming",
+   "target": "Workbench/Configuration"
+  },
+  {
+   "source": "Theming/Creating a Theme",
+   "target": "Theming/Selectors"
+  },
+  {
+   "source": "Theming/Creating a Theme",
+   "target": "Theming/Upgrading Existing Styles"
+  },
+  {
+   "source": "Theming/Creating a Theme",
+   "target": "Theming/Variables"
+  },
+  {
+   "source": "Theming/Creating a Theme",
+   "target": "Workbench/Code/Styles"
+  },
+  {
+   "source": "Theming/Creating a Theme",
+   "target": "Workbench/Console"
+  },
+  {
+   "source": "Theming/Selectors",
+   "target": "Theming/Selectors/Data"
+  },
+  {
+   "source": "Theming/Selectors",
+   "target": "Theming/Variables"
+  },
+  {
+   "source": "Theming/Upgrading Existing Styles",
+   "target": "Theming/Variables"
+  },
+  {
+   "source": "Theming/Variables",
+   "target": "Theming/Variables/Data"
+  },
+  {
+   "source": "Tool Page",
+   "target": "Tool Page Picker"
+  },
+  {
+   "source": "Tool Page",
+   "target": "View"
+  },
+  {
+   "source": "Tool Page",
+   "target": "Workbench"
+  },
+  {
+   "source": "Tool Page",
+   "target": "Workbench/Code/Scripts"
+  },
+  {
+   "source": "Tool Page",
+   "target": "Workbench/Code/Styles"
+  },
+  {
+   "source": "Troubleshooting",
+   "target": "Workbench/Console"
+  },
+  {
+   "source": "View",
+   "target": "Widget"
+  },
+  {
+   "source": "Workbench",
+   "target": "Workbench/Code"
+  },
+  {
+   "source": "Workbench",
+   "target": "Workbench/Code/Scripts"
+  },
+  {
+   "source": "Workbench",
+   "target": "Workbench/Code/Styles"
+  },
+  {
+   "source": "Workbench",
+   "target": "Workbench/Configuration"
+  },
+  {
+   "source": "Workbench",
+   "target": "Workbench/Console"
+  },
+  {
+   "source": "Workbench",
+   "target": "Workbench/Data"
+  },
+  {
+   "source": "Workbench",
+   "target": "Workbench/Libraries"
+  },
+  {
+   "source": "Workbench",
+   "target": "Workbench/Maintenance"
+  },
+  {
+   "source": "Workbench",
+   "target": "Workbench/Overview"
+  },
+  {
+   "source": "Workbench/Code",
+   "target": "Workbench/Code/Scripts"
+  },
+  {
+   "source": "Workbench/Code",
+   "target": "Workbench/Code/Styles"
+  },
+  {
+   "source": "Workbench/Code/Scripts",
+   "target": "Workbench/Code/Styles"
+  },
+  {
+   "source": "Workbench/Configuration",
+   "target": "Workbench/Data"
+  },
+  {
+   "source": "Workbench/Console",
+   "target": "Workbench/Data"
+  },
+  {
+   "source": "X-Ray",
+   "target": "YAML"
+  }
+ ],
+ "top": [
+  "CHANGELOG",
+  "Reference/SilverBullet Features",
+  "Space Lua",
+  "API",
+  "Object",
+  "Tag",
+  "Tool Page",
+  "API/tag",
+  "Library",
+  "Object Index"
+ ]
+}

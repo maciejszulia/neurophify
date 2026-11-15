@@ -1,0 +1,26 @@
+# Core: SilverBullet docs
+
+The 20 of 313 nodes with the largest weight $w(v) = (1 + \deg(v)) \cdot 2^{-d(v)/30}$. $\deg(v)$ is the number of edges of node $v$; $d(v)$ is the number of days between the last change of $v$ and the newest change in the graph (2026-11-14), so a node loses half its weight per 30 days without a change. A node without a time has $d(v) = 0$. Ties go to the label, then the id.
+
+| # | Node | Region | Degree | Last change | Weight | First paragraph |
+|---|---|---|---|---|---|---|
+| 1 | CHANGELOG | CHANGELOG | 107 | 2026-11-13 | 106.38 | An attempt at documenting the changes/new features introduced in each release. |
+| 2 | Reference/SilverBullet Features | CHANGELOG | 74 | 2026-11-13 | 74.28 | Look up the editing interface, visual tools and feature behavior. |
+| 3 | Space Lua | CHANGELOG | 67 | 2026-11-13 | 66.98 | Space Lua is a custom dialect and implementation of the [Lua programming language](https://lua.org/), embedded in SilverBullet. It aims to be a largely complete Lua implementation, but adds a few non-standard features while remaining syntactically compatible with “real” Lua. |
+| 4 | API | API | 56 | 2026-11-13 | 56.08 | This describes the APIs available in [[Space Lua]]: |
+| 5 | Tool Page | API | 33 | 2026-11-13 | 33.67 | Tool pages are pages not core to your content, but function as a way to configure, or extend your [[Space]]. Every page whose name starts with `Library/` is a tool page. That includes your configuration page, [[^Library/Config]]. |
+| 6 | Object Index | Object Index | 29 | 2026-11-13 | 29.71 | The Object Index stores [[Object\|Objects]] found in your [[Space]]. |
+| 7 | Library | API | 29 | 2026-11-13 | 29.52 | SilverBullet is designed to be [[Extensions\|extensible]]. In fact, a lot of functionality in SilverBullet is implemented through [[Space Lua]] embedded in [[Tool Page\|Tool Pages]], other functionality is implemented using [[Plugs]]. |
+| 8 | Object | Object | 35 | 2026-11-03 | 28.27 | Objects are structured records extracted from your space. Examples include [[Tag/page\|pages]], [[Tag/task\|tasks]], and [[Tag/relation\|relations]]. SilverBullet automatically maintains an [[Object Index]] extracted from all [[Markdown]] [[Page\|pages]] in your [[Space\|Space]]. |
+| 9 | API/tag | API | 29 | 2026-11-09 | 27.12 | Enables customization of [[Tag\|tags]] and its [[Object\|objects]] in a few ways: |
+| 10 | Tag | Object | 33 | 2026-11-03 | 26.70 | Tags are a means to group [[Object\|Objects]] in meaningful ways. In concept they are similar to “classes”, “types” or “tables.” |
+| 11 | Reference/Space Lua and APIs | Reference/Space Lua and APIs | 28 | 2026-11-09 | 26.22 | Language syntax, extension mechanisms and callable APIs. |
+| 12 | Page Picker | Page Picker | 24 | 2026-11-13 | 24.76 | Use the page picker to find a page by name or create one. For searching inside notes, use [[Search]]. The published documentation is read-only: use your own space for the creation steps below. |
+| 13 | Space Style | Space Style | 24 | 2026-11-13 | 24.62 | Space Style is [[Space Lua]]’s stylish sibling. It enables you to add your own styling to SilverBullet with `space-style` [[Markdown/Fenced Code Block]]. Like `space-lua`, a `space-style` block only applies when it’s on a [[Tool Page]]: a page under `Library/`. A block on any other page is shown bu… |
+| 14 | Link | Link | 26 | 2026-11-09 | 24.41 | In SilverBullet, you can create links to pages or documents inside your space as well as to external resources, using different link formats. |
+| 15 | Space | CHANGELOG | 26 | 2026-11-09 | 24.41 | A _space_ is SilverBullet terminology for a workspace, or project, or instance. [Obsidian](https://obsidian.md/) calls this a vault, [LogSeq](https://logseq.com/) calls it a graph. You may think of it as a [[Folder]] or a directory — because in practical terms, that’s all it is. |
+| 16 | Frontmatter | Object | 23 | 2026-11-13 | 23.61 | Frontmatter stores page attributes such as tags, status and dates. Edit them using the form at the top of a page, or edit their YAML source directly. |
+| 17 | API/widget | API/widget | 22 | 2026-11-13 | 22.63 | A widget is a value that describes what to render. Three questions decide how it behaves: what value you return, where you place it, and when it re-runs. Widgets render wherever they’re placed, often through [[Space Lua#Expressions]] — see [[View#Widgets and views]]. |
+| 18 | Workbench | API | 24 | 2026-11-09 | 22.60 | The workbench is where you shape and understand your space: look through your data, build queries, experiment with [[Space Lua]], and see how your scripts and styles load. |
+| 19 | Search | CHANGELOG | 20 | 2026-11-13 | 20.66 | Search searches the text of every page in your space. Open it from the command palette or press `Ctrl-Shift-f` (`Cmd-Shift-f` on macOS). Each result shows the page name and an excerpt with the matching words highlighted. |
+| 20 | Workbench/Configuration | API | 20 | 2026-11-13 | 20.66 | The Configuration tab edits your space’s configuration without hand-editing [[Space Lua]] in [[^Library/Config]]. `Configuration: Open` (`Cmd-,` or `Ctrl-,`) opens the [[Workbench]] on this tab, and `Configuration: Keyboard Shortcuts` opens it on its Key bindings section. On Desktop, *Settings…* in… |

@@ -282,3 +282,44 @@
   - Object Index: 4 edges, for example Markdown/Comment -- Object Index; Plugs/Development -- Plugs; Space Lua/Integrated Query/Aggregating -- Space Lua/Integrated Query.
   - Object: 3 edges, for example Markdown/Comment -- Object; Tag/space-lua -- Tag; Tag/space-style -- Tag.
   - Reference/Space Lua and APIs: 3 edges, for example Document Editor -- Reference/Space Lua and APIs; Space Lua/Integrated Query/Aggregating -- Reference/Space Lua and APIs; Space Lua/Integrated Query/Grouping -- Reference/Space Lua and APIs.
+
+## Time
+
+313 of 313 nodes have a time: first node 2022-06-28, last change 2026-11-14. Time comes from the git history of a Markdown folder (outside git: the file modification time) or from the "time" field of graph.json. brain.html replays the growth on a time slider.
+
+- Busiest day: 2026-06-23, 179 new nodes.
+- New nodes per month: 2022-06: 1, 2026-06: 179, 2026-08: 17, 2026-09: 27, 2026-10: 37, 2026-11: 52.
+- Status covers the 30 days before the last change: growing = new nodes, active = changes only, dormant = no change.
+
+| # | Region | First node | Last change | New in 30 days | Status |
+|---|---|---|---|---|---|
+| 1 | CHANGELOG | 2022-06-28 | 2026-11-13 | 10 | growing |
+| 2 | API | 2026-06-23 | 2026-11-14 | 10 | growing |
+| 3 | Link | 2026-06-23 | 2026-11-13 | 3 | growing |
+| 4 | Object Index | 2026-06-23 | 2026-11-13 | 3 | growing |
+| 5 | Object | 2026-06-23 | 2026-11-13 | 10 | growing |
+| 6 | Space Style | 2026-06-23 | 2026-11-13 | 15 | growing |
+| 7 | Page Picker | 2026-06-23 | 2026-11-13 | 7 | growing |
+| 8 | Tag/relation | 2026-06-23 | 2026-11-09 | 6 | growing |
+| 9 | Reference/Space Lua and APIs | 2026-06-23 | 2026-11-13 | 1 | growing |
+| 10 | Space Lua/Standard Library | 2026-06-23 | 2026-11-09 | 0 | active |
+| 11 | Architecture/Client | 2026-06-23 | 2026-11-03 | 0 | active |
+| 12 | API/widget | 2026-06-23 | 2026-11-13 | 0 | active |
+| 13 | Extensions | 2026-06-23 | 2026-11-13 | 0 | active |
+| 14 | API/auth | 2026-10-20 | 2026-11-13 | 4 | growing |
+| 15 | Workbench/Maintenance | 2026-06-23 | 2026-11-09 | 3 | growing |
+| 16 | Command | 2026-06-23 | 2026-11-09 | 0 | active |
+| 17 | Plugs/Development/Reference | 2026-06-23 | 2026-11-13 | 0 | active |
+| 18 | Service | 2026-06-23 | 2026-11-09 | 0 | active |
+| 19 | Space Lua/Page Lua | 2026-10-12 | 2026-11-09 | 0 | active |
+| 20 | Page Decorations | 2026-06-23 | 2026-11-09 | 1 | growing |
+| 21 | Graph View | 2026-06-23 | 2026-11-09 | 1 | growing |
+| 22 | Library/silverbulletmd/Themes/Classic | 2026-11-13 | 2026-11-13 | 3 | growing |
+| 23 | View | 2026-06-23 | 2026-11-13 | 0 | active |
+| 24 | other | 2026-06-23 | 2026-11-13 | 4 | growing |
+
+## Graph metrics
+
+- Connected components: 8, nodes without edges included; the largest has 304 of 313 nodes.
+- Nodes without edges: 6.
+- Modularity of the regions: Q = 0.3582. $Q = \sum_c \left[\frac{L_c}{m} - \left(\frac{D_c}{2m}\right)^2\right]$, where $L_c$ is the number of edges inside region $c$, $D_c$ the sum of the degrees of its nodes and $m$ the number of edges; "other" counts as 1 region and a graph without edges has Q = 0. Q = 0 means no more edges inside the regions than chance gives a graph with the same degrees.
