@@ -38,14 +38,14 @@ from collections import Counter, defaultdict
 from datetime import datetime
 from urllib.parse import unquote
 
-VERSION = "1.2.0"
+VERSION = "1.3.0"
 CDN = "https://cdn.jsdelivr.net/npm/3d-force-graph@1.80.1/dist/3d-force-graph.min.js"
 MAX_REGIONS = 24          # legend entries, "other" included
 TOP_LABELS = 10           # nodes with a permanent label
 SEED, LPA_MAX_ITER = 42, 50
 SPIN_FRAMES, SPIN_SECONDS = 24, 12   # brain-spin.svg: one turn in 12 s, drawn from 24 key frames
 SPIN_PITCH = math.radians(20)        # the turning brain is seen 20 degrees from above
-SPIN_EDGES = 80                      # brain-spin.svg draws the 80 edges between the nodes with the most edges
+SPIN_EDGES = 120                     # brain-spin.svg: at most 120 edges inside regions, taken from each region in turn
 STL_NODES = 40                       # brain.stl: a tetrahedron for each of the 40 nodes with the most edges
 HEMI_U, HEMI_V = 12, 6               # brain.stl: hemisphere mesh, 12 steps around, 6 from pole to pole
 HEMI_FACETS = 2 * HEMI_U * (HEMI_V - 1)
@@ -645,17 +645,41 @@ def render_svg(scene):
     return "\n".join(out) + "\n"
 
 
+def spin_view(angle):
+    """View after turning the scene by `angle` around its vertical axis: (screen x, screen y down, depth toward viewer)."""
+    cp, sp, ca, sa = math.cos(SPIN_PITCH), math.sin(SPIN_PITCH), math.cos(angle), math.sin(angle)
+
+    def view(x, y, z):
+        x, z = x * ca + z * sa, -x * sa + z * ca
+        return x, -(y * cp - z * sp), y * sp + z * cp
+    return view
+
+
 def spin_frames(scene, frames=SPIN_FRAMES):
     """Per key frame of one turn around the vertical axis: (screen x, screen y down, depth toward viewer) per node."""
-    cp, sp = math.cos(SPIN_PITCH), math.sin(SPIN_PITCH)
-    out = []
-    for f in range(frames):
-        ca, sa = math.cos(2 * math.pi * f / frames), math.sin(2 * math.pi * f / frames)
-        row = []
-        for n in scene["nodes"]:
-            x, z = n["x"] * ca + n["z"] * sa, -n["x"] * sa + n["z"] * ca
-            row.append((x, -(n["y"] * cp - z * sp), n["y"] * sp + z * cp))
-        out.append(row)
+    views = [spin_view(2 * math.pi * f / frames) for f in range(frames)]
+    return [[v(n["x"], n["y"], n["z"]) for n in scene["nodes"]] for v in views]
+
+
+def spin_edges(scene, limit=SPIN_EDGES):
+    """Edges of brain-spin.svg: inside 1 region, without the node with the most edges (its fan hides the brain),
+    taken from each region in turn so both hemispheres keep their structure."""
+    nodes = scene["nodes"]
+    if not nodes:
+        return []
+    hub = min(nodes, key=lambda n: (-n["degree"], n["label"], n["id"]))["id"]
+    degree = {n["id"]: n["degree"] for n in nodes}
+    region_of = {n["id"]: n["region"] for n in nodes}
+    groups = defaultdict(list)
+    for e in scene["edges"]:
+        if region_of[e["source"]] == region_of[e["target"]] and hub not in (e["source"], e["target"]):
+            groups[region_of[e["source"]]].append(e)
+    for g in groups.values():
+        g.sort(key=lambda e: (-(degree[e["source"]] + degree[e["target"]]), e["source"], e["target"]))
+    out, rank = [], 0
+    while len(out) < limit and any(rank < len(g) for g in groups.values()):
+        out += [groups[r][rank] for r in sorted(groups) if rank < len(groups[r])][:limit - len(out)]
+        rank += 1
     return out
 
 
@@ -684,17 +708,34 @@ def render_spin_svg(scene):
            f'<rect width="{width}" height="{height}" fill="{BACKGROUND}"/>',
            f'<text x="28" y="44" font-size="24" font-weight="600" fill="#f5f7fa">{html.escape(title)}</text>',
            f'<text x="28" y="68" font-size="14" fill="#9aa4b2">{html.escape(meta)}</text>']
-    degree = {n["id"]: n["degree"] for n in nodes}
-    region_of = {n["id"]: n["region"] for n in nodes}
-    edges = sorted(scene["edges"], key=lambda e: (-(degree[e["source"]] + degree[e["target"]]), e["source"], e["target"]))
-    for e in edges[:SPIN_EDGES]:
+    # The outline of each hemisphere turns with the nodes: the projected ellipse of hemisphere_outlines per key frame.
+    shapes = [hemisphere_outlines(spin_view(2 * math.pi * f / SPIN_FRAMES)) for f in range(SPIN_FRAMES)]
+    for h in (0, 1):
+        seq = [o[h] for o in shapes] + [shapes[0][h]]
+        turn, prev = [], None
+        for q in seq:              # an ellipse turned by 180 degrees is the same ellipse: keep the angle continuous
+            a = q[4] if prev is None else q[4] + 180 * round((prev - q[4]) / 180)
+            turn.append(a)
+            prev = a
+        x, y = [cx0 + s * q[0] for q in seq], [cy0 + s * q[1] for q in seq]
+        rx, ry = [s * q[2] for q in seq], [s * q[3] for q in seq]
+        rotate = ";".join(f"{a:.1f} {px:.0f} {py:.0f}" for a, px, py in zip(turn, x, y))
+        out.append(f'<ellipse cx="{x[0]:.0f}" cy="{y[0]:.0f}" rx="{rx[0]:.0f}" ry="{ry[0]:.0f}" '
+                   f'transform="rotate({turn[0]:.1f} {x[0]:.0f} {y[0]:.0f})" fill="#0b111b" fill-opacity="0.55" '
+                   'stroke="#2a3446" stroke-width="1.5">'
+                   + animate("cx", x, "{:.0f}") + animate("cy", y, "{:.0f}")
+                   + animate("rx", rx, "{:.0f}") + animate("ry", ry, "{:.0f}")
+                   + f'<animateTransform attributeName="transform" type="rotate" dur="{SPIN_SECONDS}s" '
+                   f'repeatCount="indefinite" values="{rotate}"/></ellipse>')
+    for e in spin_edges(scene):
         a, b = index[e["source"]], index[e["target"]]
-        ra, rb = region_of[e["source"]], region_of[e["target"]]
         ends = {"x1": [cx0 + s * v for v in track(a, 0)], "y1": [cy0 + s * v for v in track(a, 1)],
                 "x2": [cx0 + s * v for v in track(b, 0)], "y2": [cy0 + s * v for v in track(b, 1)]}
+        fade = [0.06 + 0.5 * ((za + zb) / 2 + reach) / (2 * reach) for za, zb in zip(track(a, 2), track(b, 2))]
         out.append("<line " + " ".join(f'{k}="{v[0]:.0f}"' for k, v in ends.items())
-                   + f' stroke="{regions[ra]["color"] if ra == rb else "#8b95a5"}" stroke-opacity="0.35" stroke-width="0.8">'
-                   + "".join(animate(k, v, "{:.0f}") for k, v in ends.items()) + "</line>")
+                   + f' stroke="{regions[nodes[a]["region"]]["color"]}" stroke-opacity="{fade[0]:.2f}" stroke-width="0.8">'
+                   + "".join(animate(k, v, "{:.0f}") for k, v in ends.items())
+                   + animate("stroke-opacity", fade, "{:.2f}") + "</line>")
     for n in sorted(nodes, key=lambda n: (n["degree"], n["id"])):   # nodes with more edges are drawn on top
         i = index[n["id"]]
         depth = [(z + reach) / (2 * reach) for z in track(i, 2)]
@@ -1275,6 +1316,13 @@ def selftest():
             assert radii[near] > radii[far] and alpha[near] > alpha[far], "depth does not change size and opacity"
             assert len(radii) == SPIN_FRAMES + 1 and radii[0] == radii[-1], "the turn does not close"
             assert len(spin.encode()) <= 500_000, "brain-spin.svg is larger than 500 kB"
+            sel = spin_edges(scene_b)
+            hub = min(scene_b["nodes"], key=lambda n: (-n["degree"], n["label"], n["id"]))["id"]
+            region = {n["id"]: n["region"] for n in scene_b["nodes"]}
+            assert sel and len(sel) <= SPIN_EDGES and all(
+                region[e["source"]] == region[e["target"]] and hub not in (e["source"], e["target"]) for e in sel), sel
+            assert spin.count("<line") == len(sel) == spin.count('attributeName="stroke-opacity"'), "edge fade missing"
+            assert spin.count("<ellipse") == 2 and spin.count('type="rotate"') == 2, "hemisphere outlines do not turn"
             checks += 1
             # 13. brain.stl: ASCII STL of both hemispheres and a tetrahedron per top node, at most 100 kB.
             stl = render_stl(scene_b)

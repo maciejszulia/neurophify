@@ -2886,7 +2886,7 @@ Narzędzie wymaga Pythona w wersji 3.11 lub nowszej. Narzędzie używa tylko bib
 | `REGIONS.md` | Każdy region: liczba węzłów, 5 węzłów centralnych, mosty do innych regionów. Na końcu pliku stoją sekcje „Time” oraz „Graph metrics”. |
 | `CORE.md` | 20 węzłów o największej ważności: region, stopień, data najnowszej zmiany, ważność. Dla folderu Markdown każdy wiersz zawiera pierwszy akapit strony. |
 
-2 opcje dodają pliki do README. Opcja `--spin` zapisuje plik `brain-spin.svg`: mózg obraca się raz na 12 s w animacji SMIL bez skryptu (313 kB dla 313 węzłów). Opcja `--stl` zapisuje plik `brain.stl`: model ASCII STL z 2 półkulami oraz 40 węzłami z największą liczbą krawędzi (51 kB). GitHub wyświetla model STL w bloku kodu z oznaczeniem `stl`.
+2 opcje dodają pliki do README. Opcja `--spin` zapisuje plik `brain-spin.svg`: mózg obraca się raz na 12 s w animacji SMIL bez skryptu (373 kB dla 313 węzłów). Opcja `--stl` zapisuje plik `brain.stl`: model ASCII STL z 2 półkulami oraz 40 węzłami z największą liczbą krawędzi (51 kB). GitHub wyświetla model STL w bloku kodu z oznaczeniem `stl`.
 
 Inne wejścia:
 

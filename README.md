@@ -2862,7 +2862,7 @@ The tool needs Python 3.11 or newer and nothing outside the standard library. Ea
 | `REGIONS.md` | Each region with its size, its 5 central nodes and its bridges to other regions; the Time section; graph metrics. |
 | `CORE.md` | The 20 nodes with the largest weight: region, degree, last change, weight and, for a Markdown folder, the first paragraph of the page. |
 
-Two options add files for a README. `--spin` writes `brain-spin.svg`: the brain turns once every 12 seconds, animated with SMIL and no script (313 kB for 313 nodes). `--stl` writes `brain.stl`: an ASCII STL model of both hemispheres and the 40 nodes with the most edges (51 kB), which GitHub renders in a fenced code block marked `stl`.
+Two options add files for a README. `--spin` writes `brain-spin.svg`: the brain turns once every 12 seconds, animated with SMIL and no script (373 kB for 313 nodes). `--stl` writes `brain.stl`: an ASCII STL model of both hemispheres and the 40 nodes with the most edges (51 kB), which GitHub renders in a fenced code block marked `stl`.
 
 Other inputs:
 

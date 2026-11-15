@@ -1,5 +1,5 @@
 {
- "generator": "neurophify 1.2.0",
+ "generator": "neurophify 1.3.0",
  "title": "SilverBullet docs",
  "input": "docs",
  "method": "label propagation (seed 42, at most 50 iterations, top 5 % hubs do not vote)",
